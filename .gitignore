@@ -1,0 +1,27 @@
+# Système
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Variables d'environnement
+.env
+.env.*
+
+# Node (si présent un jour)
+node_modules/
+
+# Dossier Claude Code
+.claude/
+
+# Fichiers de backup (historiques de travail, non nécessaires au repo)
+*.backup-*.html
+*.backup-*.xml
+*.backup-*.html
+
+# Notes internes Jarvis (non déployées)
+transmission-jarvis-*.md
+
+# Dossier gallery/ local (images déjà déployées sur le serveur)
+# Décommente la ligne suivante si tu ne veux pas versionner les images locales
+# gallery/

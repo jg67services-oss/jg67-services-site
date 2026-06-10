@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jg67services.fr/sitemap.xml
