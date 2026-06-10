@@ -305,7 +305,8 @@
                             votre devis gratuit</h2>
                         <p class="text-center text-on-surface-variant mb-stack-lg">Réponse sous 24h pour votre bien à
                             Strasbourg.</p>
-                        <form id="devis-form" class="space-y-6">
+                        <form id="devis-form" name="devis" method="POST" data-netlify="true" class="space-y-6">
+                            <input type="hidden" name="form-name" value="devis" />
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
                                 <div>
                                     <label class="block font-label-bold text-label-bold text-on-surface mb-2">Prénom /
@@ -511,20 +512,20 @@
 
                 const formData = new FormData(devisForm);
 
-                fetch('send_devis.php', {
+                fetch('/', {
                     method: 'POST',
-                    body: formData
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
                 })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
+                    .then(response => {
+                        if (response.ok) {
                             // Hide the form fields
                             const formGroups = devisForm.querySelectorAll('div:not(#form-success), button[type="submit"]');
                             formGroups.forEach(el => el.classList.add('hidden'));
                             // Show success message
                             formSuccess.classList.remove('hidden');
                         } else {
-                            alert(data.message || 'Une erreur est survenue lors de l\'envoi.');
+                            alert('Une erreur est survenue lors de l\'envoi. Veuillez réessayer.');
                             // Restore button
                             submitBtn.disabled = false;
                             submitBtn.innerHTML = originalBtnText;

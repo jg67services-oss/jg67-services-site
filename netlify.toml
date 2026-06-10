@@ -1,0 +1,14 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.jg67services.fr/*"
+  to = "https://jg67services.fr/:splat"
+  status = 301
+  force = true
