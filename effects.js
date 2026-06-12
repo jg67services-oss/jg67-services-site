@@ -68,45 +68,6 @@
   }
 
   // ============================
-  // JG67 EFFECTS — 2. PARALLAXE HERO
-  // ============================
-  function initParallax() {
-    if (reducedMotion) return;
-    if (window.innerWidth <= 768) return;
-
-    // Target the background image of the first hero section
-    var heroSection = document.querySelector('main section:first-child');
-    if (!heroSection) return;
-
-    var heroBg = heroSection.querySelector('img.object-cover');
-    if (!heroBg) return;
-
-    var ticking = false;
-
-    function applyParallax() {
-      if (window.innerWidth > 768) {
-        heroBg.style.transform = 'translateY(' + (window.scrollY * 0.3) + 'px)';
-      } else {
-        heroBg.style.transform = '';
-      }
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', function () {
-      if (!ticking) {
-        requestAnimationFrame(applyParallax);
-        ticking = true;
-      }
-    }, { passive: true });
-
-    window.addEventListener('resize', function () {
-      if (window.innerWidth <= 768) {
-        heroBg.style.transform = '';
-      }
-    });
-  }
-
-  // ============================
   // JG67 EFFECTS — 3. LIGHTBOX FLUIDE (galerie.html)
   // ============================
   function initLightbox() {
@@ -352,7 +313,6 @@
   // ============================
   function init() {
     initScrollReveal();
-    initParallax();
     initLightbox();
     initHoverCards();
     initStickyNav();
