@@ -68,7 +68,13 @@ header.scrolled .bar{padding:12px 0}
 header.scrolled .brand{color:var(--nuit)}
 .brand img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.35)}
 .brand b{font-family:var(--f-display);font-size:1.3rem;font-weight:700;letter-spacing:.04em}
-.brand small{display:block;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--champagne-2);font-weight:500}
+.brand small{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--champagne-2);font-weight:500}
+/* ---------- Marquee hero ---------- */
+.hero-marquee{overflow:hidden;width:calc(100% + 56px);margin:0 -28px 28px;position:relative}
+.hero-marquee-track{display:flex;white-space:nowrap;animation:marquee 28s linear infinite}
+.hero-marquee-track span{display:inline-block;font-size:.72rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--champagne-2);padding-right:56px}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.hero-marquee-track{animation:none}}
 nav.main{display:flex;gap:36px}
 nav.main a{position:relative;font-size:.86rem;font-weight:400;letter-spacing:.06em;color:rgba(255,255,255,.85);padding:6px 0;transition:color .3s}
 header.scrolled nav.main a{color:var(--encre)}
@@ -313,7 +319,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
   <div class="wrap bar">
     <a class="brand" href="./">
       <img src="https://jg67services.fr/img/logo.jpeg" alt="JG67 Services Logo">
-      <span><b>JG67 Services</b><small>Ménage premium · Strasbourg</small></span>
+      <small>Ménage premium · Strasbourg</small>
     </a>
     <nav class="main">
       <a href="./">Accueil</a>
@@ -347,7 +353,14 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
 <section class="hero" id="accueil">
   <div class="hero-img" role="img" aria-label="Ménage Airbnb Strasbourg - JG67 Services"></div>
   <div class="wrap">
-    <span class="eyebrow">Prestataire ménage Airbnb Strasbourg</span>
+    <div class="hero-marquee" aria-label="Prestataire ménage Airbnb Strasbourg">
+      <div class="hero-marquee-track" aria-hidden="true">
+        <span>· Prestataire ménage Airbnb Strasbourg</span>
+        <span>· Prestataire ménage Airbnb Strasbourg</span>
+        <span>· Prestataire ménage Airbnb Strasbourg</span>
+        <span>· Prestataire ménage Airbnb Strasbourg</span>
+      </div>
+    </div>
     <h1>
       <span class="line"><span>Ménage Airbnb Strasbourg</span></span>
       <span class="line"><span><em class="gold">JG67 Services</em></span></span>
