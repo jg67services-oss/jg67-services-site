@@ -149,6 +149,16 @@ body.mobile-menu-open {
 }
 
 /* ============================
+   JG67 EFFECTS — HERO IMAGE DESKTOP FOCUS
+   ============================ */
+@media (min-width: 769px) {
+  .hero-bg-desktop {
+    transform: scale(2);
+    transform-origin: 50% 40%;
+  }
+}
+
+/* ============================
    JG67 EFFECTS — PREFERS REDUCED MOTION
    ============================ */
 @media (prefers-reduced-motion: reduce) {
