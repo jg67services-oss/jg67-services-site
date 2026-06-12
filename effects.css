@@ -22,7 +22,7 @@
 }
 .service-card:hover {
   transform: translateY(-4px) !important;
-  border-color: rgba(201, 169, 110, 0.5) !important;
+  border-color: rgba(183, 147, 91, 0.5) !important;
 }
 
 /* ============================
@@ -32,7 +32,7 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
 }
 #main-header.nav-top {
-  background-color: rgba(15, 15, 14, 0.85) !important;
+  background-color: rgba(14, 30, 42, 0.85) !important;
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   box-shadow: none !important;
@@ -42,11 +42,11 @@
   color: rgba(255, 255, 255, 0.85) !important;
 }
 #main-header.nav-top nav a:hover {
-  color: #C9A96E !important;
+  color: #B7935B !important;
 }
 #main-header.nav-top nav a.border-b-2 {
-  border-bottom-color: #C9A96E !important;
-  color: #C9A96E !important;
+  border-bottom-color: #B7935B !important;
+  color: #B7935B !important;
 }
 #main-header.nav-top #mobile-menu-button {
   color: white !important;
@@ -94,7 +94,7 @@ body.mobile-menu-open {
   left: 0;
   width: 8px;
   height: 8px;
-  border: 1px solid #C9A96E;
+  border: 1px solid #B7935B;
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -109,7 +109,7 @@ body.mobile-menu-open {
 #jg67-cursor.cursor-hover {
   width: 24px;
   height: 24px;
-  background: rgba(201, 169, 110, 0.08);
+  background: rgba(183, 147, 91, 0.08);
 }
 
 /* ============================
@@ -119,8 +119,8 @@ body.mobile-menu-open {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(201, 169, 110, 0.12);
-  border: 1px solid rgba(201, 169, 110, 0.35);
+  background: rgba(183, 147, 91, 0.12);
+  border: 1px solid rgba(183, 147, 91, 0.35);
   color: white;
   width: 48px;
   height: 48px;
@@ -134,8 +134,8 @@ body.mobile-menu-open {
   flex-shrink: 0;
 }
 .lightbox-nav:hover {
-  background: rgba(201, 169, 110, 0.28);
-  border-color: rgba(201, 169, 110, 0.65);
+  background: rgba(183, 147, 91, 0.28);
+  border-color: rgba(183, 147, 91, 0.65);
 }
 #lightbox-prev {
   left: 16px;
