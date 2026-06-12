@@ -232,7 +232,58 @@
   }
 
   // ============================
-  // JG67 EFFECTS — 6. CURSEUR PERSONNALISÉ
+  // JG67 EFFECTS — 6. MENU MOBILE
+  // ============================
+  function initMobileMenu() {
+    var mobileMenu = document.getElementById('mobile-menu');
+    var mobileMenuBtn = document.getElementById('mobile-menu-button');
+    var closeMenuBtn = document.getElementById('close-menu');
+    if (!mobileMenu || !mobileMenuBtn || !closeMenuBtn) return;
+
+    mobileMenuBtn.setAttribute('aria-controls', 'mobile-menu');
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    closeMenuBtn.setAttribute('aria-label', 'Fermer le menu');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+
+    function setMenuOpen(isOpen) {
+      mobileMenu.classList.toggle('translate-x-full', !isOpen);
+      document.documentElement.classList.toggle('mobile-menu-open', isOpen);
+      document.body.classList.toggle('mobile-menu-open', isOpen);
+      mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    }
+
+    mobileMenuBtn.addEventListener('click', function () {
+      setMenuOpen(true);
+    });
+
+    closeMenuBtn.addEventListener('click', function () {
+      setMenuOpen(false);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        setMenuOpen(false);
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+        setMenuOpen(false);
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false);
+      }
+    });
+
+    setMenuOpen(false);
+  }
+
+  // ============================
+  // JG67 EFFECTS — 7. CURSEUR PERSONNALISÉ
   // ============================
   function initCursor() {
     if (reducedMotion) return;
@@ -305,6 +356,7 @@
     initLightbox();
     initHoverCards();
     initStickyNav();
+    initMobileMenu();
     initCursor();
   }
 

@@ -59,6 +59,27 @@
 }
 
 /* ============================
+   JG67 EFFECTS — MENU MOBILE
+   ============================ */
+#mobile-menu {
+  transform: none !important;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.2s ease, visibility 0.2s ease !important;
+}
+#mobile-menu.translate-x-full {
+  transform: none !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+html.mobile-menu-open,
+body.mobile-menu-open {
+  overflow: hidden !important;
+}
+
+/* ============================
    JG67 EFFECTS — CUSTOM CURSOR (desktop uniquement)
    ============================ */
 @media (pointer: fine) {
