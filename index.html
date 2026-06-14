@@ -55,7 +55,8 @@
     "Nettoyage location courte durée",
     "Remise à blanc Airbnb",
     "Gestion du linge",
-    "Préparation logement"
+    "Préparation logement",
+    "Conciergerie relais temporaire"
   ],
   "sameAs": [
     "https://www.google.com/search?kgmid=/g/11z5p5sp4k"
@@ -274,6 +275,36 @@ section{padding:110px 0}
 .presta li .material-icons-outlined{font-size:1rem;color:var(--champagne);margin-top:3px}
 .presta-cta{text-align:center;margin-top:54px}
 
+/* ---------- Conciergerie relais ---------- */
+.relais{background:var(--nuit);color:#fff;position:relative;overflow:hidden}
+.relais::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(14,30,42,.98),rgba(14,30,42,.86)),url("https://jg67services.fr/img/JG67%20SERVICES%20CONTROLE%20QUALITE.jpg") center/cover no-repeat;opacity:.98}
+.relais .wrap{position:relative;z-index:1}
+.relais h2{color:#fff}
+.relais .lead{color:rgba(255,255,255,.68)}
+.relais .eyebrow{color:var(--champagne-2)}
+.relais-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start;margin-top:24px}
+.relais-panel{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border-radius:3px;padding:40px}
+.relais-panel h3{color:#fff;font-size:1.45rem;margin-bottom:16px}
+.relais-list{display:grid;gap:14px;margin-top:26px}
+.relais-list li{display:flex;gap:12px;align-items:flex-start;color:rgba(255,255,255,.76);font-size:.95rem}
+.relais-list .material-icons-outlined{color:var(--champagne-2);font-size:1.08rem;margin-top:3px}
+.relais-detail{margin-top:30px;padding:24px;border:1px solid rgba(216,189,138,.32);background:rgba(216,189,138,.09);border-radius:3px}
+.relais-detail h4{font-family:var(--f-display);font-size:1.28rem;color:#fff;margin-bottom:10px}
+.relais-detail p{color:rgba(255,255,255,.72);font-size:.95rem}
+.relais-pack{display:grid;gap:14px;margin-top:22px}
+.pack{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:18px 0;border-top:1px solid rgba(255,255,255,.12)}
+.pack b{display:block;color:#fff;font-weight:500;margin-bottom:5px}
+.pack span{color:rgba(255,255,255,.62);font-size:.88rem}
+.pack strong{font-family:var(--f-display);font-size:1.45rem;color:var(--champagne-2);white-space:nowrap}
+.price-explain{margin-top:26px;padding:22px 24px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:3px}
+.price-explain h4{font-family:var(--f-display);font-size:1.24rem;color:#fff;margin-bottom:10px}
+.price-explain p{color:rgba(255,255,255,.7);font-size:.92rem;margin-bottom:12px}
+.price-explain ul{display:grid;gap:9px;margin-top:12px}
+.price-explain li{display:flex;gap:10px;color:rgba(255,255,255,.72);font-size:.9rem}
+.price-explain li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--champagne-2);margin-top:10px;flex:none}
+.relais-note{margin-top:22px;color:rgba(255,255,255,.56);font-size:.9rem}
+.relais-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+
 /* ---------- Comment ça marche — fil doré ---------- */
 .process{position:relative}
 .steps{position:relative;margin-top:70px;display:grid;grid-template-columns:repeat(4,1fr);gap:34px}
@@ -327,6 +358,10 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .field input,.field select,.field textarea{font-family:var(--f-body);font-size:.98rem;color:var(--nuit);background:var(--lin);border:1px solid var(--ligne);border-radius:2px;padding:15px 16px;outline:none;transition:border-color .3s,box-shadow .3s,background .3s}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--champagne);background:#fff;box-shadow:0 0 0 3px rgba(183,147,91,.14)}
 .field textarea{min-height:110px;resize:vertical}
+.option-check{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;padding:20px 22px;background:rgba(183,147,91,.09);border:1px solid rgba(183,147,91,.28);border-radius:3px}
+.option-check input{width:20px;height:20px;margin-top:2px;accent-color:var(--champagne)}
+.option-check label{font-size:.82rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--nuit)}
+.option-check p{grid-column:2;color:var(--gris);font-size:.92rem;margin-top:-4px}
 form .btn{grid-column:1/-1;justify-content:center;margin-top:6px}
 #form-success{display:none;grid-column:1/-1;padding:22px 24px;background:rgba(14,30,42,.06);border:1px solid var(--champagne);border-radius:2px;font-family:var(--f-display);font-size:1.15rem;color:var(--nuit);text-align:center}
 
@@ -355,6 +390,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
   nav.main,header .btn{display:none}
   .burger{display:block}
   .avis-grid,.duo,.gal-grid,.excellence .cols,.zones-cols,.devis-cols{grid-template-columns:1fr}
+  .relais-grid{grid-template-columns:1fr}
   .trio,.t-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr;gap:44px}
   .steps::before,.steps::after{display:none}
@@ -367,6 +403,12 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
   .steps,.f-grid{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(3,1fr);gap:6px}
   .stat .num{font-size:2.1rem}
+  .wrap{padding:0 20px}
+  .relais-panel,.tarifs{padding:32px 24px}
+  .pack,.tarifs li{grid-template-columns:1fr;display:grid;gap:6px}
+  .pack strong,.tarifs li b{white-space:normal}
+  form{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center;text-align:center}
 }
 </style>
 </head>
@@ -583,6 +625,55 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
   </div>
 </section>
 
+<!-- ======================= CONCIERGERIE RELAIS ======================= -->
+<section class="relais" id="conciergerie-relais">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:10px">
+      <span class="eyebrow">Relais premium pendant vos absences</span>
+      <h2>Partez serein, JG67 prend le relais de votre Airbnb</h2>
+      <p class="lead">Vacances, déplacement, imprévu ou urgence : JG67 assure temporairement la continuité de votre location à Strasbourg. Relation voyageurs, check-in, check-out, clés, ménage, linge et suivi terrain sont pris en charge dans un cadre clair, pour que vous puissiez partir l'esprit tranquille.</p>
+    </div>
+    <div class="relais-grid">
+      <div class="relais-panel reveal d1">
+        <h3>Un relais temporaire, premium, sans reprise permanente</h3>
+        <p class="lead">L'offre est pensée pour les propriétaires qui veulent sécuriser quelques jours ou quelques semaines d'absence sans laisser leur logement sans présence locale. Vous nous confiez le terrain pendant la période prévue, puis vous reprenez simplement la main à votre retour.</p>
+        <ul class="relais-list">
+          <li><i class="material-icons-outlined">vpn_key</i><span>Check-in, check-out, dépose ou remise des clés, consignes d'accès et coordination voyageurs pendant votre absence.</span></li>
+          <li><i class="material-icons-outlined">cleaning_services</i><span>Remise à blanc, linge, consommables et rapport photo après chaque rotation.</span></li>
+          <li><i class="material-icons-outlined">support_agent</i><span>Prise en charge des demandes courantes des voyageurs et alerte immédiate si une décision propriétaire est nécessaire.</span></li>
+          <li><i class="material-icons-outlined">assignment_turned_in</i><span>Compte rendu de fin de relais : interventions, incidents, points à suivre, puis retour au fonctionnement habituel.</span></li>
+        </ul>
+        <div class="relais-detail">
+          <h4>Un relais opérationnel complet pendant votre absence</h4>
+          <p>Quand l'option est activée, JG67 devient votre relais local de confiance. Nous assurons la continuité opérationnelle, suivons les arrivées et départs, coordonnons les clés, répondons aux demandes courantes des voyageurs et pilotons les rotations terrain. Vous n'êtes sollicité qu'en cas de problème important, force majeure, litige ou décision engageante, via le canal WhatsApp dédié défini avant votre départ.</p>
+        </div>
+      </div>
+      <div class="relais-panel reveal d2">
+        <h3>Tarif premium : relais absence et urgence</h3>
+        <div class="relais-pack">
+          <div class="pack"><div><b>Activation relais</b><br><span>Audit accès, consignes, planning, contacts urgence</span></div><strong>79-149 €</strong></div>
+          <div class="pack"><div><b>Relais week-end</b><br><span>De 99 € si tout est autonome à 199 € si JG67 gère clés, voyageurs, horaires ou rotations</span></div><strong>99-199 €</strong></div>
+          <div class="pack"><div><b>Relais semaine</b><br><span>Selon durée, nombre de logements, réservations prévues et niveau de suivi demandé</span></div><strong>199-399 €</strong></div>
+          <div class="pack"><div><b>Commission absence</b><br><span>Disponibilité, coordination et relation voyageur pendant votre absence</span></div><strong>16 %</strong></div>
+        </div>
+        <div class="price-explain">
+          <h4>Pourquoi une fourchette ?</h4>
+          <p>Le prix dépend du niveau de relais à assurer. Un logement autonome avec boîte à clés et consignes claires demande moins d'intervention qu'un week-end avec remise de clés, horaires sensibles, plusieurs voyageurs ou rotation ménage à coordonner.</p>
+          <ul>
+            <li>Bas de fourchette : logement simple, accès autonome, peu de messages, consignes déjà prêtes.</li>
+            <li>Haut de fourchette : clés à gérer, check-in ou check-out à suivre, rotation ménage, voyageurs à accompagner ou risque d'imprévu.</li>
+          </ul>
+        </div>
+        <p class="relais-note">Les forfaits couvrent la préparation et la coordination du relais. La commission de 16 % s'applique uniquement lorsque JG67 prend en charge la relation voyageurs pendant votre absence.</p>
+        <div class="relais-cta">
+          <a class="btn solid" href="#devis"><span>Préparer mon absence</span></a>
+          <a class="btn" href="contact.html#devis"><span>Étudier un relais</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ======================= COMMENT ÇA MARCHE ======================= -->
 <section class="process">
   <div class="wrap">
@@ -678,6 +769,15 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
               <option>Studio</option><option>T2</option><option>T3</option><option>Maison</option><option>Villa</option>
             </select>
           </div>
+          <div class="field"><label for="besoin">Besoin principal</label>
+            <select id="besoin" name="besoin">
+              <option>Ménage Airbnb régulier</option>
+              <option>Remise à blanc ponctuelle</option>
+              <option>Gestion du linge</option>
+              <option>Relais absence premium</option>
+              <option>Renfort pour conciergerie</option>
+            </select>
+          </div>
           <div class="field"><label for="surface">Surface approximative (m²)</label><input id="surface" name="surface" type="number" min="0"></div>
           <div class="field"><label for="couchages">Nombre de couchages</label><input id="couchages" name="couchages" type="number" min="0"></div>
           <div class="field"><label for="linge">Option linge de maison</label>
@@ -685,6 +785,11 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
               <option>Oui (Fourniture et blanchisserie)</option>
               <option>Non (Linge fourni par vos soins)</option>
             </select>
+          </div>
+          <div class="option-check">
+            <input id="option-relais-absence" name="option_relais_absence" type="checkbox" value="oui">
+            <label for="option-relais-absence">Option premium Relais absence</label>
+            <p>À cocher pour activer le relais opérationnel pendant vos absences, vacances ou urgences : relation voyageurs, check-in, check-out, clés, ménage, linge et suivi terrain. Un canal WhatsApp dédié est défini pour les urgences, cas de force majeure ou décisions importantes. Commission absence fixe : 16 % si la relation voyageur est confiée à JG67.</p>
           </div>
           <div class="field full"><label for="loc">Localisation</label><input id="loc" name="localisation" type="text"></div>
           <div class="field full"><label for="msg">Message (Optionnel)</label><textarea id="msg" name="message"></textarea></div>
