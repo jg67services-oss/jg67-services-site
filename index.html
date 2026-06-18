@@ -777,38 +777,15 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
         <form name="devis" action="/index.html" method="post" data-netlify="true">
           <input type="hidden" name="form-name" value="devis">
           <div class="field"><label for="nom">Prénom / Nom</label><input id="nom" name="nom" type="text" required></div>
-          <div class="field"><label for="tel">Téléphone ou Email</label><input id="tel" name="contact" type="text" required></div>
+          <div class="field"><label for="tel">Téléphone</label><input id="tel" name="contact" type="tel" required></div>
           <div class="field"><label for="type">Type de bien</label>
             <select id="type" name="type">
               <option>Studio</option><option>T2</option><option>T3</option><option>Maison</option><option>Villa</option>
             </select>
           </div>
-          <div class="field"><label for="besoin">Besoin principal</label>
-            <select id="besoin" name="besoin">
-              <option>Ménage Airbnb régulier</option>
-              <option>Remise à blanc ponctuelle</option>
-              <option>Gestion du linge</option>
-              <option>Relais absence premium</option>
-              <option>Renfort pour conciergerie</option>
-            </select>
-          </div>
-          <div class="field"><label for="surface">Surface approximative (m²)</label><input id="surface" name="surface" type="number" min="0"></div>
-          <div class="field"><label for="couchages">Nombre de couchages</label><input id="couchages" name="couchages" type="number" min="0"></div>
-          <div class="field"><label for="linge">Option linge de maison</label>
-            <select id="linge" name="linge">
-              <option>Oui (Fourniture et blanchisserie)</option>
-              <option>Non (Linge fourni par vos soins)</option>
-            </select>
-          </div>
-          <div class="option-check">
-            <input id="option-relais-absence" name="option_relais_absence" type="checkbox" value="oui">
-            <label for="option-relais-absence">Option premium Relais absence</label>
-            <p>À cocher pour activer le relais opérationnel pendant vos absences, vacances ou urgences : relation voyageurs, check-in, check-out, clés, ménage, linge et suivi terrain. Un canal WhatsApp dédié est défini pour les urgences, cas de force majeure ou décisions importantes. Commission absence fixe : 16 % si la relation voyageur est confiée à JG67.</p>
-          </div>
-          <div class="field full"><label for="loc">Localisation</label><input id="loc" name="localisation" type="text"></div>
-          <div class="field full"><label for="msg">Message (Optionnel)</label><textarea id="msg" name="message"></textarea></div>
+          <div class="field"><label for="loc">Localisation (ville ou quartier)</label><input id="loc" name="localisation" type="text" required></div>
           <div id="form-success">Merci ! Votre demande a bien été envoyée. Nous vous répondrons sous 24h.</div>
-          <button class="btn solid" type="submit"><span>Envoyer ma demande</span></button>
+          <button class="btn solid" type="submit"><span>Recevoir mon devis gratuit</span></button>
         </form>
       </div>
     </div>
