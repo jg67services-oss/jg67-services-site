@@ -1,6 +1,14 @@
 [build]
   publish = "."
 
+# Redirection www → non-www
+[[redirects]]
+  from = "https://www.jg67services.fr/*"
+  to = "https://jg67services.fr/:splat"
+  status = 301
+  force = true
+
+# Redirections .html → sans extension (canonicalisation URLs)
 [[redirects]]
   from = "/index.html"
   to = "/"
@@ -8,7 +16,127 @@
   force = true
 
 [[redirects]]
-  from = "https://www.jg67services.fr/*"
-  to = "https://jg67services.fr/:splat"
+  from = "/service.html"
+  to = "/service"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/menage-airbnb-strasbourg.html"
+  to = "/menage-airbnb-strasbourg"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/nettoyage-location-courte-duree-strasbourg.html"
+  to = "/nettoyage-location-courte-duree-strasbourg"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/remise-a-blanc-airbnb-strasbourg.html"
+  to = "/remise-a-blanc-airbnb-strasbourg"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/prestataire-menage-airbnb-conciergerie-strasbourg.html"
+  to = "/prestataire-menage-airbnb-conciergerie-strasbourg"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/galerie.html"
+  to = "/galerie"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zones-intervention.html"
+  to = "/zones-intervention"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/menage-airbnb-schiltigheim.html"
+  to = "/menage-airbnb-schiltigheim"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/menage-airbnb-illkirch.html"
+  to = "/menage-airbnb-illkirch"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/menage-airbnb-bischheim.html"
+  to = "/menage-airbnb-bischheim"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/menage-airbnb-lingolsheim.html"
+  to = "/menage-airbnb-lingolsheim"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/menage-airbnb-ostwald.html"
+  to = "/menage-airbnb-ostwald"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/menage-airbnb-obernai.html"
+  to = "/menage-airbnb-obernai"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/prix-menage-airbnb-strasbourg.html"
+  to = "/prix-menage-airbnb-strasbourg"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/checklist-menage-airbnb-entre-deux-voyageurs.html"
+  to = "/checklist-menage-airbnb-entre-deux-voyageurs"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/eviter-mauvais-avis-proprete-airbnb.html"
+  to = "/eviter-mauvais-avis-proprete-airbnb"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/menage-airbnb-ou-conciergerie-strasbourg.html"
+  to = "/menage-airbnb-ou-conciergerie-strasbourg"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mentions-legales.html"
+  to = "/mentions-legales"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/politique-confidentialite.html"
+  to = "/politique-confidentialite"
   status = 301
   force = true
