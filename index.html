@@ -574,14 +574,14 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
       <span class="eyebrow">Nos résultats après nettoyage</span>
       <h2>Lits au carré, salles de bains étincelantes, cuisines immaculées.</h2>
     </div>
-    <div class="gal-grid">
+    <div class="gal-grid" data-random-gallery>
       <figure class="gal-item reveal d1">
-        <img src="https://jg67services.fr/img/gal/b.webp" alt="Cuisine impeccable" loading="lazy">
-        <figcaption>Cuisine impeccable</figcaption>
+        <img data-random-slot="primary" src="/img/gal/new-IMG_6334.jpg" alt="Cuisine et séjour prêts pour voyageurs Airbnb à Strasbourg" loading="lazy">
+        <figcaption data-random-caption>Séjour prêt pour voyageurs</figcaption>
       </figure>
       <figure class="gal-item reveal d2">
-        <img src="https://jg67services.fr/img/gal/a.webp" alt="Chambre au carré" loading="lazy">
-        <figcaption>Chambre au carré</figcaption>
+        <img data-random-slot="secondary" src="/img/gal/new-a97189f2.jpg" alt="Chambre préparée avec soin pour arrivée voyageur" loading="lazy">
+        <figcaption data-random-caption>Chambre préparée</figcaption>
       </figure>
     </div>
     <div class="gal-cta reveal">
@@ -983,29 +983,16 @@ if(steps){
   },{threshold:.3}).observe(steps);
 }
 
-/* ===== Photos aléatoires section excellence ===== */
-(() => {
-  const slots = document.querySelectorAll('[data-random-excellence] img[data-random-slot]');
+/* ===== Photos aléatoires ===== */
+function applyRandomPhotoPair(selector, pool, storageKey) {
+  const root = document.querySelector(selector);
+  if (!root) return;
+  const slots = root.querySelectorAll('img[data-random-slot]');
   if (slots.length < 2) return;
-
-  const pool = [
-    {src:'/img/gal/new-IMG_6322.jpg', alt:'Logement préparé après ménage Airbnb à Strasbourg'},
-    {src:'/img/gal/new-IMG_6334.jpg', alt:'Cuisine et séjour prêts pour voyageurs Airbnb à Strasbourg'},
-    {src:'/img/gal/new-IMG_6386.jpg', alt:'Appartement remis au propre pour location courte durée à Strasbourg'},
-    {src:'/img/gal/new-IMG_6420.jpg', alt:'Espace de vie préparé après passage JG67 Services'},
-    {src:'/img/gal/new-41249015.jpg', alt:'Salon propre et préparé pour voyageurs courte durée'},
-    {src:'/img/gal/new-7197a184.jpg', alt:'Logement rangé après remise à blanc Airbnb'},
-    {src:'/img/gal/new-a97189f2.jpg', alt:'Chambre préparée avec soin pour arrivée voyageur'},
-    {src:'/img/gal/new-photo-avril-1.jpg', alt:'Détail de logement prêt après ménage Airbnb'},
-    {src:'/img/gal/cuisine-ouverte-plan-noir.webp', alt:'Cuisine ouverte nettoyée pour location courte durée'},
-    {src:'/img/gal/sdb-vasque-sous-combles.webp', alt:'Salle de bain prête après remise à blanc Airbnb'},
-    {src:'/img/gal/lit-serviettes-waffle-ardoise.webp', alt:'Lit préparé et serviettes mises en place'},
-    {src:'/img/gal/salon-lumineux-triple-fenetre.webp', alt:'Salon lumineux préparé pour voyageurs'}
-  ];
 
   let previousPair = [];
   try {
-    previousPair = JSON.parse(localStorage.getItem('jg67-excellence-photos') || '[]');
+    previousPair = JSON.parse(localStorage.getItem(storageKey) || '[]');
   } catch (err) {
     previousPair = [];
   }
@@ -1027,14 +1014,34 @@ if(steps){
     if (!next) return;
     img.src = next.src;
     img.alt = next.alt;
+    const caption = img.closest('figure')?.querySelector('[data-random-caption]');
+    if (caption && next.caption) caption.textContent = next.caption;
   });
 
   try {
-    localStorage.setItem('jg67-excellence-photos', JSON.stringify(shuffled.slice(0, slots.length).map(item => item.src)));
+    localStorage.setItem(storageKey, JSON.stringify(shuffled.slice(0, slots.length).map(item => item.src)));
   } catch (err) {
     /* Rien à faire si le stockage navigateur est désactivé. */
   }
-})();
+}
+
+const jg67PhotoPool = [
+  {src:'/img/gal/new-IMG_6322.jpg', alt:'Logement préparé après ménage Airbnb à Strasbourg', caption:'Logement prêt'},
+  {src:'/img/gal/new-IMG_6334.jpg', alt:'Cuisine et séjour prêts pour voyageurs Airbnb à Strasbourg', caption:'Séjour prêt pour voyageurs'},
+  {src:'/img/gal/new-IMG_6386.jpg', alt:'Appartement remis au propre pour location courte durée à Strasbourg', caption:'Appartement remis au propre'},
+  {src:'/img/gal/new-IMG_6420.jpg', alt:'Espace de vie préparé après passage JG67 Services', caption:'Espace de vie préparé'},
+  {src:'/img/gal/new-41249015.jpg', alt:'Salon propre et préparé pour voyageurs courte durée', caption:'Salon propre et rangé'},
+  {src:'/img/gal/new-7197a184.jpg', alt:'Logement rangé après remise à blanc Airbnb', caption:'Remise à blanc terminée'},
+  {src:'/img/gal/new-a97189f2.jpg', alt:'Chambre préparée avec soin pour arrivée voyageur', caption:'Chambre préparée'},
+  {src:'/img/gal/new-photo-avril-1.jpg', alt:'Détail de logement prêt après ménage Airbnb', caption:'Détail soigné'},
+  {src:'/img/gal/cuisine-ouverte-plan-noir.webp', alt:'Cuisine ouverte nettoyée pour location courte durée', caption:'Cuisine impeccable'},
+  {src:'/img/gal/sdb-vasque-sous-combles.webp', alt:'Salle de bain prête après remise à blanc Airbnb', caption:'Salle de bain prête'},
+  {src:'/img/gal/lit-serviettes-waffle-ardoise.webp', alt:'Lit préparé et serviettes mises en place', caption:'Lit au carré'},
+  {src:'/img/gal/salon-lumineux-triple-fenetre.webp', alt:'Salon lumineux préparé pour voyageurs', caption:'Salon lumineux'}
+];
+
+applyRandomPhotoPair('[data-random-gallery]', jg67PhotoPool, 'jg67-gallery-photos');
+applyRandomPhotoPair('[data-random-excellence]', jg67PhotoPool, 'jg67-excellence-photos');
 </script>
 <script src="/conversion-tracking.js" defer></script>
 </body>
