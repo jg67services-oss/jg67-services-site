@@ -10,10 +10,11 @@
   --nuit-2:      #16303F;
   --champagne:   #B7935B;
   --champagne-2: #D8BD8A;
+  --or-texte:    #80621C;
   --lin:         #F6F4EF;
   --blanc:       #FFFFFF;
   --encre:       #2B3A44;
-  --gris:        #6E7D86;
+  --gris:        #616C75;
   --ligne:       rgba(14,30,42,.10);
   --f-display:   'Cormorant Garamond', Georgia, serif;
   --f-body:      'Outfit', -apple-system, sans-serif;
@@ -45,7 +46,7 @@ h3 { font-size:1.35rem }
 p  { line-height:1.75 }
 .eyebrow {
   display:inline-flex; align-items:center; gap:14px;
-  font-size:.72rem; font-weight:500; letter-spacing:.32em; text-transform:uppercase; color:var(--champagne);
+  font-size:.72rem; font-weight:600; letter-spacing:.32em; text-transform:uppercase; color:var(--or-texte);
 }
 .eyebrow::before { content:""; width:34px; height:1px; background:var(--champagne); flex:none }
 .lead { color:var(--gris); font-size:1.05rem; max-width:60ch }
@@ -158,7 +159,7 @@ section { padding:110px 0 }
 /* ─── Footer ────────────────────────────────────────────── */
 footer { background:var(--nuit); color:rgba(255,255,255,.7); padding:90px 0 0 }
 .f-grid { display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:50px; padding-bottom:70px }
-footer h4 { font-family:var(--f-display); color:#fff; font-size:1.1rem; font-weight:600; margin-bottom:18px; letter-spacing:.03em }
+footer h4, footer .foot-h { font-family:var(--f-display); color:#fff; font-size:1.1rem; font-weight:600; margin-bottom:18px; letter-spacing:.03em }
 footer .brandfoot b { font-family:var(--f-display); font-size:1.4rem; color:#fff; font-weight:700 }
 footer .brandfoot p { margin-top:12px; font-size:.92rem; color:rgba(255,255,255,.5); max-width:28ch }
 footer li { padding:5px 0 }
@@ -168,7 +169,7 @@ footer .contact li { display:flex; gap:10px; align-items:center; font-size:.9rem
 footer .contact .material-icons-outlined { font-size:1rem; color:var(--champagne) }
 .f-bottom {
   border-top:1px solid rgba(255,255,255,.1); padding:24px 0;
-  font-size:.8rem; color:rgba(255,255,255,.35); text-align:center; letter-spacing:.04em;
+  font-size:.8rem; color:rgba(255,255,255,.6); text-align:center; letter-spacing:.04em;
 }
 
 /* ─── WhatsApp flottant ─────────────────────────────────── */
