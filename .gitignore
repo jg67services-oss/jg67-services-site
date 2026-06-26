@@ -25,3 +25,6 @@ transmission-jarvis-*.md
 # Dossier gallery/ local (images déjà déployées sur le serveur)
 # Décommente la ligne suivante si tu ne veux pas versionner les images locales
 # gallery/
+
+# Local Netlify folder
+.netlify

@@ -1,252 +1,19 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="fr">
-
+<html lang="fr">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Galerie | JG67 Services Ménage Airbnb Strasbourg</title>
-    <meta name="description" content="Découvrez les logements préparés par JG67 Services à Strasbourg. Remises à blanc, blanchisserie premium et contrôle qualité en photos. Standards hôteliers pour vos Airbnb." />
-    <link rel="canonical" href="https://jg67services.fr/galerie" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="JG67 Services" />
-    <meta property="og:url" content="https://jg67services.fr/galerie" />
-    <meta property="og:title" content="Galerie – Logements Airbnb Préparés à Strasbourg | JG67 Services" />
-    <meta property="og:description" content="Découvrez les logements préparés par JG67 Services à Strasbourg. Remises à blanc, blanchisserie premium et contrôle qualité en photos. Standards hôteliers pour vos Airbnb." />
-    <meta property="og:image" content="https://jg67services.fr/img/logo.jpeg" />
-    <meta property="og:locale" content="fr_FR" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Metropolis:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
-    <link rel="icon" type="image/jpeg" href="img/logo.jpeg" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "secondary-fixed-dim": "#B7935B",
-                        "surface-container-highest": "#D3C9BC",
-                        "error-container": "#ffdad6",
-                        "on-tertiary-fixed": "#191c1e",
-                        "inverse-surface": "#0E1E2A",
-                        "on-primary-fixed": "#001944",
-                        "inverse-on-surface": "#F6F4EF",
-                        "on-tertiary-container": "#fbfdff",
-                        "on-secondary-fixed": "#3D2A0A",
-                        "on-background": "#0E1E2A",
-                        "surface-container-low": "#EDE9E3",
-                        "on-error-container": "#93000a",
-                        "tertiary": "#595c5e",
-                        "on-surface-variant": "#5C5247",
-                        "outline-variant": "#D3C9BE",
-                        "on-secondary": "#F6F4EF",
-                        "secondary-fixed": "#E8D5BA",
-                        "primary-fixed-dim": "#B7935B",
-                        "on-primary-fixed-variant": "#00429a",
-                        "primary": "#0E1E2A",
-                        "tertiary-fixed": "#e0e3e5",
-                        "on-surface": "#0E1E2A",
-                        "on-primary": "#F6F4EF",
-                        "on-tertiary": "#ffffff",
-                        "secondary": "#6B5E4E",
-                        "surface-container-high": "#DDD5CA",
-                        "outline": "#9E9287",
-                        "error": "#ba1a1a",
-                        "primary-fixed": "#E8E2D8",
-                        "on-primary-container": "#0E1E2A",
-                        "surface-tint": "#0E1E2A",
-                        "surface-bright": "#FFFFFF",
-                        "surface-variant": "#E5DFD7",
-                        "surface": "#F6F4EF",
-                        "on-secondary-fixed-variant": "#6B5030",
-                        "surface-container": "#E5DFD7",
-                        "on-secondary-container": "#6B5030",
-                        "tertiary-fixed-dim": "#c4c7c9",
-                        "on-tertiary-fixed-variant": "#444749",
-                        "secondary-container": "#F0E6D3",
-                        "primary-container": "#E8E2D8",
-                        "background": "#F6F4EF",
-                        "surface-container-lowest": "#ffffff",
-                        "inverse-primary": "#B7935B",
-                        "surface-dim": "#CEC7BD",
-                        "tertiary-container": "#727577",
-                        "on-error": "#ffffff"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "stack-sm": "8px",
-                        "stack-md": "16px",
-                        "container-max": "1200px",
-                        "section-padding-mobile": "64px",
-                        "section-padding-desktop": "120px",
-                        "stack-lg": "32px",
-                        "gutter": "24px"
-                    },
-                    "fontFamily": {
-                        "headline-md": ["Montserrat"],
-                        "label-bold": ["Metropolis"],
-                        "body-md": ["Metropolis"],
-                        "headline-lg": ["Montserrat"],
-                        "display-lg": ["Montserrat"],
-                        "display-lg-mobile": ["Montserrat"],
-                        "body-lg": ["Metropolis"]
-                    },
-                    "fontSize": {
-                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
-                        "label-bold": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
-                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
-                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "display-lg-mobile": ["36px", { "lineHeight": "1.2", "fontWeight": "700" }],
-                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
-                    }
-                },
-            },
-        }
-    </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
-
-        .hero-gradient {
-            background: linear-gradient(rgba(14, 30, 42, 0.85), rgba(14, 30, 42, 0.75));
-        }
-
-        #lightbox-modal {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        #lightbox-modal.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        #lightbox-modal img {
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-
-        #lightbox-modal.active img {
-            transform: scale(1);
-        }
-
-        /* JG67 GALLERY — Bento grid layout */
-        #gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 260px;
-            gap: 10px;
-            grid-auto-flow: dense;
-        }
-        @media (max-width: 1024px) {
-            #gallery-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        @media (max-width: 640px) {
-            #gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
-        }
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 14px;
-            cursor: zoom-in;
-        }
-        .gallery-item img {
-            width: 100%; height: 100%; object-fit: cover;
-            transition: transform 0.5s ease;
-            display: block;
-        }
-        .gallery-item:hover img { transform: scale(1.07); }
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 14px;
-            border: 2px solid transparent;
-            transition: border-color 0.3s, box-shadow 0.3s;
-            pointer-events: none;
-            z-index: 2;
-        }
-        .gallery-item:hover::after {
-            border-color: rgba(183, 147, 91, 0.65);
-            box-shadow: inset 0 0 24px rgba(183, 147, 91, 0.10);
-        }
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(11,28,48,0.72) 0%, transparent 55%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            padding: 14px 16px;
-            z-index: 1;
-        }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-        .gallery-category-badge {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.92);
-            background: rgba(183, 147, 91, 0.22);
-            border: 1px solid rgba(183, 147, 91, 0.48);
-            padding: 3px 10px;
-            border-radius: 100px;
-            backdrop-filter: blur(6px);
-        }
-        .gallery-voir-btn {
-            color: white;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            border: 1px solid rgba(255,255,255,0.55);
-            padding: 4px 14px;
-            border-radius: 8px;
-            backdrop-filter: blur(4px);
-        }
-        @media (min-width: 641px) {
-            .gallery-item.featured-hero { grid-column: span 2; grid-row: span 2; }
-            .gallery-item.featured-tall { grid-row: span 2; }
-            .gallery-item.featured-wide { grid-column: span 2; }
-        }
-        /* Filter bar */
-        .filter-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 9px 22px;
-            border-radius: 100px;
-            font-size: 13px;
-            font-weight: 600;
-            border: 1.5px solid #e2e6f0;
-            background: #fff;
-            color: #424653;
-            cursor: pointer;
-            transition: all 0.2s;
-            white-space: nowrap;
-        }
-        .filter-btn:hover { border-color: #B7935B; color: #B7935B; }
-        .filter-btn.active { background: #0556C3; color: #fff; border-color: #0556C3; }
-        .filter-count {
-            font-size: 11px;
-            padding: 1px 7px;
-            border-radius: 100px;
-            background: rgba(0,0,0,0.08);
-        }
-        .filter-btn.active .filter-count { background: rgba(255,255,255,0.25); }
-        .gallery-item.filter-hidden { display: none !important; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerie | JG67 Services Ménage Airbnb Strasbourg</title>
+<meta name="description" content="Découvrez les logements préparés par JG67 Services à Strasbourg. Remises à blanc, blanchisserie premium et contrôle qualité en photos. Standards hôteliers pour vos Airbnb.">
+<link rel="canonical" href="https://jg67services.fr/galerie">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JG67 Services">
+<meta property="og:url" content="https://jg67services.fr/galerie">
+<meta property="og:title" content="Galerie – Logements Airbnb Préparés à Strasbourg | JG67 Services">
+<meta property="og:description" content="Découvrez les logements préparés par JG67 Services à Strasbourg. Remises à blanc, blanchisserie premium et contrôle qualité en photos. Standards hôteliers pour vos Airbnb.">
+<meta property="og:image" content="https://jg67services.fr/img/JG67%20SERVICES%20MENAGE%20LOCATION%20COURTE%20DUREE.jpg">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" type="image/jpeg" href="img/logo.jpeg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -279,26 +46,20 @@
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
-    ],
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
     "opens": "07:00",
     "closes": "21:00"
   },
   "priceRange": "€€",
-  "serviceType": [
-    "Ménage Airbnb",
-    "Nettoyage location courte durée",
-    "Remise à blanc Airbnb",
-    "Gestion du linge",
-    "Préparation logement"
-  ],
-  "sameAs": [
-    "https://www.google.com/search?kgmid=/g/11z5p5sp4k"
-  ]
+  "serviceType": ["Ménage Airbnb","Nettoyage location courte durée","Remise à blanc Airbnb","Gestion du linge","Préparation logement"],
+  "sameAs": ["https://www.google.com/search?kgmid=/g/11z5p5sp4k"]
 }
 </script>
-    <link rel="stylesheet" href="effects.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="jg67-common.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3QQGED8VS"></script>
 <script>
@@ -307,390 +68,508 @@
   gtag('js', new Date());
   gtag('config', 'G-L3QQGED8VS');
 </script>
+<style>
+/* ── Galerie page ───────────────────────────────────────── */
+
+/* Hero */
+.gal-hero {
+  position:relative; min-height:46vh; display:flex; align-items:center; color:#fff;
+  overflow:hidden; background:var(--nuit);
+}
+.gal-hero-img {
+  position:absolute; inset:0;
+  background:url('img/JG67 SERVICES MENAGE LOCATION COURTE DUREE.jpg') center/cover no-repeat;
+}
+.gal-hero::after {
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(105deg,rgba(10,22,32,.88) 0%,rgba(10,22,32,.65) 55%,rgba(10,22,32,.45) 100%);
+}
+.gal-hero .wrap { position:relative; z-index:2; padding-top:120px; padding-bottom:80px; text-align:center }
+.gal-hero .eyebrow { color:var(--champagne-2); justify-content:center }
+.gal-hero .eyebrow::before { background:var(--champagne-2) }
+.gal-hero h1 { color:#fff; margin:20px auto 14px; max-width:22ch }
+.gal-hero .lead { color:rgba(255,255,255,.78); max-width:54ch; margin:0 auto }
+
+/* Section galerie */
+.gal-body { background:var(--blanc); padding:80px 0 100px }
+
+.gal-intro { text-align:center; margin-bottom:48px }
+.gal-intro h2 { margin:14px 0 10px }
+.gal-intro p { color:var(--gris); max-width:56ch; margin:0 auto }
+
+/* Filtres */
+.gal-filters { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:44px }
+.filter-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--f-body); font-size:.73rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase;
+  padding:10px 20px; border:1px solid var(--ligne); border-radius:2px; background:var(--blanc);
+  color:var(--encre); cursor:pointer; transition:all .3s var(--ease); white-space:nowrap;
+}
+.filter-btn:hover { border-color:var(--champagne); color:var(--champagne) }
+.filter-btn.active { background:var(--nuit); color:#fff; border-color:var(--nuit) }
+.filter-count {
+  font-size:.68rem; padding:1px 7px; border-radius:99px; background:rgba(14,30,42,.1);
+  font-weight:600; letter-spacing:0;
+}
+.filter-btn.active .filter-count { background:rgba(255,255,255,.2) }
+
+/* Bento grid galerie */
+#gallery-grid {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:260px; gap:10px; grid-auto-flow:dense;
+}
+@media(max-width:1024px) { #gallery-grid { grid-template-columns:repeat(3,1fr) } }
+@media(max-width:640px)  { #gallery-grid { grid-template-columns:repeat(2,1fr); grid-auto-rows:180px } }
+
+.gallery-item {
+  position:relative; overflow:hidden; border-radius:3px; cursor:zoom-in;
+}
+.gallery-item img {
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform .6s var(--ease);
+}
+.gallery-item:hover img { transform:scale(1.08) }
+.gallery-item::after {
+  content:""; position:absolute; inset:0; border-radius:3px;
+  border:2px solid transparent; pointer-events:none; z-index:2;
+  transition:border-color .3s,box-shadow .3s;
+}
+.gallery-item:hover::after {
+  border-color:rgba(183,147,91,.65);
+  box-shadow:inset 0 0 24px rgba(183,147,91,.1);
+}
+.gallery-overlay {
+  position:absolute; inset:0; z-index:1;
+  background:linear-gradient(to top,rgba(11,28,48,.75) 0%,transparent 55%);
+  opacity:0; transition:opacity .3s;
+  display:flex; align-items:flex-end; justify-content:space-between; padding:14px 16px;
+}
+.gallery-item:hover .gallery-overlay { opacity:1 }
+.gallery-badge {
+  font-size:.62rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+  color:rgba(255,255,255,.92); background:rgba(183,147,91,.25);
+  border:1px solid rgba(183,147,91,.5); padding:3px 10px; border-radius:99px;
+  backdrop-filter:blur(6px);
+}
+.gallery-voir {
+  font-size:.68rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+  color:#fff; border:1px solid rgba(255,255,255,.55); padding:4px 14px; border-radius:2px;
+  backdrop-filter:blur(4px);
+}
+
+/* Featured variants */
+@media(min-width:641px) {
+  .featured-hero { grid-column:span 2; grid-row:span 2 }
+  .featured-tall { grid-row:span 2 }
+  .featured-wide { grid-column:span 2 }
+}
+
+.gallery-item.filter-hidden { display:none !important }
+
+/* CTA galerie */
+.gal-cta { margin-top:60px; padding-top:44px; border-top:1px solid var(--ligne); text-align:center }
+.gal-cta h3 { margin-bottom:22px }
+
+/* Lightbox */
+#lightbox {
+  display:none; position:fixed; inset:0; z-index:2000;
+  background:rgba(0,0,0,.96); align-items:center; justify-content:center;
+  padding:24px; opacity:0; transition:opacity .3s;
+}
+#lightbox.active { display:flex; opacity:1 }
+#lightbox img {
+  max-width:100%; max-height:90vh; object-fit:contain; border-radius:2px;
+  transform:scale(.92); transition:transform .35s var(--ease);
+}
+#lightbox.active img { transform:scale(1) }
+#lightbox-close {
+  position:absolute; top:20px; right:24px; background:none; border:none;
+  color:rgba(255,255,255,.7); cursor:pointer; font-size:2.2rem; line-height:1;
+  transition:color .3s;
+}
+#lightbox-close:hover { color:var(--champagne-2) }
+#lightbox-nav {
+  position:absolute; inset:0 0 auto 0; display:flex; justify-content:space-between; align-items:center;
+  pointer-events:none;
+}
+.lb-arrow {
+  background:none; border:none; color:rgba(255,255,255,.55); cursor:pointer; font-size:2.5rem;
+  padding:24px 20px; pointer-events:all; transition:color .3s;
+}
+.lb-arrow:hover { color:var(--champagne-2) }
+#lightbox-counter {
+  position:absolute; bottom:20px; left:50%; transform:translateX(-50%);
+  font-size:.75rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.45);
+}
+</style>
 </head>
+<body>
 
-<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
-    <!-- TopNavBar -->
-    <header id="main-header"
-        class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-outline-variant/20 shadow-sm h-20 transition-all nav-top">
-        <div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
-            <div class="flex items-center gap-4">
-                <a href="/">
-                    <img src="img/logo.jpeg" alt="JG67 Services Logo" class="h-14 w-auto object-contain">
-                </a>
-            </div>
-            <nav class="hidden md:flex items-center space-x-8 font-label-bold text-label-bold">
-                <a class="text-secondary hover:text-primary transition-colors" href="/">Accueil</a>
-                <a class="text-secondary hover:text-primary transition-colors" href="/service">Services</a>
-                <a class="text-primary border-b-2 border-primary pb-1 transition-colors" href="/galerie">Galerie</a>
-                <a class="text-secondary hover:text-primary transition-colors" href="/about">À propos</a>
-                <a class="text-secondary hover:text-primary transition-colors" href="/contact">Contact</a>
-            </nav>
-            <div class="flex items-center gap-4">
-                <a class="hidden md:block bg-primary text-on-primary font-label-bold text-label-bold px-6 py-3 rounded-lg hover:brightness-90 transition-all active:scale-95"
-                    href="/contact#devis">
-                    Demander un Devis
-                </a>
-                <button id="mobile-menu-button" class="md:hidden text-primary p-2">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="fixed inset-0 z-[1000] bg-white translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col"
-        style="background-color: white !important;">
-        <div class="flex justify-between items-center p-gutter border-b border-outline-variant/10">
-            <img src="img/logo.jpeg" alt="Logo" class="h-10 w-auto">
-            <button id="close-menu" class="text-on-surface p-2">
-                <span class="material-symbols-outlined text-4xl">close</span>
-            </button>
-        </div>
-        <nav class="flex flex-col p-gutter gap-6 text-2xl font-bold">
-            <a href="/"
-                class="text-on-surface hover:text-primary transition-colors border-b border-outline-variant/5 pb-4">Accueil</a>
-            <a href="/service"
-                class="text-on-surface hover:text-primary transition-colors border-b border-outline-variant/5 pb-4">Services</a>
-            <a href="/galerie"
-                class="text-primary transition-colors border-b border-outline-variant/5 pb-4">Galerie</a>
-            <a href="/about"
-                class="text-on-surface hover:text-primary transition-colors border-b border-outline-variant/5 pb-4">À
-                propos</a>
-            <a href="/contact"
-                class="text-on-surface hover:text-primary transition-colors border-b border-outline-variant/5 pb-4">Contact</a>
-        </nav>
-        <div class="mt-auto p-gutter pb-12">
-            <a href="/contact#devis"
-                class="block w-full bg-primary text-on-primary text-center py-5 rounded-xl font-bold text-lg shadow-lg">Demander
-                un Devis</a>
-        </div>
-    </div>
-
-    <main>
-        <!-- HERO PAGE GALERIE -->
-        <section class="relative pt-20 h-[40vh] flex items-center min-h-[300px]">
-            <div class="absolute inset-0 z-0 overflow-hidden pt-20">
-                <img class="w-full h-full object-cover" src="img/JG67 SERVICES MENAGE LOCATION COURTE DUREE.jpg"
-                    alt="Fond galerie" />
-                <div class="absolute inset-0 hero-gradient"></div>
-            </div>
-            <div class="relative z-10 max-w-container-max mx-auto px-gutter text-center text-white">
-                <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-4">
-                    Galerie – Nos Prestations Ménage Airbnb à Strasbourg
-                </h1>
-                <p class="font-body-lg text-body-lg text-surface-variant/90 max-w-2xl mx-auto">
-                    Découvrez nos réalisations. Des logements impeccables, des lits au carré et un niveau d'exigence
-                    hôtelier.
-                </p>
-            </div>
-        </section>
-
-        <!-- GALLERY GRID -->
-        <section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-container-lowest">
-            <div class="max-w-container-max mx-auto px-gutter">
-                <div class="text-center mb-10">
-                    <h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Nos résultats après nettoyage</h2>
-                    <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Chaque prestation est suivie d'un contrôle rigoureux pour vous garantir une qualité irréprochable.</p>
-                </div>
-
-                <div class="flex flex-wrap gap-3 justify-center mb-10">
-                    <button class="filter-btn active" data-filter="all">Tout <span class="filter-count">30</span></button>
-                    <button class="filter-btn" data-filter="chambre">Chambres <span class="filter-count">9</span></button>
-                    <button class="filter-btn" data-filter="salle-de-bain">Salles de bain <span class="filter-count">6</span></button>
-                    <button class="filter-btn" data-filter="espace-de-vie">Espaces de vie <span class="filter-count">12</span></button>
-                    <button class="filter-btn" data-filter="detail">Détails <span class="filter-count">3</span></button>
-                </div>
-
-                <div id="gallery-grid">
-                    <div class="gallery-item featured-hero cursor-zoom-in" data-category="chambre">
-                        <img src="img/gal/chambre-theme-sous-marin-etoilee.webp" alt="Chambre thème sous-marin avec ciel étoilé – Ménage Airbnb premium Strasbourg">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Chambre</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item featured-tall cursor-zoom-in" data-category="salle-de-bain">
-                        <img src="img/gal/sdb-baignoire-jacuzzi.webp" alt="Baignoire jacuzzi d'angle après nettoyage – Salle de bain Airbnb Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Salle de bain</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="salle-de-bain">
-                        <img src="img/gal/sdb-douche-marbre.webp" alt="Douche italienne carrelage effet marbre – Salle de bain premium Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Salle de bain</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="chambre">
-                        <img src="img/gal/chambre-boheme-sous-combles.webp" alt="Chambre bohème sous les combles préparée par JG67 Services Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Chambre</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item featured-wide cursor-zoom-in" data-category="chambre">
-                        <img src="img/gal/lit-rond-bleu-cygnes-serviettes.webp" alt="Lit rond avec décoration serviettes en cygnes – Ménage Airbnb Strasbourg JG67 Services" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Chambre</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="chambre">
-                        <img src="img/gal/lit-serviettes-waffle-ardoise.webp" alt="Lit préparé avec serviettes roulées style hôtelier – JG67 Services Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Chambre</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="salle-de-bain">
-                        <img src="img/gal/sdb-double-vasque-ensemble.webp" alt="Salle de bain double vasque après remise à blanc – JG67 Services Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Salle de bain</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="chambre">
-                        <img src="img/gal/lit-parure-florale-bleue.webp" alt="Parure de lit fleurie bleue après ménage Airbnb – JG67 Services Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Chambre</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="chambre">
-                        <img src="img/gal/chambre-twin-verte-parquet.webp" alt="Chambre twin avec parure verte préparée pour location courte durée – Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Chambre</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="salle-de-bain">
-                        <img src="img/gal/sdb-douche-colonne-beige.webp" alt="Douche avec colonne chromée – Nettoyage salle de bain location Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Salle de bain</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="chambre">
-                        <img src="img/gal/chambre-parquet-point-hongrie.webp" alt="Chambre double avec parquet point de Hongrie après remise à blanc – JG67 Services" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Chambre</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="salle-de-bain">
-                        <img src="img/gal/sdb-vasque-sous-combles.webp" alt="Meuble vasque sous les combles préparé – JG67 Services Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Salle de bain</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="espace-de-vie">
-                        <img src="img/gal/sejour-sous-combles-table-ronde.webp" alt="Séjour sous les combles après nettoyage – Prestataire ménage Airbnb Strasbourg JG67" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Espace de vie</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="espace-de-vie">
-                        <img src="img/gal/cuisine-ouverte-plan-noir.webp" alt="Cuisine ouverte avec plan noir nettoyée pour Airbnb – JG67 Services Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Espace de vie</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="espace-de-vie">
-                        <img src="img/gal/salon-lumineux-triple-fenetre.webp" alt="Salon lumineux triple fenêtre après ménage Airbnb Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Espace de vie</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="detail">
-                        <img src="img/gal/detail-serviette-noeud.webp" alt="Détail serviette pliée en nœud papillon – Finitions premium ménage Airbnb Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Détail</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="chambre">
-                        <img src="img/gal/a.webp" alt="Appartement impeccable après ménage Airbnb Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Chambre</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="espace-de-vie">
-                        <img src="img/gal/b.webp" alt="Cuisine étincelante après nettoyage – JG67 Services Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Espace de vie</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="salle-de-bain">
-                        <img src="img/gal/c.webp" alt="Salle de bain parfaitement propre après prestation – JG67 Services" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Salle de bain</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="espace-de-vie">
-                        <img src="img/gal/d.webp" alt="Salon accueillant après remise à blanc – JG67 Services Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Espace de vie</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="detail">
-                        <img src="img/gal/e.webp" alt="Détails soignés après prestation ménage Airbnb" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Détail</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="chambre">
-                        <img src="img/2848e560-e6b0-4dc1-9231-73e6b1b9e8ea.webp" alt="Chambre au carré après passage JG67 Services Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Chambre</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="espace-de-vie">
-                        <img src="img/904c5dfa-d923-418c-81d3-880668892027 (1).webp" alt="Salon avec canapé et coussins alignés – Ménage location Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Espace de vie</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="detail">
-                        <img src="img/PHOTO-2026-03-09-14-30-02.webp" alt="Détail produits et serviettes – Finitions hôtelières JG67" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Détail</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="espace-de-vie">
-                        <img src="img/fb100037-1d1f-4ffc-b1d3-1fd88ef7928e.webp" alt="Espace de vie propre et accueillant – JG67 Services Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Espace de vie</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item featured-wide cursor-zoom-in" data-category="espace-de-vie">
-                        <img src="img/salon-boheme-voilages.webp" alt="Salon bohème voilages blancs et guirlandes – Logement Airbnb Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Espace de vie</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item featured-tall cursor-zoom-in" data-category="espace-de-vie">
-                        <img src="img/loft-mezzanine-canapes.webp" alt="Loft mezzanine canapés anthracite et mur planches – Location courte durée Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Espace de vie</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="espace-de-vie">
-                        <img src="img/salon-scandinave-miroirs.webp" alt="Salon scandinave canapé gris miroirs dorés – Ménage Airbnb Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Espace de vie</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="espace-de-vie">
-                        <img src="img/salon-rouge-lampe-arc.webp" alt="Salon chaises terracotta et lampe arc – Nettoyage location courte durée Strasbourg JG67" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Espace de vie</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                    <div class="gallery-item cursor-zoom-in" data-category="espace-de-vie">
-                        <img src="img/salon-rar-cuivre.webp" alt="Salon moderne chaise RAR lampe cuivre – Logement premium Airbnb Strasbourg" loading="lazy">
-                        <div class="gallery-overlay"><span class="gallery-category-badge">Espace de vie</span><span class="gallery-voir-btn">Voir</span></div>
-                    </div>
-                </div>
-
-                <div class="mt-stack-lg text-center pt-8 border-t border-outline-variant/10">
-                    <h3 class="font-headline-md text-headline-md text-on-background mb-4">Ces résultats vous inspirent confiance ?</h3>
-                    <a class="inline-flex items-center gap-2 bg-primary text-on-primary font-label-bold text-label-bold px-8 py-4 rounded-xl hover:brightness-90 transition-all active:scale-95 shadow-lg"
-                        href="/index#devis">
-                        Obtenir un devis personnalisé
-                        <span class="material-symbols-outlined">arrow_forward</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-surface-container text-on-surface py-12 border-t border-outline-variant/10">
-        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div class="flex flex-col gap-4">
-                <span class="text-2xl font-display-md text-primary tracking-tight">JG67 Services</span>
-                <p class="text-on-surface-variant font-body-md text-body-md opacity-80">L'excellence du nettoyage
-                    hôtelier au service des propriétaires strasbourgeois.</p>
-            </div>
-            <div>
-                <h4 class="font-label-bold text-label-bold mb-6">Liens Rapides</h4>
-                <ul class="flex flex-col gap-3">
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                            href="/">Accueil</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                            href="/service">Services</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                            href="/galerie">Galerie</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                            href="/about">À propos</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                            href="/contact">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-label-bold text-label-bold mb-6">Informations</h4>
-                <ul class="flex flex-col gap-3">
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                            href="/mentions-legales">Mentions Légales</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                            href="/politique-confidentialite">Politique de Confidentialité</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                            href="/zones-intervention">Zones d'intervention</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                            href="/menage-airbnb-strasbourg">Ménage Airbnb Strasbourg</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors hover:translate-x-1 inline-block"
-                            href="/nettoyage-location-courte-duree-strasbourg">Nettoyage location courte durée</a></li>
-
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-label-bold text-label-bold mb-6">Contact</h4>
-                <p class="text-on-surface-variant mb-4">Disponible 7j/7 pour vos rotations Airbnb.</p>
-                <div class="flex items-center gap-2 text-primary font-label-bold mb-2">
-                    <span class="material-symbols-outlined">map</span>
-                    <span>Strasbourg, France</span>
-                </div>
-                <div class="flex items-center gap-2 text-primary font-label-bold">
-                    <span class="material-symbols-outlined">mail</span>
-                    <a href="mailto:contact@jg67services.fr" class="hover:underline">contact@jg67services.fr</a>
-                </div>
-            </div>
-        </div>
-        <div
-            class="max-w-container-max mx-auto px-gutter mt-12 pt-8 border-t border-outline-variant/5 text-center text-on-surface-variant text-sm">
-            © 2026 JG67 Services. Ménage Airbnb et remise à blanc à Strasbourg.
-        </div>
-    </footer>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="fixed inset-0 z-[2000] bg-black/95 items-center justify-center p-4 cursor-zoom-out">
-        <button id="close-lightbox" class="absolute top-6 right-6 text-white hover:text-primary transition-colors">
-            <span class="material-symbols-outlined text-5xl">close</span>
-        </button>
-        <img id="lightbox-img" src="" alt="Agrandissement"
-            class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl">
-    </div>
-
-    <script>
-        // Mobile Menu logic
-        const mobileMenuBtn = document.getElementById('mobile-menu-button');
-        const closeMenuBtn = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-x-full');
-        });
-
-        closeMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('translate-x-full');
-        });
-
-        // Close menu when clicking links
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('translate-x-full');
-            });
-        });
-
-        // Lightbox logic
-        const lightboxModal = document.getElementById('lightbox-modal');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeLightbox = document.getElementById('close-lightbox');
-        const galleryItems = document.querySelectorAll('.cursor-zoom-in img');
-
-        galleryItems.forEach(img => {
-            img.parentElement.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightboxModal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scroll
-            });
-        });
-
-        const hideLightbox = () => {
-            lightboxModal.classList.remove('active');
-            setTimeout(() => {
-                if (!lightboxModal.classList.contains('active')) {
-                    lightboxImg.src = '';
-                    document.body.style.overflow = '';
-                }
-            }, 300);
-        };
-
-        lightboxModal.addEventListener('click', (e) => {
-            if (e.target !== lightboxImg) {
-                hideLightbox();
-            }
-        });
-
-        closeLightbox.addEventListener('click', hideLightbox);
-
-        // Escape key to close
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
-                hideLightbox();
-            }
-        });
-
-        // Gallery category filter
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const filter = btn.dataset.filter;
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                document.querySelectorAll('.gallery-item').forEach(item => {
-                    if (filter === 'all' || item.dataset.category === filter) {
-                        item.classList.remove('filter-hidden');
-                    } else {
-                        item.classList.add('filter-hidden');
-                    }
-                });
-            });
-        });
-    </script>
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/33754817008?text=Bonjour%20JG67%20Services%2C%20je%20cherche%20un%20prestataire%20m%C3%A9nage%20Airbnb%20%C3%A0%20Strasbourg."
-        target="_blank" rel="noopener noreferrer"
-        class="fixed bottom-4 right-4 md:bottom-6 md:right-6 bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center"
-        aria-label="Contactez-nous sur WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" class="w-6 h-6 md:w-8 md:h-8">
-            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-        </svg>
+<!-- ── Header ──────────────────────────────────────────────── -->
+<header id="header">
+  <div class="wrap bar">
+    <a class="brand" href="/">
+      <img src="img/logo.jpeg" alt="JG67 Services">
+      <small>Ménage premium · Strasbourg</small>
     </a>
-    <script src="effects.js" defer></script>
-</body>
+    <nav class="main">
+      <a href="/">Accueil</a>
+      <a href="/service">Services</a>
+      <a href="/galerie" class="active">Galerie</a>
+      <a href="/about">À propos</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <a class="btn" href="/contact#devis"><span>Demander un devis</span></a>
+    <button class="burger" id="burger-btn" aria-label="Ouvrir le menu">
+      <i class="material-icons-outlined">menu</i>
+    </button>
+  </div>
+</header>
 
+<!-- ── Menu mobile ─────────────────────────────────────────── -->
+<div id="mobile-overlay" role="dialog" aria-label="Menu de navigation">
+  <button class="mob-close" id="mob-close" aria-label="Fermer le menu">
+    <i class="material-icons-outlined">close</i>
+  </button>
+  <p class="mob-brand">JG67 Services</p>
+  <nav>
+    <a href="/">Accueil</a>
+    <a href="/service">Services</a>
+    <a href="/galerie">Galerie</a>
+    <a href="/about">À propos</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <div class="mob-cta">
+    <a class="btn solid" href="/contact#devis"><span>Demander un devis</span></a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ── Hero ──────────────────────────────────────────────── -->
+  <section class="gal-hero">
+    <div class="gal-hero-img" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow">Portfolio</span>
+      <h1>Galerie – Nos Prestations Ménage Airbnb à Strasbourg</h1>
+      <p class="lead">Découvrez nos réalisations. Des logements impeccables, des lits au carré, un niveau d'exigence hôtelier.</p>
+    </div>
+  </section>
+
+  <!-- ── Galerie ────────────────────────────────────────────── -->
+  <section class="gal-body">
+    <div class="wrap">
+      <div class="gal-intro reveal">
+        <span class="eyebrow" style="justify-content:center">Nos résultats</span>
+        <h2>Après nettoyage – en situation réelle</h2>
+        <p>Chaque prestation est suivie d'un contrôle rigoureux pour vous garantir une qualité irréprochable.</p>
+      </div>
+
+      <!-- Filtres -->
+      <div class="gal-filters reveal">
+        <button class="filter-btn active" data-filter="all">Tout <span class="filter-count">30</span></button>
+        <button class="filter-btn" data-filter="chambre">Chambres <span class="filter-count">9</span></button>
+        <button class="filter-btn" data-filter="salle-de-bain">Salles de bain <span class="filter-count">6</span></button>
+        <button class="filter-btn" data-filter="espace-de-vie">Espaces de vie <span class="filter-count">12</span></button>
+        <button class="filter-btn" data-filter="detail">Détails <span class="filter-count">3</span></button>
+      </div>
+
+      <!-- Grid -->
+      <div id="gallery-grid">
+        <div class="gallery-item featured-hero" data-category="chambre" data-index="0">
+          <img src="img/gal/chambre-theme-sous-marin-etoilee.webp" alt="Chambre thème sous-marin avec ciel étoilé – Ménage Airbnb premium Strasbourg">
+          <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item featured-tall" data-category="salle-de-bain" data-index="1">
+          <img src="img/gal/sdb-baignoire-jacuzzi.webp" alt="Baignoire jacuzzi d'angle après nettoyage – Salle de bain Airbnb Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Salle de bain</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="salle-de-bain" data-index="2">
+          <img src="img/gal/sdb-douche-marbre.webp" alt="Douche italienne carrelage effet marbre – Salle de bain premium Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Salle de bain</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="chambre" data-index="3">
+          <img src="img/gal/chambre-boheme-sous-combles.webp" alt="Chambre bohème sous les combles préparée par JG67 Services Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item featured-wide" data-category="chambre" data-index="4">
+          <img src="img/gal/lit-rond-bleu-cygnes-serviettes.webp" alt="Lit rond avec décoration serviettes en cygnes – Ménage Airbnb Strasbourg JG67 Services" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="chambre" data-index="5">
+          <img src="img/gal/lit-serviettes-waffle-ardoise.webp" alt="Lit préparé avec serviettes roulées style hôtelier – JG67 Services Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="salle-de-bain" data-index="6">
+          <img src="img/gal/sdb-double-vasque-ensemble.webp" alt="Salle de bain double vasque après remise à blanc – JG67 Services Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Salle de bain</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="chambre" data-index="7">
+          <img src="img/gal/lit-parure-florale-bleue.webp" alt="Parure de lit fleurie bleue après ménage Airbnb – JG67 Services Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="chambre" data-index="8">
+          <img src="img/gal/chambre-twin-verte-parquet.webp" alt="Chambre twin avec parure verte préparée pour location courte durée – Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="salle-de-bain" data-index="9">
+          <img src="img/gal/sdb-douche-colonne-beige.webp" alt="Douche avec colonne chromée – Nettoyage salle de bain location Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Salle de bain</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="chambre" data-index="10">
+          <img src="img/gal/chambre-parquet-point-hongrie.webp" alt="Chambre double avec parquet point de Hongrie après remise à blanc – JG67 Services" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="salle-de-bain" data-index="11">
+          <img src="img/gal/sdb-vasque-sous-combles.webp" alt="Meuble vasque sous les combles préparé – JG67 Services Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Salle de bain</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="espace-de-vie" data-index="12">
+          <img src="img/gal/sejour-sous-combles-table-ronde.webp" alt="Séjour sous les combles après nettoyage – Prestataire ménage Airbnb Strasbourg JG67" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="espace-de-vie" data-index="13">
+          <img src="img/gal/cuisine-ouverte-plan-noir.webp" alt="Cuisine ouverte avec plan noir nettoyée pour Airbnb – JG67 Services Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="espace-de-vie" data-index="14">
+          <img src="img/gal/salon-lumineux-triple-fenetre.webp" alt="Salon lumineux triple fenêtre après ménage Airbnb Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="detail" data-index="15">
+          <img src="img/gal/detail-serviette-noeud.webp" alt="Détail serviette pliée en nœud papillon – Finitions premium ménage Airbnb Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Détail</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="chambre" data-index="16">
+          <img src="img/gal/a.webp" alt="Appartement impeccable après ménage Airbnb Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="espace-de-vie" data-index="17">
+          <img src="img/gal/b.webp" alt="Cuisine étincelante après nettoyage – JG67 Services Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="salle-de-bain" data-index="18">
+          <img src="img/gal/c.webp" alt="Salle de bain parfaitement propre après prestation – JG67 Services" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Salle de bain</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="espace-de-vie" data-index="19">
+          <img src="img/gal/d.webp" alt="Salon accueillant après remise à blanc – JG67 Services Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="detail" data-index="20">
+          <img src="img/gal/e.webp" alt="Détails soignés après prestation ménage Airbnb" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Détail</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="chambre" data-index="21">
+          <img src="img/2848e560-e6b0-4dc1-9231-73e6b1b9e8ea.webp" alt="Chambre au carré après passage JG67 Services Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="espace-de-vie" data-index="22">
+          <img src="img/904c5dfa-d923-418c-81d3-880668892027 (1).webp" alt="Salon avec canapé et coussins alignés – Ménage location Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="detail" data-index="23">
+          <img src="img/PHOTO-2026-03-09-14-30-02.webp" alt="Détail produits et serviettes – Finitions hôtelières JG67" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Détail</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="espace-de-vie" data-index="24">
+          <img src="img/fb100037-1d1f-4ffc-b1d3-1fd88ef7928e.webp" alt="Espace de vie propre et accueillant – JG67 Services Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item featured-wide" data-category="espace-de-vie" data-index="25">
+          <img src="img/salon-boheme-voilages.webp" alt="Salon bohème voilages blancs et guirlandes – Logement Airbnb Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item featured-tall" data-category="espace-de-vie" data-index="26">
+          <img src="img/loft-mezzanine-canapes.webp" alt="Loft mezzanine canapés anthracite et mur planches – Location courte durée Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="espace-de-vie" data-index="27">
+          <img src="img/salon-scandinave-miroirs.webp" alt="Salon scandinave canapé gris miroirs dorés – Ménage Airbnb Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="espace-de-vie" data-index="28">
+          <img src="img/salon-rouge-lampe-arc.webp" alt="Salon chaises terracotta et lampe arc – Nettoyage location courte durée Strasbourg JG67" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
+        </div>
+        <div class="gallery-item" data-category="espace-de-vie" data-index="29">
+          <img src="img/salon-rar-cuivre.webp" alt="Salon moderne chaise RAR lampe cuivre – Logement premium Airbnb Strasbourg" loading="lazy">
+          <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="gal-cta reveal">
+        <h3>Ces résultats vous inspirent confiance ?</h3>
+        <a class="btn solid" href="/contact#devis"><span>Obtenir un devis personnalisé</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Footer ──────────────────────────────────────────────── -->
+<footer>
+  <div class="wrap f-grid">
+    <div class="brandfoot">
+      <b>JG67 Services</b>
+      <p>L'excellence du nettoyage hôtelier au service des propriétaires strasbourgeois.</p>
+    </div>
+    <div>
+      <h4>Liens rapides</h4>
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/service">Services</a></li>
+        <li><a href="/galerie">Galerie</a></li>
+        <li><a href="/about">À propos</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Informations</h4>
+      <ul>
+        <li><a href="/mentions-legales">Mentions Légales</a></li>
+        <li><a href="/politique-confidentialite">Politique de Confidentialité</a></li>
+        <li><a href="/zones-intervention">Zones d'intervention</a></li>
+        <li><a href="/menage-airbnb-strasbourg">Ménage Airbnb Strasbourg</a></li>
+        <li><a href="/nettoyage-location-courte-duree-strasbourg">Nettoyage location courte durée</a></li>
+        <li><a href="/prestataire-menage-airbnb-conciergerie-strasbourg">Partenaire conciergeries</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="contact">
+        <li style="display:block;margin-bottom:10px">Disponible 7j/7 pour vos rotations Airbnb.</li>
+        <li><i class="material-icons-outlined">map</i> Strasbourg, France</li>
+        <li><i class="material-icons-outlined">phone</i> <a href="https://wa.me/33754817008" style="color:inherit">+33 7 54 81 70 08</a> (WhatsApp)</li>
+        <li><i class="material-icons-outlined">phone</i> <a href="https://wa.me/33621600288" style="color:inherit">+33 6 21 60 02 88</a> (WhatsApp)</li>
+        <li><i class="material-icons-outlined">mail</i> contact@jg67services.fr</li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bottom">© 2026 JG67 Services. Ménage Airbnb et remise à blanc à Strasbourg.</div>
+</footer>
+
+<!-- ── WhatsApp flottant ───────────────────────────────────── -->
+<a class="wa" aria-label="Contacter JG67 sur WhatsApp" target="_blank" rel="noopener"
+   href="https://wa.me/33754817008?text=Bonjour%20JG67%20Services%2C%20je%20cherche%20un%20prestataire%20m%C3%A9nage%20Airbnb%20%C3%A0%20Strasbourg.">
+  <svg viewBox="0 0 32 32"><path d="M16 .8C7.6.8.8 7.6.8 16c0 2.7.7 5.3 2 7.6L.8 31.2l7.8-2c2.2 1.2 4.7 1.9 7.4 1.9 8.4 0 15.2-6.8 15.2-15.1S24.4.8 16 .8zm0 27.6c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-4.6 1.2 1.2-4.5-.3-.5c-1.3-2-2-4.4-2-6.9C3.1 8.9 8.9 3.1 16 3.1S28.9 8.9 28.9 16 23.1 28.4 16 28.4zm7.1-9.4c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.3-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 1 .4 1.7.7 2.3.9 1 .3 1.9.3 2.6.2.8-.1 2.3-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.4-.3-.8-.5z"/></svg>
+</a>
+
+<!-- ── Lightbox ──────────────────────────────────────────────── -->
+<div id="lightbox" role="dialog" aria-label="Agrandissement photo">
+  <button id="lightbox-close" aria-label="Fermer">
+    <i class="material-icons-outlined">close</i>
+  </button>
+  <div id="lightbox-nav">
+    <button class="lb-arrow" id="lb-prev" aria-label="Précédent">
+      <i class="material-icons-outlined">chevron_left</i>
+    </button>
+    <button class="lb-arrow" id="lb-next" aria-label="Suivant">
+      <i class="material-icons-outlined">chevron_right</i>
+    </button>
+  </div>
+  <img id="lightbox-img" src="" alt="Agrandissement">
+  <div id="lightbox-counter"></div>
+</div>
+
+<script>
+/* Header scroll */
+const header = document.getElementById('header');
+const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+onScroll();
+window.addEventListener('scroll', onScroll, {passive:true});
+
+/* Menu mobile */
+const burgerBtn = document.getElementById('burger-btn');
+const overlay   = document.getElementById('mobile-overlay');
+const mobClose  = document.getElementById('mob-close');
+const openMenu  = () => { overlay.classList.add('open'); document.body.style.overflow='hidden'; };
+const closeMenu = () => { overlay.classList.remove('open'); document.body.style.overflow=''; };
+burgerBtn.addEventListener('click', openMenu);
+mobClose.addEventListener('click', closeMenu);
+overlay.querySelectorAll('nav a').forEach(a => a.addEventListener('click', closeMenu));
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMenu(); });
+
+/* Scroll reveal */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* Filtres */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.classList.toggle('filter-hidden', f !== 'all' && item.dataset.category !== f);
+    });
+  });
+});
+
+/* Lightbox avec navigation */
+const lb      = document.getElementById('lightbox');
+const lbImg   = document.getElementById('lightbox-img');
+const lbClose = document.getElementById('lightbox-close');
+const lbPrev  = document.getElementById('lb-prev');
+const lbNext  = document.getElementById('lb-next');
+const lbCtr   = document.getElementById('lightbox-counter');
+let currentIndex = 0;
+
+function visibleItems() {
+  return [...document.querySelectorAll('.gallery-item:not(.filter-hidden)')];
+}
+
+function openLightbox(index) {
+  const items = visibleItems();
+  if(!items[index]) return;
+  currentIndex = index;
+  const img = items[index].querySelector('img');
+  lbImg.src = img.src;
+  lbImg.alt = img.alt;
+  lbCtr.textContent = `${index + 1} / ${items.length}`;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lb.classList.remove('active');
+  setTimeout(() => { lbImg.src = ''; }, 300);
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.gallery-item').forEach((item, i) => {
+  item.addEventListener('click', () => {
+    const items = visibleItems();
+    const idx = items.indexOf(item);
+    if(idx !== -1) openLightbox(idx);
+  });
+});
+
+lbClose.addEventListener('click', closeLightbox);
+lb.addEventListener('click', e => { if(e.target === lb || e.target === lbImg) closeLightbox(); });
+
+lbPrev.addEventListener('click', e => {
+  e.stopPropagation();
+  const items = visibleItems();
+  openLightbox((currentIndex - 1 + items.length) % items.length);
+});
+lbNext.addEventListener('click', e => {
+  e.stopPropagation();
+  const items = visibleItems();
+  openLightbox((currentIndex + 1) % items.length);
+});
+
+document.addEventListener('keydown', e => {
+  if(!lb.classList.contains('active')) return;
+  if(e.key === 'Escape') closeLightbox();
+  if(e.key === 'ArrowLeft') lbPrev.click();
+  if(e.key === 'ArrowRight') lbNext.click();
+});
+</script>
+</body>
 </html>
