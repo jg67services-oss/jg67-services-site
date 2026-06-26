@@ -64,7 +64,7 @@
 <body>
 <header id="header">
   <div class="wrap bar">
-    <a class="brand" href="/"><img src="img/logo.jpeg" alt="JG67 Services"><small>Ménage premium · Strasbourg</small></a>
+    <a class="brand" href="/"><img src="img/logo.jpeg" alt="JG67 Services"><small>Ménage Airbnb · Strasbourg</small></a>
     <nav class="main">
       <a href="/">Accueil</a><a href="/menage-airbnb-strasbourg">Ménage Airbnb</a>
       <a href="/service">Services</a><a href="/zones-intervention" class="active">Zones</a><a href="/contact">Contact</a>
@@ -77,7 +77,7 @@
   <button class="mob-close" id="mob-close"><i class="material-icons-outlined">close</i></button>
   <p class="mob-brand">JG67 Services</p>
   <nav><a href="/">Accueil</a><a href="/menage-airbnb-strasbourg">Ménage Airbnb</a><a href="/nettoyage-location-courte-duree-strasbourg">Location courte durée</a><a href="/service">Services</a><a href="/zones-intervention">Zones</a><a href="/contact">Contact</a></nav>
-  <div class="mob-cta"><a class="btn solid" href="/contact#devis"><span>Demander un devis gratuit</span></a></div>
+  <div class="mob-cta"><a class="btn solid" href="/contact#devis"><span>Recevoir mon devis sous 24h</span></a></div>
 </div>
 <main>
   <section class="loc-hero">
@@ -139,7 +139,7 @@
     <div class="wrap">
       <h2>Besoin d'un devis pour Obernai ?</h2>
       <p>Indiquez la ville, la surface, le type de logement, la fréquence des rotations et l'option linge souhaitée. JG67 Services vous répond avec une proposition adaptée.</p>
-      <a class="btn solid" href="/contact#devis"><span>Recevoir mon devis gratuit</span></a>
+      <a class="btn solid" href="/contact#devis"><span>Recevoir mon devis sous 24h</span></a>
     </div>
   </section>
 </main>
@@ -164,5 +164,6 @@ overlay.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{ove
 const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
+<script src="/conversion-tracking.js" defer></script>
 </body>
 </html>

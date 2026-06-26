@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact - JG67 Services | Devis Gratuit Strasbourg</title>
-<meta name="description" content="Obtenez votre devis gratuit de ménage Airbnb à Strasbourg en 2 minutes. JG67 Services répond en moins de 2h. WhatsApp disponible 7j/7. Zone d'intervention : Strasbourg et 20 km.">
+<title>Contact devis ménage Airbnb Strasbourg | JG67</title>
+<meta name="description" content="Demandez un devis ménage Airbnb à Strasbourg : remise à blanc, linge, contrôle qualité, réponse sous 24h, WhatsApp 7j/7, Strasbourg et 20 km.">
 <link rel="canonical" href="https://jg67services.fr/contact">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="JG67 Services">
 <meta property="og:url" content="https://jg67services.fr/contact">
-<meta property="og:title" content="Contact – Devis Gratuit Ménage Airbnb Strasbourg | JG67 Services">
-<meta property="og:description" content="Obtenez votre devis gratuit de ménage Airbnb à Strasbourg en 2 minutes. JG67 Services répond en moins de 2h. WhatsApp disponible 7j/7. Zone d'intervention : Strasbourg et 20 km.">
+<meta property="og:title" content="Contact devis ménage Airbnb Strasbourg | JG67">
+<meta property="og:description" content="Demandez un devis ménage Airbnb à Strasbourg : remise à blanc, linge, contrôle qualité, réponse sous 24h, WhatsApp 7j/7, Strasbourg et 20 km.">
 <meta property="og:image" content="https://jg67services.fr/img/PHOTO-2026-03-09-14-30-02.webp">
 <meta property="og:locale" content="fr_FR">
 <link rel="icon" type="image/jpeg" href="img/logo.jpeg">
@@ -122,6 +122,14 @@
 }
 .ctc-form-wrap h2 { font-size:1.6rem; margin-bottom:6px }
 .ctc-form-wrap .sub { color:var(--gris); font-size:.93rem; margin-bottom:32px }
+.ctc-proof {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 0 28px;
+}
+.ctc-proof span {
+  border:1px solid var(--ligne); background:var(--lin); border-radius:3px; padding:12px 10px;
+  font-size:.78rem; color:var(--encre); text-align:center; line-height:1.35;
+}
+.ctc-proof b { display:block; font-family:var(--f-display); font-size:1.08rem; color:var(--nuit); line-height:1.1; margin-bottom:2px }
 
 /* Form fields */
 .form-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:18px }
@@ -211,6 +219,7 @@
 @media(max-width:560px) {
   .form-grid-2 { grid-template-columns:1fr }
   .ctc-form-wrap { padding:28px 20px }
+  .ctc-proof { grid-template-columns:1fr }
 }
 </style>
 </head>
@@ -221,7 +230,7 @@
   <div class="wrap bar">
     <a class="brand" href="/">
       <img src="img/logo.jpeg" alt="JG67 Services">
-      <small>Ménage premium · Strasbourg</small>
+      <small>Ménage Airbnb · Strasbourg</small>
     </a>
     <nav class="main">
       <a href="/">Accueil</a>
@@ -261,9 +270,9 @@
   <section class="ctc-hero">
     <div class="ctc-hero-img" aria-hidden="true"></div>
     <div class="wrap">
-      <span class="eyebrow">Travaillons ensemble</span>
-      <h1>Devis Gratuit – Ménage Airbnb Strasbourg</h1>
-      <p class="lead">Réponse garantie sous 2h. Disponible 7j/7 pour tous vos besoins opérationnels.</p>
+      <span class="eyebrow">Devis ménage Airbnb Strasbourg</span>
+      <h1>Obtenir un devis pour votre logement Airbnb</h1>
+      <p class="lead">Décrivez votre bien, vos rotations et vos besoins de linge. JG67 vous répond sous 24h avec une proposition claire.</p>
     </div>
   </section>
 
@@ -287,16 +296,16 @@
               <div class="ctc-ico"><i class="material-icons-outlined">schedule</i></div>
               <div>
                 <p class="ctc-row-label">Disponibilité</p>
-                <p class="ctc-row-val">7j/7, y compris jours fériés</p>
+                <p class="ctc-row-val">Interventions 7j/7 selon planning et disponibilité</p>
               </div>
             </div>
             <div class="ctc-row">
               <div class="ctc-ico"><i class="material-icons-outlined">phone</i></div>
               <div>
-                <p class="ctc-row-label">WhatsApp</p>
+                <p class="ctc-row-label">Téléphone / WhatsApp</p>
                 <p class="ctc-row-val">
-                  <a href="https://wa.me/33754817008" target="_blank" rel="noopener">+33 7 54 81 70 08</a><br>
-                  <a href="https://wa.me/33621600288" target="_blank" rel="noopener">+33 6 21 60 02 88</a>
+                  <a href="tel:+33754817008">+33 7 54 81 70 08</a> · <a href="https://wa.me/33754817008" target="_blank" rel="noopener">WhatsApp</a><br>
+                  <a href="tel:+33621600288">+33 6 21 60 02 88</a> · <a href="https://wa.me/33621600288" target="_blank" rel="noopener">WhatsApp</a>
                 </p>
               </div>
             </div>
@@ -304,7 +313,7 @@
               <div class="ctc-ico"><i class="material-icons-outlined">mail</i></div>
               <div>
                 <p class="ctc-row-label">Email</p>
-                <p class="ctc-row-val">contact@jg67services.fr</p>
+                <p class="ctc-row-val"><a href="mailto:contact@jg67services.fr">contact@jg67services.fr</a></p>
               </div>
             </div>
           </div>
@@ -319,8 +328,13 @@
 
         <!-- Formulaire -->
         <div class="ctc-form-wrap reveal d1" id="devis">
-          <h2>Demandez votre devis gratuit</h2>
-          <p class="sub">Réponse sous 24h pour votre bien à Strasbourg.</p>
+          <h2>Demandez votre devis sous 24h</h2>
+          <p class="sub">Les champs essentiels suffisent pour estimer correctement votre prestation.</p>
+          <div class="ctc-proof" aria-label="Preuves de confiance">
+            <span><b>15 avis</b>Google 5/5</span>
+            <span><b>24h</b>Réponse devis</span>
+            <span><b>20 km</b>Autour de Strasbourg</span>
+          </div>
 
           <!-- Succès (masqué par défaut) -->
           <div class="form-success" id="form-success">
@@ -351,7 +365,7 @@
                   <option>T2</option>
                   <option>T3</option>
                   <option>Maison</option>
-                  <option>Villa</option>
+                  <option>Grand logement</option>
                 </select>
               </div>
               <div class="form-field">
@@ -379,12 +393,29 @@
               <input id="f-loc" name="localisation" type="text" placeholder="Strasbourg Centre, Schiltigheim…">
             </div>
 
-            <!-- Option premium -->
+            <div class="form-grid-2">
+              <div class="form-field">
+                <label for="f-frequence">Fréquence prévue</label>
+                <select id="f-frequence" name="frequence">
+                  <option>Je ne sais pas encore</option>
+                  <option>Ponctuel</option>
+                  <option>1 à 3 rotations par mois</option>
+                  <option>1 rotation ou plus par semaine</option>
+                  <option>Plusieurs logements</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="f-date">Première mission souhaitée</label>
+                <input id="f-date" name="date_souhaitee" type="date">
+              </div>
+            </div>
+
+            <!-- Option relais absence -->
             <div class="option-premium">
               <label class="option-premium-label">
                 <input name="option_relais_absence" type="checkbox" value="oui">
                 <div>
-                  <p class="option-title">Option premium — Relais absence</p>
+                  <p class="option-title">Option relais absence</p>
                   <p class="option-desc">Relation voyageurs, check-in/out, clés, ménage, linge et suivi terrain pendant vos absences. Canal WhatsApp dédié pour les urgences. Commission fixe : 16 % si la relation voyageur est confiée à JG67.</p>
                 </div>
               </label>
@@ -396,7 +427,7 @@
             </div>
 
             <button class="btn-submit" type="submit" id="submit-btn">
-              <span>Envoyer ma demande</span>
+              <span>Recevoir mon devis sous 24h</span>
             </button>
           </form>
         </div>
@@ -415,7 +446,7 @@
   <!-- ── CTA banner ─────────────────────────────────────────── -->
   <div class="ctc-cta">
     <div class="wrap">
-      <h3>Prêt pour une expérience d'excellence ?</h3>
+      <h3>Besoin de vérifier une prestation avant de demander un devis ?</h3>
       <div class="ctc-cta-btns">
         <a class="btn solid" href="/service"><span>Voir nos services</span></a>
         <a class="btn" href="/about"><span>Notre expertise</span></a>
@@ -458,9 +489,9 @@
       <ul class="contact">
         <li style="display:block;margin-bottom:10px">Disponible 7j/7 pour vos rotations Airbnb.</li>
         <li><i class="material-icons-outlined">map</i> Strasbourg, France</li>
-        <li><i class="material-icons-outlined">phone</i> <a href="https://wa.me/33754817008" style="color:inherit">+33 7 54 81 70 08</a> (WhatsApp)</li>
-        <li><i class="material-icons-outlined">phone</i> <a href="https://wa.me/33621600288" style="color:inherit">+33 6 21 60 02 88</a> (WhatsApp)</li>
-        <li><i class="material-icons-outlined">mail</i> contact@jg67services.fr</li>
+        <li><i class="material-icons-outlined">phone</i> <a href="tel:+33754817008" style="color:inherit">+33 7 54 81 70 08</a> · <a href="https://wa.me/33754817008" style="color:inherit">WhatsApp</a></li>
+        <li><i class="material-icons-outlined">phone</i> <a href="tel:+33621600288" style="color:inherit">+33 6 21 60 02 88</a> · <a href="https://wa.me/33621600288" style="color:inherit">WhatsApp</a></li>
+        <li><i class="material-icons-outlined">mail</i> <a href="mailto:contact@jg67services.fr" style="color:inherit">contact@jg67services.fr</a></li>
       </ul>
     </div>
   </div>
@@ -530,6 +561,13 @@ if(form) {
     })
     .then(res => {
       if(res.ok) {
+        if(window.jg67TrackConversion){
+          window.jg67TrackConversion('generate_lead',{
+            form_name:'devis',
+            form_location:'contact',
+            lead_type: form.querySelector('[name="option_relais_absence"]')?.checked ? 'premium_relay_quote' : 'quote_request'
+          });
+        }
         form.style.display = 'none';
         success.style.display = 'block';
         success.scrollIntoView({behavior:'smooth', block:'center'});
@@ -547,5 +585,6 @@ if(form) {
   });
 }
 </script>
+<script src="/conversion-tracking.js" defer></script>
 </body>
 </html>

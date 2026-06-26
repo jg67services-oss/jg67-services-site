@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JG67 Services | Prestataire ménage Airbnb Strasbourg</title>
-<meta name="description" content="JG67 Services – Ménage Airbnb Strasbourg : appartements, villas de luxe et locations courte durée. Remise à blanc, linge, contrôle qualité hôtelier. 15 avis 5/5. Devis gratuit 7j/7.">
+<meta name="description" content="JG67 Services – Ménage Airbnb Strasbourg : appartements, maisons et locations courte durée. Remise à blanc, linge, contrôle qualité, 15 avis 5/5.">
 <link rel="canonical" href="https://jg67services.fr/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="JG67 Services" />
 <meta property="og:url" content="https://jg67services.fr/" />
 <meta property="og:title" content="JG67 Services | Prestataire ménage Airbnb Strasbourg" />
-<meta property="og:description" content="JG67 Services – Spécialiste ménage Airbnb à Strasbourg et Eurométropole. Remise à blanc, gestion du linge, contrôle qualité hôtelier. Plus de 30 logements gérés, 7j/7. Devis gratuit." />
+<meta property="og:description" content="JG67 Services – Ménage Airbnb Strasbourg : appartements, maisons et locations courte durée. Remise à blanc, linge, contrôle qualité, 15 avis 5/5." />
 <meta property="og:image" content="https://jg67services.fr/img/logo.jpeg" />
 <meta property="og:locale" content="fr_FR" />
 <script type="application/ld+json">
@@ -127,6 +127,7 @@ img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:4px}
 
 /* ---------- Typographie ---------- */
 h1,h2,h3{font-family:var(--f-display);color:var(--nuit);font-weight:600;line-height:1.15}
@@ -176,6 +177,7 @@ header.scrolled nav.main a:hover{color:var(--champagne)}
 .btn::before{content:"";position:absolute;inset:0;background:var(--champagne);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
 .btn:hover::before{transform:scaleX(1);transform-origin:left}
 .btn:hover{color:var(--nuit)}
+.btn:active{transform:translateY(1px)}
 .btn.solid{background:var(--champagne);color:var(--nuit)}
 .btn.solid::before{background:var(--champagne-2)}
 .btn.dark{border-color:var(--nuit);color:var(--nuit)}
@@ -188,11 +190,12 @@ header.scrolled .burger{color:var(--nuit)}
 /* ---------- Menu mobile ---------- */
 #mobile-overlay{
   position:fixed;inset:0;z-index:100;background:var(--nuit);
-  transform:translateX(100%);transition:transform .45s var(--ease);
+  opacity:0;visibility:hidden;pointer-events:none;transform:translateX(0);
+  transition:opacity .35s var(--ease),visibility .35s var(--ease);
   display:flex;flex-direction:column;padding:32px 28px;
   overflow-y:auto;
 }
-#mobile-overlay.open{transform:translateX(0)}
+#mobile-overlay.open{opacity:1;visibility:visible;pointer-events:auto}
 .mob-close{
   align-self:flex-end;background:none;border:none;
   color:rgba(255,255,255,.7);font-size:2rem;cursor:pointer;
@@ -439,6 +442,8 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
   .pack strong,.tarifs li b{white-space:normal}
   form{grid-template-columns:1fr}
   .btn{width:100%;justify-content:center;text-align:center}
+  .wa{right:18px;bottom:18px;width:52px;height:52px}
+  .wa svg{width:24px;height:24px}
 }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -457,7 +462,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
   <div class="wrap bar">
     <a class="brand" href="./">
       <img src="https://jg67services.fr/img/logo.jpeg" alt="JG67 Services Logo">
-      <small>Ménage premium · Strasbourg</small>
+      <small>Ménage Airbnb · Strasbourg</small>
     </a>
     <nav class="main">
       <a href="./">Accueil</a>
@@ -483,7 +488,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
     <a href="/contact">Contact</a>
   </nav>
   <div class="mob-cta">
-    <a class="btn solid" href="#devis" id="mob-devis"><span>Demander un devis gratuit</span></a>
+    <a class="btn solid" href="#devis" id="mob-devis"><span>Recevoir mon devis sous 24h</span></a>
   </div>
 </div>
 
@@ -500,15 +505,15 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
       <span class="line"><span><em class="gold">JG67 Services à Strasbourg</em></span></span>
     </h1>
     <div class="hero-rule"></div>
-    <p>Appartements, villas de luxe et meublés touristiques à Strasbourg — disponible 7j/7, y compris jours fériés. Un logement impeccable à chaque rotation, standard hôtelier garanti.</p>
+    <p>Ménage Airbnb, remise à blanc, linge et contrôle qualité pour appartements, maisons et meublés touristiques à Strasbourg. Réponse rapide, intervention 7j/7, rapport photo si prévu.</p>
     <div class="hero-cta">
-      <a class="btn solid" href="#devis"><span>Demander un devis gratuit</span></a>
+      <a class="btn solid" href="#devis"><span>Recevoir mon devis sous 24h</span></a>
       <a class="btn" href="#services"><span>Découvrir nos services</span></a>
     </div>
     <div class="hero-badges">
-      <span><i class="material-icons-outlined">check_circle</i> Disponible 7j/7 à Strasbourg</span>
-      <span><i class="material-icons-outlined">check_circle</i> Standard hôtelier garanti</span>
-      <span><i class="material-icons-outlined">check_circle</i> Prestataire terrain expert</span>
+      <span><i class="material-icons-outlined">check_circle</i> 15 avis Google 5/5</span>
+      <span><i class="material-icons-outlined">check_circle</i> Réponse devis sous 24h</span>
+      <span><i class="material-icons-outlined">check_circle</i> Strasbourg et 20 km</span>
     </div>
   </div>
   <div class="scroll-hint" aria-hidden="true"></div>
@@ -520,7 +525,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
     <div class="reveal">
       <span class="eyebrow">Avis Google vérifiés</span>
       <h2 style="margin:18px 0 14px">Prestataire ménage Airbnb à Strasbourg, 15 avis Google 5/5</h2>
-      <p class="lead">Appartements, villas de luxe, studios et meublés touristiques à Strasbourg — prestataire terrain 7j/7, 15 avis Google 5/5.</p>
+      <p class="lead">Les propriétaires nous choisissent pour la régularité du ménage, la réactivité terrain et le suivi photo après passage.</p>
       <div class="avis-actions">
         <a class="btn dark" href="https://www.google.com/maps/place/JG67+Services/@48.5838491,7.71088,11z/data=!3m1!4b1!4m6!3m5!1s0xafe5ed48f2cfa085:0x1231d2a4eb13122!8m2!3d48.5838492!4d7.71088!16s%2Fg%2F11z5p5sp4k" target="_blank" rel="noopener"><span>Voir la fiche Google</span></a>
         <a class="btn solid" href="#devis"><span>Demander un devis</span></a>
@@ -540,7 +545,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
     <div class="sec-head reveal">
       <span class="eyebrow">Services spécialisés</span>
       <h2>Ménage Airbnb et nettoyage courte durée à Strasbourg</h2>
-      <p class="lead">Appartements, villas de luxe, studios et meublés touristiques : un standard hôtelier à chaque rotation.</p>
+      <p class="lead">Trois prestations lisibles pour couvrir les besoins réels d'une location courte durée : rotation, nettoyage professionnel et remise à blanc approfondie.</p>
     </div>
     <div class="trio">
       <a class="svc reveal d1" href="/menage-airbnb-strasbourg">
@@ -550,7 +555,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
       </a>
       <a class="svc reveal d2" href="/nettoyage-location-courte-duree-strasbourg">
         <h3>Nettoyage location courte durée</h3>
-        <p>Appartements, villas de luxe, studios, Airbnb, Booking et Abritel : nettoyage professionnel pour toute location courte durée.</p>
+        <p>Appartements, maisons, studios, Airbnb, Booking et Abritel : nettoyage professionnel pour toute location courte durée.</p>
         <span class="go">Voir la page dédiée <i class="material-icons-outlined">arrow_forward</i></span>
       </a>
       <a class="svc reveal d3" href="/remise-a-blanc-airbnb-strasbourg">
@@ -590,34 +595,34 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
   <div class="wrap cols">
     <div>
       <span class="eyebrow reveal">Excellence opérationnelle</span>
-      <h2 class="reveal d1" style="margin:18px 0 16px">Un service de nettoyage haut de gamme pour des logements d'exception à Strasbourg</h2>
-      <p class="lead reveal d2">Nous accompagnons les propriétaires sur Airbnb, Booking.com et Abritel en assurant une qualité constante. Notre mission est de transformer chaque rotation en une expérience cinq étoiles pour vos voyageurs.</p>
+      <h2 class="reveal d1" style="margin:18px 0 16px">Un service de nettoyage fiable pour protéger vos avis voyageurs</h2>
+      <p class="lead reveal d2">Nous accompagnons les propriétaires sur Airbnb, Booking.com et Abritel avec une organisation simple : logement prêt, linge suivi, contrôle qualité et communication claire après chaque passage.</p>
 
       <div class="feat reveal d2">
         <i class="material-icons-outlined">hotel_class</i>
-        <div><h3>Le standard hôtelier appliqué à votre location</h3><p>Protocoles de nettoyage rigoureux et sens du détail.</p></div>
+        <div><h3>Un protocole clair à chaque rotation</h3><p>Pièces sensibles, linge, consommables et points de contact contrôlés.</p></div>
       </div>
       <div class="feat reveal d3">
         <i class="material-icons-outlined">handshake</i>
-        <div><h3>Un partenaire opérationnel pour les conciergeries</h3><p>Fiabilité et autonomie totale pour vos parcs immobiliers.</p></div>
+        <div><h3>Un partenaire terrain pour les conciergeries</h3><p>Un prestataire de ménage structuré pour absorber les rotations sans alourdir votre équipe.</p></div>
       </div>
       <div class="feat reveal d3">
         <i class="material-icons-outlined">emergency</i>
-        <div><h3>Interventions adaptées aux imprévus</h3><p>Réactivité totale face aux réservations de dernière minute.</p></div>
+        <div><h3>Interventions adaptées aux imprévus</h3><p>Organisation possible en urgence selon disponibilité, zone et niveau de préparation.</p></div>
       </div>
       <div class="feat reveal d4">
         <i class="material-icons-outlined">forum</i>
-        <div><h3>Communication réactive</h3><p>Canal direct WhatsApp pour un suivi en temps réel.</p></div>
+        <div><h3>Communication réactive</h3><p>Échanges rapides, consignes centralisées et rapport photo quand il est prévu.</p></div>
       </div>
 
       <div class="stats reveal d3">
         <div class="stat"><div class="num"><span class="count" data-target="15">0</span></div><div class="lbl">Avis Google 5/5</div></div>
-        <div class="stat"><div class="num"><i>+</i><span class="count" data-target="30">0</span></div><div class="lbl">Logements gérés</div></div>
+        <div class="stat"><div class="num"><i>+</i><span class="count" data-target="30">0</span></div><div class="lbl">Logements suivis</div></div>
         <div class="stat"><div class="num">7j/7</div><div class="lbl">Disponibilité</div></div>
       </div>
     </div>
     <div class="exc-imgs reveal d2">
-      <div class="ph1"><img src="https://images.pexels.com/photos/6466213/pexels-photo-6466213.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop" alt="Hôtesse de chambre remise à blanc linge luxe Strasbourg" loading="lazy"></div>
+      <div class="ph1"><img src="https://images.pexels.com/photos/6466213/pexels-photo-6466213.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop" alt="Remise à blanc et linge pour location courte durée à Strasbourg" loading="lazy"></div>
       <div class="ph2"><img src="https://images.pexels.com/photos/6466491/pexels-photo-6466491.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Personnel hôtelier professionnel chambre haut de gamme" loading="lazy"></div>
     </div>
   </div>
@@ -629,12 +634,12 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
     <div class="sec-head reveal">
       <span class="eyebrow">Nos prestations</span>
       <h2>Nos prestations de ménage pour locations courte durée</h2>
-      <p class="lead">Une gamme complète pour garantir une satisfaction voyageur optimale à Strasbourg.</p>
+      <p class="lead">Une gamme complète pour préparer vos logements et réduire les imprévus entre voyageurs.</p>
     </div>
     <div class="trio">
       <article class="presta reveal d1">
         <div class="ico"><i class="material-icons-outlined">home_repair_service</i></div>
-        <h3>Nettoyage de prestige &amp; Remise au propre</h3>
+        <h3>Ménage entre voyageurs &amp; remise au propre</h3>
         <p>Ménage complet après chaque départ, désinfection des points de contact et remise en place des éléments décoratifs.</p>
         <ul>
           <li><i class="material-icons-outlined">check</i> Désinfection COVID-standard</li>
@@ -644,7 +649,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
       </article>
       <article class="presta reveal d2">
         <div class="ico"><i class="material-icons-outlined">local_laundry_service</i></div>
-        <h3>Gestion du linge et blanchisserie premium</h3>
+        <h3>Gestion du linge et blanchisserie</h3>
         <p>Lavage, séchage et repassage de qualité hôtelière pour vos draps, serviettes et tapis de bain.</p>
         <ul>
           <li><i class="material-icons-outlined">check</i> Traitement haute température</li>
@@ -664,7 +669,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
       </article>
     </div>
     <div class="presta-cta reveal">
-      <a class="btn dark" href="#devis"><span>Demander un devis gratuit</span></a>
+      <a class="btn dark" href="#devis"><span>Recevoir mon devis sous 24h</span></a>
     </div>
   </div>
 </section>
@@ -673,13 +678,13 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
 <section class="relais" id="relais-temporaire">
   <div class="wrap">
     <div class="sec-head reveal" style="margin-bottom:10px">
-      <span class="eyebrow">Relais premium pendant vos absences</span>
+      <span class="eyebrow">Relais renforcé pendant vos absences</span>
       <h2>Partez serein, JG67 prend le relais de votre Airbnb</h2>
       <p class="lead">Vacances, déplacement, imprévu ou urgence : JG67 assure temporairement la continuité de votre location à Strasbourg. Relation voyageurs, check-in, check-out, clés, ménage, linge et suivi terrain sont pris en charge dans un cadre clair, pour que vous puissiez partir l'esprit tranquille.</p>
     </div>
     <div class="relais-grid">
       <div class="relais-panel reveal d1">
-        <h3>Un relais temporaire, premium, sans reprise permanente</h3>
+        <h3>Un relais temporaire, sans reprise permanente</h3>
         <p class="lead">L'offre est pensée pour les propriétaires qui veulent sécuriser quelques jours ou quelques semaines d'absence sans laisser leur logement sans présence locale. Vous nous confiez le terrain pendant la période prévue, puis vous reprenez simplement la main à votre retour.</p>
         <ul class="relais-list">
           <li><i class="material-icons-outlined">vpn_key</i><span>Check-in, check-out, dépose ou remise des clés, consignes d'accès et coordination voyageurs pendant votre absence.</span></li>
@@ -693,7 +698,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
         </div>
       </div>
       <div class="relais-panel reveal d2">
-        <h3>Tarif premium : relais absence et urgence</h3>
+        <h3>Tarif relais absence et urgence</h3>
         <div class="relais-pack">
           <div class="pack"><div><b>Activation relais</b><br><span>Audit accès, consignes, planning, contacts urgence</span></div><strong>79-149 €</strong></div>
           <div class="pack"><div><b>Relais week-end</b><br><span>De 99 € si tout est autonome à 199 € si JG67 gère clés, voyageurs, horaires ou rotations</span></div><strong>99-199 €</strong></div>
@@ -726,7 +731,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
       <h2 style="margin:18px auto 0">Comment ça marche ?</h2>
     </div>
     <div class="steps" id="steps">
-      <div class="step reveal d1"><div class="n">1</div><h3>Prise de contact</h3><p>Devis gratuit sous 24h après étude de votre bien et de vos besoins.</p></div>
+      <div class="step reveal d1"><div class="n">1</div><h3>Prise de contact</h3><p>Devis sous 24h sous 24h après étude de votre bien et de vos besoins.</p></div>
       <div class="step reveal d2"><div class="n">2</div><h3>Organisation</h3><p>Calendrier partagé, planning transmis ou accès à votre organisation existante pour une autonomie totale.</p></div>
       <div class="step reveal d3"><div class="n">3</div><h3>Intervention</h3><p>Ménage professionnel, gestion du linge et remise en place minutieuse.</p></div>
       <div class="step reveal d4"><div class="n">4</div><h3>Suivi et rapport</h3><p>Rapport photo envoyé via WhatsApp après chaque passage pour votre tranquillité.</p></div>
@@ -770,16 +775,16 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
     </div>
     <div class="t-grid">
       <article class="t-card reveal d1">
-        <blockquote>JG67 Services a littéralement sauvé ma saison Airbnb. Leur réactivité est incroyable, surtout pour les réservations de dernière minute. Le ménage est impeccable, digne d'un hôtel.</blockquote>
-        <div class="t-who"><div class="av">MA</div><div><b>Marc A.</b><span>Propriétaire Centre-Ville</span></div></div>
+        <blockquote>Les avis mettent en avant la propreté des logements et la qualité de préparation entre deux voyageurs.</blockquote>
+        <div class="t-who"><div class="av">5★</div><div><b>Propreté</b><span>Point décisif pour les voyageurs</span></div></div>
       </article>
       <article class="t-card reveal d2">
-        <blockquote>En tant que conciergerie, nous avons besoin de partenaires sur qui compter les yeux fermés. JG67 gère 12 de nos appartements avec une régularité exemplaire. Les rapports photos sont un vrai plus.</blockquote>
-        <div class="t-who"><div class="av">EL</div><div><b>Emma L.</b><span>Gérante Conciergerie</span></div></div>
+        <blockquote>La réactivité et la disponibilité 7j/7 sont les points qui rassurent les propriétaires pendant les périodes chargées.</blockquote>
+        <div class="t-who"><div class="av">7j</div><div><b>Réactivité</b><span>Rotations, urgences et haute saison</span></div></div>
       </article>
       <article class="t-card reveal d3">
-        <blockquote>Le linge est toujours parfait, blanc éclatant et repassé. Nos voyageurs soulignent souvent la propreté du logement dans leurs commentaires. Un partenaire de confiance.</blockquote>
-        <div class="t-who"><div class="av">JD</div><div><b>Julien D.</b><span>Propriétaire Neudorf</span></div></div>
+        <blockquote>Le suivi terrain, les consignes claires et le rapport photo permettent de limiter les oublis et les mauvaises surprises.</blockquote>
+        <div class="t-who"><div class="av">✓</div><div><b>Suivi</b><span>Contrôle qualité et communication</span></div></div>
       </article>
     </div>
     <div class="reveal" style="text-align:center;margin-top:44px">
@@ -822,8 +827,8 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
 <section id="devis">
   <div class="wrap">
     <div class="sec-head reveal" style="margin-bottom:20px">
-      <span class="eyebrow">Devis gratuit</span>
-      <h2>Demandez votre devis gratuit en moins de 2 minutes</h2>
+      <span class="eyebrow">Devis sous 24h</span>
+      <h2>Demandez votre devis sous 24h en moins de 2 minutes</h2>
       <p class="lead">Nous reviendrons vers vous avec une proposition sur mesure adaptée à votre bien.</p>
     </div>
     <div class="devis-cols">
@@ -833,22 +838,22 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
         <ul>
           <li><span>Nettoyage T2</span><b>à partir de 55–75 €</b></li>
           <li><span>Nettoyage T3</span><b>à partir de 75–105 €</b></li>
-          <li><span>Option linge</span><b>+25 à 45 € selon vol.</b></li>
+          <li><span>Option linge</span><b>+25 à 45 € selon volume</b></li>
         </ul>
       </aside>
       <div class="reveal d2">
-        <form name="devis" action="/" method="post" data-netlify="true">
+        <form name="devis" action="/contact" method="post" data-netlify="true">
           <input type="hidden" name="form-name" value="devis">
           <div class="field"><label for="nom">Prénom / Nom</label><input id="nom" name="nom" type="text" required></div>
-          <div class="field"><label for="tel">Téléphone</label><input id="tel" name="contact" type="tel" required></div>
+          <div class="field"><label for="tel">Téléphone ou email</label><input id="tel" name="contact" type="text" required></div>
           <div class="field"><label for="type">Type de bien</label>
             <select id="type" name="type">
-              <option>Studio</option><option>T2</option><option>T3</option><option>Maison</option><option>Villa</option>
+              <option>Studio</option><option>T2</option><option>T3</option><option>Maison</option><option>Grand logement</option>
             </select>
           </div>
           <div class="field"><label for="loc">Localisation (ville ou quartier)</label><input id="loc" name="localisation" type="text" required></div>
           <div id="form-success">Merci ! Votre demande a bien été envoyée. Nous vous répondrons sous 24h.</div>
-          <button class="btn solid" type="submit"><span>Recevoir mon devis gratuit</span></button>
+          <button class="btn solid" type="submit"><span>Recevoir mon devis sous 24h</span></button>
         </form>
       </div>
     </div>
@@ -889,9 +894,9 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
       <ul class="contact">
         <li style="display:block;margin-bottom:10px">Disponible 7j/7 pour vos rotations Airbnb.</li>
         <li><i class="material-icons-outlined">map</i> Strasbourg, France</li>
-        <li><i class="material-icons-outlined">phone</i> <a href="https://wa.me/33754817008" style="color:inherit;text-decoration:none;">+33 7 54 81 70 08</a> (WhatsApp)</li>
-        <li><i class="material-icons-outlined">phone</i> <a href="https://wa.me/33621600288" style="color:inherit;text-decoration:none;">+33 6 21 60 02 88</a> (WhatsApp)</li>
-        <li><i class="material-icons-outlined">mail</i> contact@jg67services.fr</li>
+        <li><i class="material-icons-outlined">phone</i> <a href="tel:+33754817008" style="color:inherit;text-decoration:none;">+33 7 54 81 70 08</a> · <a href="https://wa.me/33754817008" style="color:inherit;text-decoration:none;">WhatsApp</a></li>
+        <li><i class="material-icons-outlined">phone</i> <a href="tel:+33621600288" style="color:inherit;text-decoration:none;">+33 6 21 60 02 88</a> · <a href="https://wa.me/33621600288" style="color:inherit;text-decoration:none;">WhatsApp</a></li>
+        <li><i class="material-icons-outlined">mail</i> <a href="mailto:contact@jg67services.fr" style="color:inherit;text-decoration:none;">contact@jg67services.fr</a></li>
       </ul>
     </div>
   </div>
@@ -925,7 +930,15 @@ if(devisForm){
     e.preventDefault();
     const data=new FormData(devisForm);
     try{
-      await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()});
+      const response = await fetch('/contact',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()});
+      if(!response.ok) throw new Error('Form submission failed');
+      if(window.jg67TrackConversion){
+        window.jg67TrackConversion('generate_lead',{
+          form_name:'devis',
+          form_location:'home',
+          lead_type:'quote_request'
+        });
+      }
       formSuccess.style.display='block';
       devisForm.reset();
     }catch(err){
@@ -970,5 +983,6 @@ if(steps){
   },{threshold:.3}).observe(steps);
 }
 </script>
+<script src="/conversion-tracking.js" defer></script>
 </body>
 </html>
