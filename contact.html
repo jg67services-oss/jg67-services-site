@@ -111,6 +111,10 @@
 .ctc-row-val { font-size:.93rem; color:var(--encre) }
 .ctc-row-val a { color:var(--champagne); transition:color .3s }
 .ctc-row-val a:hover { color:var(--champagne-2) }
+.ctc-phones { display:flex; flex-direction:column; gap:8px; margin-top:2px }
+.ctc-phone { display:grid; grid-template-columns:150px auto 1fr; align-items:center; gap:10px }
+.ctc-num { font-variant-numeric:tabular-nums; letter-spacing:.02em; white-space:nowrap }
+.ctc-sep { color:var(--gris); opacity:.5 }
 
 .ctc-map { border-radius:3px; overflow:hidden; border:1px solid var(--ligne); aspect-ratio:4/3 }
 .ctc-map iframe { width:100%; height:100%; border:0; display:block }
@@ -220,6 +224,9 @@
   .form-grid-2 { grid-template-columns:1fr }
   .ctc-form-wrap { padding:28px 20px }
   .ctc-proof { grid-template-columns:1fr }
+  .ctc-phone { grid-template-columns:1fr auto; row-gap:3px }
+  .ctc-phone .ctc-sep { display:none }
+  .ctc-phone a[href^="https://wa.me/"] { grid-column:1 / -1 }
 }
 </style>
 </head>
@@ -303,10 +310,18 @@
               <div class="ctc-ico"><i class="material-icons-outlined">phone</i></div>
               <div>
                 <p class="ctc-row-label">Téléphone / WhatsApp</p>
-                <p class="ctc-row-val">
-                  <a href="tel:+33754817008">+33 7 54 81 70 08</a> · <a href="https://wa.me/33754817008" target="_blank" rel="noopener">WhatsApp</a><br>
-                  <a href="tel:+33621600288">+33 6 21 60 02 88</a> · <a href="https://wa.me/33621600288" target="_blank" rel="noopener">WhatsApp</a>
-                </p>
+                <div class="ctc-row-val ctc-phones">
+                  <span class="ctc-phone">
+                    <a class="ctc-num" href="tel:+33754817008">+33 7 54 81 70 08</a>
+                    <span class="ctc-sep">·</span>
+                    <a href="https://wa.me/33754817008" target="_blank" rel="noopener">WhatsApp</a>
+                  </span>
+                  <span class="ctc-phone">
+                    <a class="ctc-num" href="tel:+33621600288">+33 6 21 60 02 88</a>
+                    <span class="ctc-sep">·</span>
+                    <a href="https://wa.me/33621600288" target="_blank" rel="noopener">WhatsApp</a>
+                  </span>
+                </div>
               </div>
             </div>
             <div class="ctc-row">
@@ -319,7 +334,7 @@
           </div>
           <div class="ctc-map">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42231.2952876118!2d7.71261305!3d48.58392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796c8495e18b571%3A0x408ab2ae4baa380!2sStrasbourg%2C%20France!5e0!3m2!1sfr!2sfr!4v1715180000000!5m2!1sfr!2sfr"
+              src="https://www.google.com/maps?q=Strasbourg%2C+France&z=11&output=embed"
               loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
               title="Zone d'intervention JG67 Services Strasbourg">
             </iframe>
