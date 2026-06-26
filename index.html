@@ -621,9 +621,9 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
         <div class="stat"><div class="num">7j/7</div><div class="lbl">Disponibilité</div></div>
       </div>
     </div>
-    <div class="exc-imgs reveal d2">
-      <div class="ph1"><img src="https://images.pexels.com/photos/6466213/pexels-photo-6466213.jpeg?auto=compress&cs=tinysrgb&w=900&h=1200&fit=crop" alt="Remise à blanc et linge pour location courte durée à Strasbourg" loading="lazy"></div>
-      <div class="ph2"><img src="https://images.pexels.com/photos/6466491/pexels-photo-6466491.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop" alt="Personnel hôtelier professionnel chambre haut de gamme" loading="lazy"></div>
+    <div class="exc-imgs reveal d2" data-random-excellence>
+      <div class="ph1"><img data-random-slot="primary" src="/img/gal/new-IMG_6322.jpg" alt="Logement préparé après ménage Airbnb à Strasbourg" loading="lazy"></div>
+      <div class="ph2"><img data-random-slot="secondary" src="/img/gal/sdb-vasque-sous-combles.webp" alt="Salle de bain prête après remise à blanc Airbnb à Strasbourg" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -982,6 +982,59 @@ if(steps){
     entries.forEach(e=>{if(e.isIntersecting){steps.style.setProperty('--thread',1);}});
   },{threshold:.3}).observe(steps);
 }
+
+/* ===== Photos aléatoires section excellence ===== */
+(() => {
+  const slots = document.querySelectorAll('[data-random-excellence] img[data-random-slot]');
+  if (slots.length < 2) return;
+
+  const pool = [
+    {src:'/img/gal/new-IMG_6322.jpg', alt:'Logement préparé après ménage Airbnb à Strasbourg'},
+    {src:'/img/gal/new-IMG_6334.jpg', alt:'Cuisine et séjour prêts pour voyageurs Airbnb à Strasbourg'},
+    {src:'/img/gal/new-IMG_6386.jpg', alt:'Appartement remis au propre pour location courte durée à Strasbourg'},
+    {src:'/img/gal/new-IMG_6420.jpg', alt:'Espace de vie préparé après passage JG67 Services'},
+    {src:'/img/gal/new-41249015.jpg', alt:'Salon propre et préparé pour voyageurs courte durée'},
+    {src:'/img/gal/new-7197a184.jpg', alt:'Logement rangé après remise à blanc Airbnb'},
+    {src:'/img/gal/new-a97189f2.jpg', alt:'Chambre préparée avec soin pour arrivée voyageur'},
+    {src:'/img/gal/new-photo-avril-1.jpg', alt:'Détail de logement prêt après ménage Airbnb'},
+    {src:'/img/gal/cuisine-ouverte-plan-noir.webp', alt:'Cuisine ouverte nettoyée pour location courte durée'},
+    {src:'/img/gal/sdb-vasque-sous-combles.webp', alt:'Salle de bain prête après remise à blanc Airbnb'},
+    {src:'/img/gal/lit-serviettes-waffle-ardoise.webp', alt:'Lit préparé et serviettes mises en place'},
+    {src:'/img/gal/salon-lumineux-triple-fenetre.webp', alt:'Salon lumineux préparé pour voyageurs'}
+  ];
+
+  let previousPair = [];
+  try {
+    previousPair = JSON.parse(localStorage.getItem('jg67-excellence-photos') || '[]');
+  } catch (err) {
+    previousPair = [];
+  }
+
+  let shuffled = pool
+    .map(item => ({item, rank: Math.random()}))
+    .sort((a, b) => a.rank - b.rank)
+    .map(entry => entry.item);
+
+  if (
+    previousPair.length >= slots.length &&
+    shuffled.slice(0, slots.length).every((item, index) => item.src === previousPair[index])
+  ) {
+    shuffled = shuffled.slice(1).concat(shuffled[0]);
+  }
+
+  slots.forEach((img, index) => {
+    const next = shuffled[index];
+    if (!next) return;
+    img.src = next.src;
+    img.alt = next.alt;
+  });
+
+  try {
+    localStorage.setItem('jg67-excellence-photos', JSON.stringify(shuffled.slice(0, slots.length).map(item => item.src)));
+  } catch (err) {
+    /* Rien à faire si le stockage navigateur est désactivé. */
+  }
+})();
 </script>
 <script src="/conversion-tracking.js" defer></script>
 </body>
