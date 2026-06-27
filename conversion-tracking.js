@@ -33,7 +33,8 @@
       page_path: window.location.pathname,
       page_title: document.title,
       value: VALUE_BY_EVENT[name] || 0,
-      currency: "EUR"
+      currency: "EUR",
+      transport_type: "beacon"
     }, params || {});
 
     if (typeof window.gtag === "function") {
@@ -92,4 +93,59 @@
       form_action: form.getAttribute("action") || window.location.pathname
     });
   }, true);
+
+  // ---- Attribution marketing (first-touch, persistée entre les pages) ----
+  var ATTR_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid"];
+  var ATTR_STORE = "jg67_attribution";
+
+  function captureAttribution() {
+    var stored = null;
+    try { stored = JSON.parse(window.localStorage.getItem(ATTR_STORE) || "null"); } catch (e) { stored = null; }
+
+    var qs = new URLSearchParams(window.location.search);
+    var hasNewUtm = ATTR_KEYS.some(function (k) { return qs.get(k); });
+
+    // First-touch : on n'écrase la source que si une nouvelle campagne arrive.
+    if (!stored || hasNewUtm) {
+      var next = stored || {};
+      ATTR_KEYS.forEach(function (k) {
+        var v = qs.get(k);
+        if (v) next[k] = cleanText(v);
+        else if (!(k in next)) next[k] = "";
+      });
+      if (!next.landing_page) next.landing_page = window.location.pathname;
+      if (!("referrer" in next)) next.referrer = cleanText(document.referrer || "");
+      stored = next;
+      try { window.localStorage.setItem(ATTR_STORE, JSON.stringify(stored)); } catch (e) {}
+    }
+    return stored || {};
+  }
+
+  function fillForms() {
+    var attr = captureAttribution();
+    var values = {
+      utm_source: attr.utm_source || "",
+      utm_medium: attr.utm_medium || "",
+      utm_campaign: attr.utm_campaign || "",
+      utm_content: attr.utm_content || "",
+      utm_term: attr.utm_term || "",
+      gclid: attr.gclid || "",
+      landing_page: attr.landing_page || window.location.pathname,
+      referrer: attr.referrer || "",
+      page_path: window.location.pathname
+    };
+    var forms = document.querySelectorAll("form[data-netlify]");
+    for (var i = 0; i < forms.length; i++) {
+      Object.keys(values).forEach(function (name) {
+        var input = forms[i].querySelector('input[name="' + name + '"]');
+        if (input) input.value = values[name];
+      });
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", fillForms);
+  } else {
+    fillForms();
+  }
 })();

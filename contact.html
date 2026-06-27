@@ -358,8 +358,24 @@
             <p>Merci pour votre demande. L'équipe JG67 vous répond dans les prochaines heures.</p>
           </div>
 
-          <form id="devis-form" name="devis" action="/contact" method="POST" data-netlify="true">
+          <form id="devis-form" name="devis" action="/contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="devis">
+
+            <!-- Anti-spam honeypot (ne pas remplir, masqué aux humains) -->
+            <p hidden aria-hidden="true">
+              <label>Ne remplissez pas ce champ : <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+            </p>
+
+            <!-- Attribution marketing (rempli automatiquement par conversion-tracking.js) -->
+            <input type="hidden" name="utm_source">
+            <input type="hidden" name="utm_medium">
+            <input type="hidden" name="utm_campaign">
+            <input type="hidden" name="utm_content">
+            <input type="hidden" name="utm_term">
+            <input type="hidden" name="gclid">
+            <input type="hidden" name="landing_page">
+            <input type="hidden" name="referrer">
+            <input type="hidden" name="page_path">
 
             <div class="form-grid-2">
               <div class="form-field">

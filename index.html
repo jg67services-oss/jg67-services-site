@@ -842,8 +842,24 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
         </ul>
       </aside>
       <div class="reveal d2">
-        <form name="devis" action="/contact" method="post" data-netlify="true">
+        <form name="devis" action="/contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="devis">
+
+          <!-- Anti-spam honeypot (ne pas remplir, masqué aux humains) -->
+          <p hidden aria-hidden="true">
+            <label>Ne remplissez pas ce champ : <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
+
+          <!-- Attribution marketing (rempli automatiquement par conversion-tracking.js) -->
+          <input type="hidden" name="utm_source">
+          <input type="hidden" name="utm_medium">
+          <input type="hidden" name="utm_campaign">
+          <input type="hidden" name="utm_content">
+          <input type="hidden" name="utm_term">
+          <input type="hidden" name="gclid">
+          <input type="hidden" name="landing_page">
+          <input type="hidden" name="referrer">
+          <input type="hidden" name="page_path">
           <div class="field"><label for="nom">Prénom / Nom</label><input id="nom" name="nom" type="text" required></div>
           <div class="field"><label for="tel">Téléphone ou email</label><input id="tel" name="contact" type="text" required></div>
           <div class="field"><label for="type">Type de bien</label>
