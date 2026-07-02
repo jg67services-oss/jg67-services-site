@@ -441,17 +441,6 @@
               </div>
             </div>
 
-            <!-- Option relais absence -->
-            <div class="option-premium">
-              <label class="option-premium-label">
-                <input name="option_relais_absence" type="checkbox" value="oui">
-                <div>
-                  <p class="option-title">Option relais absence</p>
-                  <p class="option-desc">Relation voyageurs, check-in/out, clés, ménage, linge et suivi terrain pendant vos absences. Canal WhatsApp dédié pour les urgences. Commission fixe : 16 % si la relation voyageur est confiée à JG67.</p>
-                </div>
-              </label>
-            </div>
-
             <div class="form-field">
               <label for="f-message">Message (optionnel)</label>
               <textarea id="f-message" name="message" placeholder="Précisez vos besoins particuliers"></textarea>
@@ -596,7 +585,7 @@ if(form) {
           window.jg67TrackConversion('generate_lead',{
             form_name:'devis',
             form_location:'contact',
-            lead_type: form.querySelector('[name="option_relais_absence"]')?.checked ? 'premium_relay_quote' : 'quote_request'
+            lead_type: 'quote_request'
           });
         }
         form.style.display = 'none';

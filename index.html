@@ -55,8 +55,7 @@
     "Nettoyage location courte durée",
     "Remise à blanc Airbnb",
     "Gestion du linge",
-    "Préparation logement",
-    "Service relais logement temporaire"
+    "Préparation logement"
   ],
   "sameAs": [
     "https://www.google.com/search?kgmid=/g/11z5p5sp4k"
@@ -308,36 +307,6 @@ section{padding:110px 0}
 .presta li .material-icons-outlined{font-size:1rem;color:var(--champagne);margin-top:3px}
 .presta-cta{text-align:center;margin-top:54px}
 
-/* ---------- Relais temporaire ---------- */
-.relais{background:var(--nuit);color:#fff;position:relative;overflow:hidden}
-.relais::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(14,30,42,.98),rgba(14,30,42,.86)),url("https://jg67services.fr/img/JG67%20SERVICES%20CONTROLE%20QUALITE.jpg") center/cover no-repeat;opacity:.98}
-.relais .wrap{position:relative;z-index:1}
-.relais h2{color:#fff}
-.relais .lead{color:rgba(255,255,255,.68)}
-.relais .eyebrow{color:var(--champagne-2)}
-.relais-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start;margin-top:24px}
-.relais-panel{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border-radius:3px;padding:40px}
-.relais-panel h3{color:#fff;font-size:1.45rem;margin-bottom:16px}
-.relais-list{display:grid;gap:14px;margin-top:26px}
-.relais-list li{display:flex;gap:12px;align-items:flex-start;color:rgba(255,255,255,.76);font-size:.95rem}
-.relais-list .material-icons-outlined{color:var(--champagne-2);font-size:1.08rem;margin-top:3px}
-.relais-detail{margin-top:30px;padding:24px;border:1px solid rgba(216,189,138,.32);background:rgba(216,189,138,.09);border-radius:3px}
-.relais-detail h4{font-family:var(--f-display);font-size:1.28rem;color:#fff;margin-bottom:10px}
-.relais-detail p{color:rgba(255,255,255,.72);font-size:.95rem}
-.relais-pack{display:grid;gap:14px;margin-top:22px}
-.pack{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:18px 0;border-top:1px solid rgba(255,255,255,.12)}
-.pack b{display:block;color:#fff;font-weight:500;margin-bottom:5px}
-.pack span{color:rgba(255,255,255,.62);font-size:.88rem}
-.pack strong{font-family:var(--f-display);font-size:1.45rem;color:var(--champagne-2);white-space:nowrap}
-.price-explain{margin-top:26px;padding:22px 24px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:3px}
-.price-explain h4{font-family:var(--f-display);font-size:1.24rem;color:#fff;margin-bottom:10px}
-.price-explain p{color:rgba(255,255,255,.7);font-size:.92rem;margin-bottom:12px}
-.price-explain ul{display:grid;gap:9px;margin-top:12px}
-.price-explain li{display:flex;gap:10px;color:rgba(255,255,255,.72);font-size:.9rem}
-.price-explain li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--champagne-2);margin-top:10px;flex:none}
-.relais-note{margin-top:22px;color:rgba(255,255,255,.56);font-size:.9rem}
-.relais-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-
 /* ---------- Comment ça marche — fil doré ---------- */
 .process{position:relative}
 .steps{position:relative;margin-top:70px;display:grid;grid-template-columns:repeat(4,1fr);gap:34px}
@@ -423,7 +392,6 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
   nav.main,header .btn{display:none}
   .burger{display:block}
   .avis-grid,.duo,.gal-grid,.excellence .cols,.zones-cols,.devis-cols{grid-template-columns:1fr}
-  .relais-grid{grid-template-columns:1fr}
   .trio,.t-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr;gap:44px}
   .steps::before,.steps::after{display:none}
@@ -437,9 +405,9 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
   .stats{grid-template-columns:repeat(3,1fr);gap:6px}
   .stat .num{font-size:2.1rem}
   .wrap{padding:0 20px}
-  .relais-panel,.tarifs{padding:32px 24px}
-  .pack,.tarifs li{grid-template-columns:1fr;display:grid;gap:6px}
-  .pack strong,.tarifs li b{white-space:normal}
+  .tarifs{padding:32px 24px}
+  .tarifs li{grid-template-columns:1fr;display:grid;gap:6px}
+  .tarifs li b{white-space:normal}
   form{grid-template-columns:1fr}
   .btn{width:100%;justify-content:center;text-align:center}
   .wa{right:18px;bottom:18px;width:52px;height:52px}
@@ -642,7 +610,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
         <h3>Ménage entre voyageurs &amp; remise au propre</h3>
         <p>Ménage complet après chaque départ, désinfection des points de contact et remise en place des éléments décoratifs.</p>
         <ul>
-          <li><i class="material-icons-outlined">check</i> Désinfection COVID-standard</li>
+          <li><i class="material-icons-outlined">check</i> Contrôle des points sensibles</li>
           <li><i class="material-icons-outlined">check</i> Nettoyage vitres et sols</li>
           <li><i class="material-icons-outlined">check</i> Remise en ordre esthétique</li>
         </ul>
@@ -670,55 +638,6 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
     </div>
     <div class="presta-cta reveal">
       <a class="btn dark" href="#devis"><span>Recevoir mon devis sous 24h</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= RELAIS TEMPORAIRE ======================= -->
-<section class="relais" id="relais-temporaire">
-  <div class="wrap">
-    <div class="sec-head reveal" style="margin-bottom:10px">
-      <span class="eyebrow">Relais renforcé pendant vos absences</span>
-      <h2>Partez serein, JG67 prend le relais de votre Airbnb</h2>
-      <p class="lead">Vacances, déplacement, imprévu ou urgence : JG67 assure temporairement la continuité de votre location à Strasbourg. Relation voyageurs, check-in, check-out, clés, ménage, linge et suivi terrain sont pris en charge dans un cadre clair, pour que vous puissiez partir l'esprit tranquille.</p>
-    </div>
-    <div class="relais-grid">
-      <div class="relais-panel reveal d1">
-        <h3>Un relais temporaire, sans reprise permanente</h3>
-        <p class="lead">L'offre est pensée pour les propriétaires qui veulent sécuriser quelques jours ou quelques semaines d'absence sans laisser leur logement sans présence locale. Vous nous confiez le terrain pendant la période prévue, puis vous reprenez simplement la main à votre retour.</p>
-        <ul class="relais-list">
-          <li><i class="material-icons-outlined">vpn_key</i><span>Check-in, check-out, dépose ou remise des clés, consignes d'accès et coordination voyageurs pendant votre absence.</span></li>
-          <li><i class="material-icons-outlined">cleaning_services</i><span>Remise à blanc, linge, consommables et rapport photo après chaque rotation.</span></li>
-          <li><i class="material-icons-outlined">support_agent</i><span>Prise en charge des demandes courantes des voyageurs et alerte immédiate si une décision propriétaire est nécessaire.</span></li>
-          <li><i class="material-icons-outlined">assignment_turned_in</i><span>Compte rendu de fin de relais : interventions, incidents, points à suivre, puis retour au fonctionnement habituel.</span></li>
-        </ul>
-        <div class="relais-detail">
-          <h4>Un relais opérationnel complet pendant votre absence</h4>
-          <p>Quand l'option est activée, JG67 devient votre relais local de confiance. Nous assurons la continuité opérationnelle, suivons les arrivées et départs, coordonnons les clés, répondons aux demandes courantes des voyageurs et pilotons les rotations terrain. Vous n'êtes sollicité qu'en cas de problème important, force majeure, litige ou décision engageante, via le canal WhatsApp dédié défini avant votre départ.</p>
-        </div>
-      </div>
-      <div class="relais-panel reveal d2">
-        <h3>Tarif relais absence et urgence</h3>
-        <div class="relais-pack">
-          <div class="pack"><div><b>Activation relais</b><br><span>Audit accès, consignes, planning, contacts urgence</span></div><strong>79-149 €</strong></div>
-          <div class="pack"><div><b>Relais week-end</b><br><span>De 99 € si tout est autonome à 199 € si JG67 gère clés, voyageurs, horaires ou rotations</span></div><strong>99-199 €</strong></div>
-          <div class="pack"><div><b>Relais semaine</b><br><span>Selon durée, nombre de logements, réservations prévues et niveau de suivi demandé</span></div><strong>199-399 €</strong></div>
-          <div class="pack"><div><b>Commission absence</b><br><span>Disponibilité, coordination et relation voyageur pendant votre absence</span></div><strong>16 %</strong></div>
-        </div>
-        <div class="price-explain">
-          <h4>Pourquoi une fourchette ?</h4>
-          <p>Le prix dépend du niveau de relais à assurer. Un logement autonome avec boîte à clés et consignes claires demande moins d'intervention qu'un week-end avec remise de clés, horaires sensibles, plusieurs voyageurs ou rotation ménage à coordonner.</p>
-          <ul>
-            <li>Bas de fourchette : logement simple, accès autonome, peu de messages, consignes déjà prêtes.</li>
-            <li>Haut de fourchette : clés à gérer, check-in ou check-out à suivre, rotation ménage, voyageurs à accompagner ou risque d'imprévu.</li>
-          </ul>
-        </div>
-        <p class="relais-note">Les forfaits couvrent la préparation et la coordination du relais. La commission de 16 % s'applique uniquement lorsque JG67 prend en charge la relation voyageurs pendant votre absence.</p>
-        <div class="relais-cta">
-          <a class="btn solid" href="#devis"><span>Préparer mon absence</span></a>
-          <a class="btn" href="/contact#devis"><span>Étudier un relais</span></a>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -816,7 +735,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
       </article>
       <article class="presta reveal d3">
         <h3>Ménage Airbnb ou conciergerie à Strasbourg ?</h3>
-        <p>Comprendre la différence entre prestataire ménage, relais temporaire et conciergerie complète.</p>
+        <p>Comprendre la différence entre prestataire ménage et conciergerie complète.</p>
         <a class="go" href="/menage-airbnb-ou-conciergerie-strasbourg">Comparer les options <i class="material-icons-outlined">arrow_forward</i></a>
       </article>
     </div>
