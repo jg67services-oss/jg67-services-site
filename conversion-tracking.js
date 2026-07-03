@@ -27,6 +27,8 @@
   }
 
   function sendEvent(name, params) {
+    /* RGPD : aucun événement analytics sans consentement explicite (cookie-consent.js) */
+    if (window.jg67ConsentGranted !== true) return;
     var payload = Object.assign({
       event_category: "conversion",
       page_type: pageType(),
