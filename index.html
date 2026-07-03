@@ -94,8 +94,14 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" fetchpriority="high" href="/img/JG67%20SERVICES%20MENAGE%20LOCATION%20COURTE%20DUREE.jpg">
+<!-- Fonts en non-bloquant : le rendu démarre sur les polices de secours (display=swap) -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=block" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=block" rel="stylesheet">
+</noscript>
 <style>
 /* ==========================================================
    JG67 SERVICES — HABILLAGE PREMIUM
@@ -227,15 +233,15 @@ header.scrolled .burger{color:var(--nuit)}
 .hero .eyebrow::before{background:var(--champagne-2)}
 .hero h1{color:#fff;max-width:15ch;margin:22px 0 10px}
 .hero h1 .line{display:block;overflow:hidden}
-.hero h1 .line>span{display:block;transform:translateY(110%);animation:rise 1.1s var(--ease) forwards}
+.hero h1 .line>span{display:block;transform:translateY(110%);animation:rise .6s var(--ease) forwards}
 .hero h1 .line:nth-child(2)>span{animation-delay:.15s}
 @keyframes rise{to{transform:none}}
-.hero-rule{width:0;height:1px;background:var(--champagne);margin:26px 0;animation:grow 1.2s var(--ease) .7s forwards}
+.hero-rule{width:0;height:1px;background:var(--champagne);margin:26px 0;animation:grow .8s var(--ease) .35s forwards}
 @keyframes grow{to{width:88px}}
-.hero p{max-width:54ch;color:rgba(255,255,255,.82);font-size:1.08rem;opacity:0;animation:fade 1s var(--ease) .85s forwards}
-.hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-top:38px;opacity:0;animation:fade 1s var(--ease) 1.05s forwards}
+.hero p{max-width:54ch;color:rgba(255,255,255,.82);font-size:1.08rem;opacity:0;animation:fade .6s var(--ease) .45s forwards}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;margin-top:38px;opacity:0;animation:fade .6s var(--ease) .55s forwards}
 @keyframes fade{to{opacity:1}}
-.hero-badges{display:flex;gap:34px;flex-wrap:wrap;margin-top:56px;opacity:0;animation:fade 1s var(--ease) 1.25s forwards}
+.hero-badges{display:flex;gap:34px;flex-wrap:wrap;margin-top:56px;opacity:0;animation:fade .6s var(--ease) .65s forwards}
 .hero-badges span{display:flex;align-items:center;gap:9px;font-size:.85rem;color:rgba(255,255,255,.85);letter-spacing:.04em}
 .hero-badges .material-icons-outlined{font-size:1.1rem;color:var(--champagne-2)}
 .scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;width:1px;height:58px;background:rgba(255,255,255,.22);overflow:hidden}
@@ -553,11 +559,11 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
     </div>
     <div class="gal-grid" data-random-gallery>
       <figure class="gal-item reveal d1">
-        <img data-random-slot="primary" src="/img/gal/new-IMG_6334.jpg" alt="Cuisine et séjour prêts pour voyageurs Airbnb à Strasbourg" loading="lazy">
+        <picture><source srcset="/img/gal/new-IMG_6334.webp" type="image/webp"><img data-random-slot="primary" src="/img/gal/new-IMG_6334.jpg" alt="Cuisine et séjour prêts pour voyageurs Airbnb à Strasbourg" loading="lazy"></picture>
         <figcaption data-random-caption>Séjour prêt pour voyageurs</figcaption>
       </figure>
       <figure class="gal-item reveal d2">
-        <img data-random-slot="secondary" src="/img/gal/new-a97189f2.jpg" alt="Chambre préparée avec soin pour arrivée voyageur" loading="lazy">
+        <picture><source srcset="/img/gal/new-a97189f2.webp" type="image/webp"><img data-random-slot="secondary" src="/img/gal/new-a97189f2.jpg" alt="Chambre préparée avec soin pour arrivée voyageur" loading="lazy"></picture>
         <figcaption data-random-caption>Chambre préparée</figcaption>
       </figure>
     </div>
@@ -599,7 +605,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
       </div>
     </div>
     <div class="exc-imgs reveal d2" data-random-excellence>
-      <div class="ph1"><img data-random-slot="primary" src="/img/gal/new-IMG_6322.jpg" alt="Logement préparé après ménage Airbnb à Strasbourg" loading="lazy"></div>
+      <div class="ph1"><picture><source srcset="/img/gal/new-IMG_6322.webp" type="image/webp"><img data-random-slot="primary" src="/img/gal/new-IMG_6322.jpg" alt="Logement préparé après ménage Airbnb à Strasbourg" loading="lazy"></picture></div>
       <div class="ph2"><img data-random-slot="secondary" src="/img/gal/sdb-vasque-sous-combles.webp" alt="Salle de bain prête après remise à blanc Airbnb à Strasbourg" loading="lazy"></div>
     </div>
   </div>
