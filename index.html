@@ -145,6 +145,10 @@ em.gold{font-style:italic;color:var(--champagne)}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
   *{animation:none!important;transition:none!important}
+  /* États finaux explicites : sans animation, le hero doit rester visible */
+  .hero h1 .line>span{transform:none!important}
+  .hero-rule{width:88px!important}
+  .hero p,.hero-cta,.hero-badges{opacity:1!important}
 }
 
 /* ---------- Header ---------- */
@@ -423,6 +427,10 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
   gtag('js', new Date());
   gtag('config', 'G-L3QQGED8VS');
 </script>
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 
