@@ -116,7 +116,8 @@
   --lin:         #F6F4EF;
   --blanc:       #FFFFFF;
   --encre:       #2B3A44;
-  --gris:        #6E7D86;
+  --gris:        #616C75;
+  --or-texte:    #80621C;
   --ligne:       rgba(14,30,42,.10);
 
   --f-display:'Cormorant Garamond',Georgia,serif;
@@ -139,7 +140,7 @@ h1,h2,h3{font-family:var(--f-display);color:var(--nuit);font-weight:600;line-hei
 h1{font-size:clamp(2.6rem,5.5vw,4.3rem);letter-spacing:-.01em}
 h2{font-size:clamp(2rem,3.6vw,2.9rem)}
 h3{font-size:1.45rem}
-.eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.72rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--champagne)}
+.eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.72rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:var(--or-texte)}
 .eyebrow::before{content:"";width:34px;height:1px;background:var(--champagne)}
 .lead{color:var(--gris);font-size:1.06rem;max-width:62ch}
 em.gold{font-style:italic;color:var(--champagne)}
@@ -389,7 +390,7 @@ footer li a:hover{color:var(--champagne-2);padding-left:6px}
 footer .contact li{display:flex;gap:10px;align-items:center;font-size:.92rem;color:rgba(255,255,255,.6)}
 footer .contact li a[href^="tel:"]{white-space:nowrap}
 footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne)}
-.f-bottom{border-top:1px solid rgba(255,255,255,.1);padding:26px 0;font-size:.82rem;color:rgba(255,255,255,.4);text-align:center;letter-spacing:.04em}
+.f-bottom{border-top:1px solid rgba(255,255,255,.1);padding:26px 0;font-size:.82rem;color:rgba(255,255,255,.6);text-align:center;letter-spacing:.04em}
 
 /* ---------- WhatsApp flottant ---------- */
 .wa{position:fixed;right:26px;bottom:26px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;color:#fff;box-shadow:0 14px 34px -10px rgba(37,211,102,.55);transition:transform .4s var(--ease)}
@@ -426,7 +427,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
 }
 </style>
 <!-- Google tag (gtag.js) -->
-<script defer src="/cookie-consent.js"></script>
+<script defer src="/cookie-consent.js?v=20260703"></script>
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -988,6 +989,6 @@ const jg67PhotoPool = [
 applyRandomPhotoPair('[data-random-gallery]', jg67PhotoPool, 'jg67-gallery-photos');
 applyRandomPhotoPair('[data-random-excellence]', jg67PhotoPool, 'jg67-excellence-photos');
 </script>
-<script src="/conversion-tracking.js" defer></script>
+<script src="/conversion-tracking.js?v=20260703" defer></script>
 </body>
 </html>
