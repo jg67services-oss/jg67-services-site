@@ -153,7 +153,7 @@ em.gold{font-style:italic;color:var(--champagne)}
   .reveal{opacity:1;transform:none;transition:none}
   *{animation:none!important;transition:none!important}
   /* États finaux explicites : sans animation, le hero doit rester visible */
-  .hero h1 .line>span{transform:none!important}
+  .hero h1 .w>span{transform:none!important}
   .hero-rule{width:88px!important}
   .hero p,.hero-cta,.hero-badges{opacity:1!important}
 }
@@ -226,7 +226,14 @@ header.scrolled .burger{color:var(--nuit)}
 
 /* ---------- Hero ---------- */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--nuit)}
+.hero-depth{position:absolute;inset:0;will-change:transform}
 .hero-img{position:absolute;inset:0;background:url("https://jg67services.fr/img/JG67%20SERVICES%20MENAGE%20LOCATION%20COURTE%20DUREE.jpg") center/cover no-repeat;animation:kenburns 26s var(--ease) both;will-change:transform}
+/* Fond cinéma : fondu enchaîné lent entre 3 vraies photos (desktop, activé par JS après chargement) */
+.hero-slide{position:absolute;inset:0;background:center/cover no-repeat;opacity:0;transform:scale(1.06)}
+.hero.slides-on .hero-slide:nth-of-type(2){animation:slideA 27s ease-in-out infinite}
+.hero.slides-on .hero-slide:nth-of-type(3){animation:slideB 27s ease-in-out infinite}
+@keyframes slideA{0%,30%{opacity:0}38%,60%{opacity:1}68%,100%{opacity:0}}
+@keyframes slideB{0%,60%{opacity:0}68%,92%{opacity:1}100%{opacity:0}}
 @keyframes kenburns{from{transform:scale(1.14)}to{transform:scale(1)}}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,32,.55) 0%,rgba(10,22,32,0) 16%),linear-gradient(100deg,rgba(10,22,32,.92) 0%,rgba(10,22,32,.72) 45%,rgba(10,22,32,.35) 100%)}
 /* Halo champagne — statique par défaut (mobile), respiration douce sur desktop uniquement */
@@ -239,9 +246,15 @@ header.scrolled .burger{color:var(--nuit)}
 .hero .eyebrow{color:var(--champagne-2)}
 .hero .eyebrow::before{background:var(--champagne-2)}
 .hero h1{color:#fff;max-width:15ch;margin:22px 0 10px}
-.hero h1 .line{display:block;overflow:hidden}
-.hero h1 .line>span{display:block;transform:translateY(110%);animation:rise .6s var(--ease) forwards}
-.hero h1 .line:nth-child(2)>span{animation-delay:.15s}
+.hero h1 .line{display:block}
+/* Révélation mot à mot : chaque mot monte depuis son masque, en cascade */
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top}
+.hero h1 .w>span{display:inline-block;transform:translateY(115%);animation:rise .7s var(--ease) forwards;animation-delay:calc(var(--i,0)*70ms)}
+/* Reflet doré balayant la ligne de marque (fallback : couleur champagne actuelle) */
+@supports(-webkit-background-clip:text){
+  .hero h1 em.gold{background:linear-gradient(110deg,var(--champagne) 0%,var(--champagne) 42%,#F3E5C4 50%,var(--champagne) 58%,var(--champagne) 100%);background-size:230% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 3s var(--ease) 1.6s 2}
+}
+@keyframes shine{from{background-position:125% 0}to{background-position:-125% 0}}
 @keyframes rise{to{transform:none}}
 .hero-rule{width:0;height:1px;background:var(--champagne);margin:26px 0;animation:grow .8s var(--ease) .35s forwards}
 @keyframes grow{to{width:88px}}
@@ -478,15 +491,19 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
 
 <!-- ======================= HERO ======================= -->
 <section class="hero" id="accueil">
-  <div class="hero-img" role="img" aria-label="Ménage Airbnb Strasbourg - JG67 Services"></div>
+  <div class="hero-depth">
+    <div class="hero-img" role="img" aria-label="Ménage Airbnb Strasbourg - JG67 Services"></div>
+    <div class="hero-slide" data-bg="/img/gal/chambre-parquet-point-hongrie.webp"></div>
+    <div class="hero-slide" data-bg="/img/gal/sdb-douche-marbre.webp"></div>
+  </div>
   <div class="wrap">
     <div class="hero-eyebrow-wrap">
       <span>Prestataire ménage Airbnb Strasbourg</span>
     </div>
     <h1>
-      <span class="line"><span>Nettoyage et remise à blanc</span></span>
-      <span class="line"><span>pour locations courte durée</span></span>
-      <span class="line"><span><em class="gold">JG67 Services à Strasbourg</em></span></span>
+      <span class="line"><span class="w" style="--i:0"><span>Nettoyage</span></span> <span class="w" style="--i:1"><span>et</span></span> <span class="w" style="--i:2"><span>remise</span></span> <span class="w" style="--i:3"><span>à</span></span> <span class="w" style="--i:4"><span>blanc</span></span></span>
+      <span class="line"><span class="w" style="--i:5"><span>pour</span></span> <span class="w" style="--i:6"><span>locations</span></span> <span class="w" style="--i:7"><span>courte</span></span> <span class="w" style="--i:8"><span>durée</span></span></span>
+      <span class="line"><em class="gold"><span class="w" style="--i:9"><span>JG67</span></span> <span class="w" style="--i:10"><span>Services</span></span> <span class="w" style="--i:11"><span>à</span></span> <span class="w" style="--i:12"><span>Strasbourg</span></span></em></span>
     </h1>
     <div class="hero-rule"></div>
     <p>Ménage Airbnb, remise à blanc, linge et contrôle qualité pour appartements, maisons et meublés touristiques à Strasbourg. Réponse rapide, intervention 7j/7, rapport photo si prévu.</p>
@@ -1016,6 +1033,42 @@ applyRandomPhotoPair('[data-random-excellence]', jg67PhotoPool, 'jg67-excellence
         ticking = false;
       });
     }, { passive: true });
+  }
+
+  /* Fond cinéma : charge les 2 slides après le chargement complet, hors connexions lentes */
+  addEventListener('load', function () {
+    var conn = navigator.connection;
+    if (conn && (conn.saveData || /2g/.test(conn.effectiveType || ''))) return;
+    var slides = document.querySelectorAll('.hero-slide');
+    if (!slides.length) return;
+    var pending = slides.length;
+    slides.forEach(function (s) {
+      var url = s.getAttribute('data-bg');
+      var im = new Image();
+      im.onload = function () {
+        s.style.backgroundImage = 'url("' + url + '")';
+        if (--pending === 0) document.querySelector('.hero').classList.add('slides-on');
+      };
+      im.src = url;
+    });
+  });
+
+  /* Profondeur 3D : le fond suit doucement la souris */
+  var depth = document.querySelector('.hero-depth');
+  if (depth) {
+    var tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+    function tick() {
+      cx += (tx - cx) * 0.06;
+      cy += (ty - cy) * 0.06;
+      depth.style.transform = 'translate3d(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px,0) scale(1.04)';
+      if (Math.abs(tx - cx) > 0.2 || Math.abs(ty - cy) > 0.2) { raf = requestAnimationFrame(tick); }
+      else { raf = null; }
+    }
+    document.querySelector('.hero').addEventListener('mousemove', function (e) {
+      tx = (e.clientX / innerWidth - 0.5) * -14;
+      ty = (e.clientY / innerHeight - 0.5) * -10;
+      if (!raf) raf = requestAnimationFrame(tick);
+    });
   }
 
   /* Tilt 3D subtil sur les cartes services (max 2,4 degrés) */
