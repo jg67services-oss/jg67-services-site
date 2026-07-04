@@ -228,7 +228,13 @@ header.scrolled .burger{color:var(--nuit)}
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--nuit)}
 .hero-img{position:absolute;inset:0;background:url("https://jg67services.fr/img/JG67%20SERVICES%20MENAGE%20LOCATION%20COURTE%20DUREE.jpg") center/cover no-repeat;animation:kenburns 26s var(--ease) both;will-change:transform}
 @keyframes kenburns{from{transform:scale(1.14)}to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,22,32,.92) 0%,rgba(10,22,32,.72) 45%,rgba(10,22,32,.35) 100%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,32,.55) 0%,rgba(10,22,32,0) 16%),linear-gradient(100deg,rgba(10,22,32,.92) 0%,rgba(10,22,32,.72) 45%,rgba(10,22,32,.35) 100%)}
+/* Halo champagne — statique par défaut (mobile), respiration douce sur desktop uniquement */
+.hero::before{content:"";position:absolute;z-index:1;right:-14%;top:6%;width:58vw;height:58vw;max-width:880px;max-height:880px;border-radius:50%;background:radial-gradient(circle,rgba(216,189,138,.15) 0%,rgba(183,147,91,.06) 40%,transparent 68%);pointer-events:none}
+@keyframes halo-respire{from{opacity:.55;transform:scale(.96)}to{opacity:1;transform:scale(1.06)}}
+@media (min-width:900px) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .hero::before{animation:halo-respire 14s ease-in-out infinite alternate;will-change:opacity,transform}
+}
 .hero .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:80px}
 .hero .eyebrow{color:var(--champagne-2)}
 .hero .eyebrow::before{background:var(--champagne-2)}
@@ -990,5 +996,43 @@ applyRandomPhotoPair('[data-random-gallery]', jg67PhotoPool, 'jg67-gallery-photo
 applyRandomPhotoPair('[data-random-excellence]', jg67PhotoPool, 'jg67-excellence-photos');
 </script>
 <script src="/conversion-tracking.js?v=20260703" defer></script>
+<script>
+/* Effets premium — desktop avec souris uniquement, jamais sous prefers-reduced-motion */
+(function(){
+  "use strict";
+  var mq = matchMedia('(min-width:900px) and (pointer:fine) and (prefers-reduced-motion: no-preference)');
+  if (!mq.matches) return;
+
+  /* Profondeur : le contenu du hero glisse légèrement plus lentement que le scroll */
+  var wrap = document.querySelector('.hero .wrap');
+  if (wrap) {
+    var ticking = false;
+    addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var y = Math.min(window.scrollY, 800);
+        wrap.style.transform = 'translate3d(0,' + (y * 0.10).toFixed(1) + 'px,0)';
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
+  /* Tilt 3D subtil sur les cartes services (max 2,4 degrés) */
+  document.querySelectorAll('.svc').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var r = card.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transitionDuration = '.18s';
+      card.style.transform = 'perspective(900px) rotateX(' + (-y * 2.4).toFixed(2) + 'deg) rotateY(' + (x * 2.4).toFixed(2) + 'deg) translateY(-8px)';
+    });
+    card.addEventListener('mouseleave', function () {
+      card.style.transitionDuration = '';
+      card.style.transform = '';
+    });
+  });
+})();
+</script>
 </body>
 </html>
