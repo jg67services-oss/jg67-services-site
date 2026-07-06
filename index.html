@@ -808,10 +808,19 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
               <option>Studio</option><option>T2</option><option>T3</option><option>Maison</option><option>Villa</option><option>Grand logement</option>
             </select>
           </div>
-          <div class="field"><label for="couchages">Nombre de couchages</label><input id="couchages" name="couchages" type="number" min="1" placeholder="ex : 4"></div>
-          <div class="field"><label for="canape-lit">Canapé-lit</label>
+          <div class="field"><label for="couchage-double">Nombre de couchages doubles</label>
+            <select id="couchage-double" name="couchages_double">
+              <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11+">&gt; 10</option>
+            </select>
+          </div>
+          <div class="field"><label for="couchage-simple">Nombre de couchages simples</label>
+            <select id="couchage-simple" name="couchages_simple">
+              <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11+">&gt; 10</option>
+            </select>
+          </div>
+          <div class="field"><label for="canape-lit">Nombre de canapés-lits</label>
             <select id="canape-lit" name="canape_lit">
-              <option>Sans canapé-lit</option><option>Avec canapé-lit</option><option>Je ne sais pas encore</option>
+              <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11+">&gt; 10</option>
             </select>
           </div>
           <div class="field"><label for="loc">Localisation (ville ou quartier)</label><input id="loc" name="localisation" type="text" required></div>
