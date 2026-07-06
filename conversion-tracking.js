@@ -136,7 +136,7 @@
       referrer: attr.referrer || "",
       page_path: window.location.pathname
     };
-    var forms = document.querySelectorAll("form[data-netlify]");
+    var forms = document.querySelectorAll('form[data-netlify], form[name="devis"]');
     for (var i = 0; i < forms.length; i++) {
       Object.keys(values).forEach(function (name) {
         var input = forms[i].querySelector('input[name="' + name + '"]');
