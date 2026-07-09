@@ -60,7 +60,21 @@
 .loc-cta{background:var(--nuit);padding:80px 0;text-align:center}
 .loc-cta h2{color:#fff;margin-bottom:16px}
 .loc-cta p{color:rgba(255,255,255,.68);font-size:.95rem;max-width:50ch;margin:0 auto 32px}
-@media(max-width:860px){.loc-content-grid,.loc-bottom-grid,.loc-int-grid{grid-template-columns:1fr}}
+.loc-stats{background:var(--blanc);padding:36px 0;border-bottom:1px solid var(--ligne)}
+.loc-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+.loc-stats-grid b{display:block;font-family:"Cormorant Garamond",serif;font-size:2.1rem;font-weight:600;color:var(--champagne);line-height:1.1}
+.loc-stats-grid span{font-size:.82rem;color:var(--gris);letter-spacing:.02em}
+.loc-galerie{background:var(--nuit);padding:80px 0}
+.loc-galerie h2{color:#fff}
+.loc-galerie .gal-sub{color:rgba(255,255,255,.6);font-size:.94rem;margin-top:10px}
+.loc-gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.loc-gal-grid figure{margin:0}
+.loc-gal-grid img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:3px;display:block}
+.loc-gal-grid figcaption{font-size:.82rem;color:rgba(255,255,255,.65);margin-top:10px;text-align:center}
+.loc-gal-link{text-align:center;margin-top:38px}
+.loc-gal-link a{color:var(--champagne-2);font-weight:500}
+.loc-gal-link a:hover{color:#fff}
+@media(max-width:860px){.loc-content-grid,.loc-bottom-grid,.loc-int-grid{grid-template-columns:1fr}.loc-gal-grid,.loc-stats-grid{grid-template-columns:1fr 1fr;gap:22px}}
 </style>
 </head>
 <body>
@@ -93,6 +107,14 @@
       </div>
     </div>
   </section>
+  <section class="loc-stats">
+    <div class="wrap loc-stats-grid">
+      <div class="reveal"><b>15</b><span>avis Google 5/5</span></div>
+      <div class="reveal d1"><b>40+</b><span>logements suivis</span></div>
+      <div class="reveal d2"><b>7j/7</b><span>interventions</span></div>
+      <div class="reveal d3"><b>24h</b><span>réponse devis</span></div>
+    </div>
+  </section>
   <section class="loc-content">
     <div class="wrap loc-content-grid">
       <div class="reveal">
@@ -116,6 +138,21 @@
         <div class="loc-int-card reveal d1"><h3>Linge hôtelier</h3><p>Mise en place du linge selon vos standards, lits dressés au niveau hôtelier, linge sale isolé et suivi des rotations.</p></div>
         <div class="loc-int-card reveal d2"><h3>Discrétion et contrôle</h3><p>Confidentialité des lieux et des accès, signalement immédiat des anomalies, rapport photo envoyé après chaque passage.</p></div>
       </div>
+    </div>
+  </section>
+  <section class="loc-galerie">
+    <div class="wrap">
+      <div class="sec-head reveal" style="text-align:center">
+        <h2>Le niveau de détail que nous livrons</h2>
+        <p class="gal-sub">Des photos réelles de nos missions, pas des images de banque.</p>
+      </div>
+      <div class="loc-gal-grid">
+        <figure class="reveal"><img src="img/chambre-parquet-point-hongrie.webp" width="1200" height="1600" loading="lazy" alt="Chambre au parquet point de Hongrie préparée par JG67 Services dans un bien haut de gamme à Strasbourg"><figcaption>Parquet point de Hongrie</figcaption></figure>
+        <figure class="reveal d1"><img src="img/sdb-douche-marbre.webp" width="1600" height="1600" loading="lazy" alt="Salle de bain en marbre nettoyée pour une location de luxe à Strasbourg"><figcaption>Douche marbre</figcaption></figure>
+        <figure class="reveal d2"><img src="img/sdb-baignoire-jacuzzi.webp" width="1200" height="1600" loading="lazy" alt="Baignoire jacuzzi entretenue dans un bien d'exception en courte durée"><figcaption>Baignoire jacuzzi</figcaption></figure>
+        <figure class="reveal d3"><img src="img/detail-serviette-noeud.webp" width="1152" height="2048" loading="lazy" alt="Finition hôtelière du linge, serviette nouée par JG67 Services"><figcaption>Finition hôtelière</figcaption></figure>
+      </div>
+      <p class="loc-gal-link"><a href="/galerie">Voir toute la galerie de nos prestations →</a></p>
     </div>
   </section>
   <section class="loc-bottom">
