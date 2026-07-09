@@ -157,7 +157,7 @@
 
 /* Pages spécialisées */
 .svc-pages { background:var(--lin) }
-.svc-pages-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:48px }
+.svc-pages-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:48px }
 .svc-page-link {
   display:block; background:var(--blanc); border:1px solid var(--ligne); border-radius:3px; padding:38px 34px;
   position:relative; overflow:hidden; transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s;
@@ -366,7 +366,7 @@ details.faq-item[open] summary { color:var(--champagne) }
       <div class="sec-head reveal">
         <span class="eyebrow">Prestations spécialisées</span>
         <h2>Pages dédiées à nos services</h2>
-        <p class="lead">Deux pages détaillent précisément notre positionnement de prestataire ménage, sans confusion avec une conciergerie complète.</p>
+        <p class="lead">Trois pages détaillent précisément notre positionnement de prestataire ménage, sans confusion avec une conciergerie complète.</p>
       </div>
       <div class="svc-pages-grid">
         <a class="svc-page-link reveal" href="/menage-airbnb-strasbourg">
@@ -377,6 +377,11 @@ details.faq-item[open] summary { color:var(--champagne) }
         <a class="svc-page-link reveal d1" href="/nettoyage-location-courte-duree-strasbourg">
           <h3>Nettoyage location courte durée Strasbourg</h3>
           <p>Nettoyage professionnel pour Airbnb, Booking, Abritel, meublés touristiques et appartements saisonniers.</p>
+          <span class="go">Consulter la page <i class="material-icons-outlined">arrow_forward</i></span>
+        </a>
+        <a class="svc-page-link reveal d2" href="/menage-villas-luxe-strasbourg">
+          <h3>Ménage villas de luxe Strasbourg</h3>
+          <p>Remise à blanc minutieuse, linge hôtelier et discrétion pour villas et biens d'exception loués en courte durée.</p>
           <span class="go">Consulter la page <i class="material-icons-outlined">arrow_forward</i></span>
         </a>
       </div>
