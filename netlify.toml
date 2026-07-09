@@ -46,6 +46,12 @@
   force = true
 
 [[redirects]]
+  from = "/menage-villas-luxe-strasbourg.html"
+  to = "/menage-villas-luxe-strasbourg"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/contact.html"
   to = "/contact"
   status = 301
