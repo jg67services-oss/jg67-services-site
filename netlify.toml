@@ -52,6 +52,18 @@
   force = true
 
 [[redirects]]
+  from = "/menage-location-moyenne-duree-strasbourg.html"
+  to = "/menage-location-moyenne-duree-strasbourg"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reglementation-location-courte-duree-strasbourg.html"
+  to = "/reglementation-location-courte-duree-strasbourg"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/contact.html"
   to = "/contact"
   status = 301
