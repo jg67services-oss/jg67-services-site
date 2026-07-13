@@ -158,3 +158,9 @@
   to = "/politique-confidentialite"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/cgv.html"
+  to = "/cgv"
+  status = 301
+  force = true
