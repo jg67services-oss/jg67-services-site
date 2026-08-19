@@ -130,7 +130,8 @@ header.scrolled nav.main a.active { color:var(--champagne) }
 header .btn { padding:10px 20px }
 
 /* ─── Burger mobile ─────────────────────────────────────── */
-.burger { display:none; background:none; border:none; color:#fff; font-size:1.6rem; cursor:pointer; line-height:1 }
+.burger { display:none; background:none; border:none; color:#fff; font-size:1.6rem; cursor:pointer; line-height:1;
+          width:44px; height:44px; place-items:center; padding:0 }
 header.scrolled .burger { color:var(--nuit) }
 
 /* ─── Mobile overlay ────────────────────────────────────── */
@@ -143,7 +144,8 @@ header.scrolled .burger { color:var(--nuit) }
 #mobile-overlay.open { opacity:1; visibility:visible; pointer-events:auto }
 .mob-close {
   align-self:flex-end; background:none; border:none;
-  color:rgba(255,255,255,.7); font-size:2rem; cursor:pointer; padding:4px; margin-bottom:40px; line-height:1;
+  color:rgba(255,255,255,.7); font-size:2rem; cursor:pointer; padding:0; margin-bottom:40px; line-height:1;
+  display:grid; place-items:center; width:44px; height:44px;
 }
 .mob-brand {
   font-family:var(--f-display); font-size:1.6rem; font-weight:700;
@@ -196,7 +198,7 @@ footer .contact .material-icons-outlined { font-size:1rem; color:var(--champagne
 /* ─── Responsive ────────────────────────────────────────── */
 @media(max-width:980px) {
   nav.main, header .btn { display:none }
-  .burger { display:block }
+  .burger { display:grid }
   .f-grid { grid-template-columns:1fr 1fr }
   section { padding:80px 0 }
 }
