@@ -2,4 +2,17 @@ User-agent: *
 Allow: /
 Disallow: /*backup*
 
+# Moteurs de recherche et assistants IA : accès explicite (veille site JG67, 13/11/2026)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Google-Extended
+User-agent: Bingbot
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /*backup*
+
 Sitemap: https://jg67services.fr/sitemap.xml

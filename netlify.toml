@@ -1,5 +1,7 @@
 [build]
   publish = "."
+  # Notes internes (briefs, schéma, htaccess) : jamais publiées (veille site du 13/11/2026). Ne touche ni aux pages, ni aux images, ni à llms.txt/robots.txt.
+  command = "rm -f ./*.md ./htaccess-*"
 
 # Redirection www → non-www
 [[redirects]]
