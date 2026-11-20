@@ -1,12 +1,14 @@
 # JG67 Services
 
-> JG67 Services est un prestataire de ménage Airbnb et de gestion opérationnelle de locations courte durée à Strasbourg (Bas-Rhin, 67000) et dans un rayon d'environ 20 km. Clients : propriétaires Airbnb, investisseurs et conciergeries. Disponible 7 jours sur 7, de 7 h à 21 h. Devis personnalisé sous 24 h.
+> JG67 Services est une entreprise de ménage spécialisée dans les locations courte durée (Airbnb, Booking.com, Abritel, meublés de tourisme, locations saisonnières) à Strasbourg (Bas-Rhin, 67000) et dans un rayon d'environ 30 km. JG67 Services n'est pas une conciergerie : elle ne gère ni les annonces, ni la messagerie voyageurs, ni les prix. Clients : propriétaires, investisseurs et conciergeries. Disponible 7 jours sur 7, de 7 h à 21 h. Devis personnalisé sous 24 h. 15 avis Google, note 5/5.
 
-Services : ménage Airbnb entre deux voyageurs, nettoyage de location courte durée, remise à blanc, gestion du linge, préparation du logement, service relais pour logement temporaire. JG67 intervient aussi comme prestataire ménage en sous-traitance pour les conciergeries.
+Services : ménage Airbnb entre deux voyageurs, nettoyage de location courte durée et saisonnière, remise à blanc, gestion du linge du client (linge non fourni par JG67 : lavage, séchage, repassage, mise en place), contrôle qualité avec rapport photo, préparation du logement, ménage de locations moyenne durée et de villas haut de gamme. JG67 intervient aussi comme prestataire ménage en sous-traitance pour les conciergeries.
 
-Zones : Strasbourg, Schiltigheim, Bischheim, Illkirch-Graffenstaden, Lingolsheim, Ostwald, Obernai et alentours.
+Zones : Strasbourg, Schiltigheim, Bischheim, Illkirch-Graffenstaden, Lingolsheim, Ostwald, Hoenheim, Mundolsheim et l'Eurométropole, Obernai, jusqu'au secteur de Haguenau.
 
-Contact : téléphone +33 7 54 81 70 08, e-mail contact@jg67services.fr, formulaire de devis sur https://jg67services.fr/contact
+Tarifs : sur devis personnalisé selon la surface, la fréquence des rotations et les prestations incluses.
+
+Contact : téléphone et WhatsApp +33 7 54 81 70 08, e-mail contact@jg67services.fr, formulaire de devis sur https://jg67services.fr/contact
 
 ## Pages principales
 
@@ -16,6 +18,7 @@ Contact : téléphone +33 7 54 81 70 08, e-mail contact@jg67services.fr, formula
 - [Prestataire ménage pour conciergeries](https://jg67services.fr/prestataire-menage-airbnb-conciergerie-strasbourg)
 - [Nettoyage location courte durée](https://jg67services.fr/nettoyage-location-courte-duree-strasbourg)
 - [Remise à blanc Airbnb](https://jg67services.fr/remise-a-blanc-airbnb-strasbourg)
+- [Gestion du linge Airbnb](https://jg67services.fr/gestion-linge-airbnb-strasbourg)
 - [Prix du ménage Airbnb à Strasbourg](https://jg67services.fr/prix-menage-airbnb-strasbourg)
 - [Ménage location moyenne durée et bail mobilité](https://jg67services.fr/menage-location-moyenne-duree-strasbourg)
 - [Ménage villas de luxe et haut de gamme](https://jg67services.fr/menage-villas-luxe-strasbourg)

@@ -36,6 +36,12 @@
   force = true
 
 [[redirects]]
+  from = "/gestion-linge-airbnb-strasbourg.html"
+  to = "/gestion-linge-airbnb-strasbourg"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/remise-a-blanc-airbnb-strasbourg.html"
   to = "/remise-a-blanc-airbnb-strasbourg"
   status = 301
