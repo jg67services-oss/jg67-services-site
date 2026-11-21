@@ -162,7 +162,7 @@
     '@keyframes nh-ca{0%,100%{transform:none}25%{transform:translate(2px,-3px)}50%{transform:translate(4px,0)}75%{transform:translate(2px,3px)}}' +
     '@keyframes nh-vs{from{transform:translateX(-16px)}to{transform:translateX(36px)}}' +
     '@keyframes nh-pn{0%{transform:translateY(70px)}11%{transform:translateY(-4px)}14%{transform:translateY(0)}20%{transform:translateY(0) rotate(5deg)}24%{transform:translateY(0) rotate(-2deg)}28%,92%{transform:translateY(0) rotate(0)}100%{transform:translateY(70px)}}' +
-    '@keyframes nh-po{from{opacity:0;transform:translateY(6px) rotate(35deg)}to{opacity:1;transform:none}}' +
+    '@keyframes nh-sg{0%{opacity:0;transform:translateY(6px) rotate(35deg)}12%{opacity:1;transform:rotate(0)}22%{transform:rotate(-13deg)}32%{transform:rotate(9deg)}42%{transform:rotate(-13deg)}52%{transform:rotate(9deg)}62%{transform:rotate(0)}82%,100%{opacity:1;transform:rotate(-95deg)}}' +
     '@keyframes nh-st{0%{transform:scale(0) rotate(0);opacity:0}55%{transform:scale(1.25) rotate(50deg);opacity:1}100%{transform:scale(1) rotate(90deg);opacity:1}}';
 
   function deja() { try { return sessionStorage.getItem(VU); } catch (e) { return '1'; } }
@@ -214,9 +214,11 @@
       /* ciel et sol */
       '<g fill="#F3E3C0" opacity=".5"><circle cx="28" cy="24" r="1.2"/><circle cx="74" cy="12" r=".9"/><circle cx="122" cy="30" r="1.1"/><circle cx="168" cy="14" r=".9"/><circle cx="326" cy="52" r="1"/></g>' +
       '<path d="M0 128h340v22H0z" fill="#fff" opacity=".07"/><path d="M0 128h340" fill="none" stroke="#B7935B" stroke-width="1" opacity=".55"/>' +
-      /* Scène 3 : le Père Noël, caché derrière le toit, monte, hoche la tête et lève le pouce */
+      /* Scène 3 : le Père Noël, caché derrière le toit, monte, hoche la tête et salue de la main */
       '<g clip-path="url(#nh-ciel)"><g style="transform-origin:250px 60px;' + an('nh-pn', 5.3, 11.2) + '"><g transform="translate(122.2 -18.4) scale(1.8)" fill="url(#nh-or)">' + CORPS +
-      '<g style="transform-origin:62px 46px;' + an('nh-po', 0.45, 12.1, 'cubic-bezier(.3,1.5,.5,1)') + '"><path d="M62 47l-9-10" fill="none" stroke="url(#nh-or)" stroke-width="4.5"/><circle cx="52.5" cy="36" r="3.3" fill="#F0DDB4"/><path d="M52.5 33.5v-5.5" fill="none" stroke="#F0DDB4" stroke-width="2.6"/></g>' +
+      /* salut de la main ouverte (moufle blanche, pouce sur le côté), puis le bras redescend vers la ceinture */
+      '<g style="transform-origin:62px 47px;' + an('nh-sg', 3.6, 12.1) + '"><path d="M62 47l-9-10.5" fill="none" stroke="url(#nh-or)" stroke-width="4.5"/>' +
+      '<ellipse cx="50.6" cy="33.6" rx="3.5" ry="4.4" transform="rotate(-40 50.6 33.6)" fill="#fff"/><circle cx="54.3" cy="32.3" r="1.7" fill="#fff"/></g>' +
       TETE + '</g></g></g>' +
       /* le logement : petite maison à colombages */
       '<rect x="290" y="44" width="11" height="24" fill="#8E6F3F"/>' +
