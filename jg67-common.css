@@ -121,7 +121,12 @@ header.scrolled nav.main a.active { color:var(--champagne) }
 }
 .btn:hover::before { transform:scaleX(1); transform-origin:left }
 .btn:hover { color:var(--nuit) }
-.btn:active { transform:translateY(1px) }
+.btn:active { transform:translateY(1px) scale(.98) }
+/* Retour tactile (iPhone : pas de survol) */
+.btn,.wa { -webkit-tap-highlight-color:transparent }
+.btn { transition:color .4s var(--ease),transform .18s var(--ease) }
+.wa:active { transform:scale(.93) }
+@media(prefers-reduced-motion:reduce){ .btn { transition:color .4s } }
 .btn.solid { background:var(--champagne); color:var(--nuit) }
 .btn.solid::before { background:var(--champagne-2) }
 .btn.dark { border-color:var(--nuit); color:var(--nuit) }

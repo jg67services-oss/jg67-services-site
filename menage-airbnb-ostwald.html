@@ -43,6 +43,6 @@
 <script>const header=document.getElementById('header');window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>40),{passive:true});header.classList.toggle('scrolled',window.scrollY>40);const burgerBtn=document.getElementById('burger-btn'),overlay=document.getElementById('mobile-overlay'),mobClose=document.getElementById('mob-close');burgerBtn.addEventListener('click',()=>{overlay.classList.add('open');document.body.style.overflow='hidden';});mobClose.addEventListener('click',()=>{overlay.classList.remove('open');document.body.style.overflow='';});overlay.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{overlay.classList.remove('open');document.body.style.overflow='';}));const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));</script>
 <script src="/conversion-tracking.js?v=20260703" defer></script>
 <script src="/noel.js?v=20261121e" defer></script>
-<script src="/cta-mobile.js?v=20261120" defer></script>
+<script src="/cta-mobile.js?v=20261121" defer></script>
 </body>
 </html>

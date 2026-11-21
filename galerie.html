@@ -126,6 +126,12 @@
   transition:transform .6s var(--ease);
 }
 .gallery-item:hover img { transform:scale(1.08) }
+/* Révélation douce des photos au défilement : la classe .gr est posée par le script sur les photos sous l'écran, puis retirée */
+.gallery-item.gr { opacity:0; transform:translateY(22px); transition:opacity .8s var(--ease) var(--gd,0s),transform .8s var(--ease) var(--gd,0s) }
+.gallery-item.gr img { transform:scale(1.07); transition:transform 1.4s var(--ease) var(--gd,0s) }
+.gallery-item.gr.in { opacity:1; transform:none }
+.gallery-item.gr.in img { transform:none }
+@media(prefers-reduced-motion:reduce){ .gallery-item.gr,.gallery-item.gr img { opacity:1; transform:none; transition:none } }
 .gallery-item::after {
   content:""; position:absolute; inset:0; border-radius:3px;
   border:2px solid transparent; pointer-events:none; z-index:2;
@@ -562,6 +568,22 @@ const io = new IntersectionObserver(entries => {
 }, {threshold:.1});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+/* Révélation douce des photos : seules celles sous l'écran sont masquées (rien n'est caché sans script ni si les animations sont réduites) */
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const ioG = new IntersectionObserver(entries => {
+    let k = 0;
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      const el = e.target, d = Math.min(k++, 5) * 0.07;
+      el.style.setProperty('--gd', d + 's'); el.classList.add('in'); ioG.unobserve(el);
+      setTimeout(() => { el.classList.remove('gr','in'); el.style.removeProperty('--gd'); }, 1700 + d * 1000);
+    });
+  }, {threshold:.08});
+  document.querySelectorAll('.gallery-item').forEach(el => {
+    if(el.getBoundingClientRect().top > innerHeight){ el.classList.add('gr'); ioG.observe(el); }
+  });
+}
+
 /* Filtres */
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -636,6 +658,6 @@ document.addEventListener('keydown', e => {
 </script>
 <script src="/conversion-tracking.js?v=20260703" defer></script>
 <script src="/noel.js?v=20261121e" defer></script>
-<script src="/cta-mobile.js?v=20261120" defer></script>
+<script src="/cta-mobile.js?v=20261121" defer></script>
 </body>
 </html>

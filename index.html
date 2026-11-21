@@ -348,6 +348,11 @@ section{padding:110px 0}
 .step{position:relative;text-align:center;padding:0 8px}
 .step .n{position:relative;z-index:1;width:62px;height:62px;margin:0 auto 24px;display:grid;place-items:center;border-radius:50%;background:var(--blanc);border:1px solid var(--ligne);font-family:var(--f-display);font-size:1.5rem;font-weight:700;color:var(--champagne);transition:background .5s,color .5s,border-color .5s,transform .5s var(--ease)}
 .step:hover .n{background:var(--nuit);color:var(--champagne-2);border-color:var(--nuit);transform:scale(1.08)}
+/* Les numéros s'allument un à un au passage du fil doré (classe .fil posée par le script, délais remis à zéro ensuite pour le survol) */
+.step:nth-child(1){--sd:.1s}.step:nth-child(2){--sd:.75s}.step:nth-child(3){--sd:1.4s}.step:nth-child(4){--sd:2.05s}
+.steps.fil .step .n{border-color:var(--champagne);box-shadow:0 0 0 5px rgba(183,147,91,.1);transition:background .5s,color .5s,border-color .6s var(--ease) var(--sd),box-shadow .9s var(--ease) var(--sd),transform .5s var(--ease)}
+.steps.fil-ok .step{--sd:0s}
+.steps.fil .step:hover .n{border-color:var(--nuit)}
 .step h3{font-size:1.25rem;margin-bottom:8px}
 .step p{color:var(--gris);font-size:.92rem}
 
@@ -499,7 +504,13 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
   .presta::after,.t-card::after,.svc::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(183,147,91,.14),transparent 62%);opacity:0;transition:opacity .5s;pointer-events:none}
   .presta:hover::after,.t-card:hover::after,.svc:hover::after{opacity:1}
 }
-@media(prefers-reduced-motion:reduce){.hero-card{opacity:1!important}.gal-item img,.exc-imgs img{clip-path:none!important}}
+/* Retour tactile (iPhone : pas de survol) : les boutons et les cartes répondent au doigt */
+.btn,.wa,.svc{-webkit-tap-highlight-color:transparent}
+.btn{transition:color .4s var(--ease),transform .18s var(--ease)}
+.btn:active{transform:translateY(1px) scale(.98)}
+.wa:active{transform:scale(.93)}
+@media(hover:none){.svc:active,.presta:active{transform:scale(.985);transition-duration:.18s}}
+@media(prefers-reduced-motion:reduce){.hero-card{opacity:1!important}.gal-item img,.exc-imgs img{clip-path:none!important}.steps.fil .step .n{transition:none}.btn{transition:color .4s}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script defer src="/cookie-consent.js?v=20260703"></script>
@@ -1144,7 +1155,7 @@ counters.forEach(c=>ioCount.observe(c));
 const steps=document.getElementById('steps');
 if(steps){
   new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){steps.style.setProperty('--thread',1);}});
+    entries.forEach(e=>{if(e.isIntersecting&&!steps.classList.contains('fil')){steps.style.setProperty('--thread',1);steps.classList.add('fil');setTimeout(()=>steps.classList.add('fil-ok'),3200);}});
   },{threshold:.3}).observe(steps);
 }
 
@@ -1210,7 +1221,7 @@ applyRandomPhotoPair('[data-random-excellence]', jg67PhotoPool, 'jg67-excellence
 </script>
 <script src="/conversion-tracking.js?v=20260703" defer></script>
 <script src="/noel.js?v=20261121e" defer></script>
-<script src="/cta-mobile.js?v=20261120" defer></script>
+<script src="/cta-mobile.js?v=20261121" defer></script>
 <script>
 /* Effets premium — desktop avec souris uniquement, jamais sous prefers-reduced-motion */
 (function(){
