@@ -306,6 +306,8 @@ section{padding:110px 0}
 .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px}
 .gal-item{position:relative;overflow:hidden;border-radius:3px;aspect-ratio:4/3}
 .gal-item img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.2s var(--ease)}
+/* Retouche légère des photos (même réglage courant que la galerie) */
+.gal-item img,.exc-imgs img{filter:brightness(1.03) contrast(1.04) saturate(1.04)}
 .gal-item:hover img{transform:scale(1.1)}
 .gal-item figcaption{position:absolute;left:0;bottom:0;width:100%;padding:26px 26px 20px;background:linear-gradient(transparent,rgba(10,22,32,.85));font-family:var(--f-display);font-size:1.25rem;font-style:italic;letter-spacing:.02em;opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
 .gal-item:hover figcaption{opacity:1;transform:none}
@@ -424,8 +426,9 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
 .wa{position:fixed;right:26px;bottom:26px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;color:#fff;box-shadow:0 14px 34px -10px rgba(37,211,102,.55);transition:transform .4s var(--ease)}
 .wa:hover{transform:scale(1.1) rotate(6deg)}
 .wa svg{width:28px;height:28px;fill:#fff}
-.wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid #25D366;animation:pulse 2.4s var(--ease) infinite}
-@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+.wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid #25D366;animation:pulse 7s var(--ease) infinite}
+/* halo du bouton WhatsApp : une onde douce toutes les 7 s (au lieu d'une onde continue) */
+@keyframes pulse{0%{transform:scale(1);opacity:.6}30%,100%{transform:scale(1.6);opacity:0}}
 
 /* ---------- Responsive ---------- */
 @media(max-width:980px){
@@ -476,7 +479,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
 }
 /* Ruban défilant des prestations */
 .ruban{background:var(--nuit);border-top:1px solid rgba(255,255,255,.08);overflow:hidden;padding:22px 0}
-.ruban-in{display:flex;width:max-content;animation:ruban 52s linear infinite}
+.ruban-in{display:flex;width:max-content;animation:ruban 84s linear infinite}
 .ruban:hover .ruban-in{animation-play-state:paused}
 .ruban span{font-family:var(--f-display);font-style:italic;font-size:1.3rem;color:rgba(255,255,255,.8);white-space:nowrap;padding-left:30px}
 .ruban span::after{content:"\2726";font-style:normal;font-size:.62rem;color:var(--champagne);margin-left:30px;vertical-align:middle}
@@ -510,7 +513,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
 .btn:active{transform:translateY(1px) scale(.98)}
 .wa:active{transform:scale(.93)}
 @media(hover:none){.svc:active,.presta:active{transform:scale(.985);transition-duration:.18s}}
-@media(prefers-reduced-motion:reduce){.hero-card{opacity:1!important}.gal-item img,.exc-imgs img{clip-path:none!important}.steps.fil .step .n{transition:none}.btn{transition:color .4s}}
+@media(prefers-reduced-motion:reduce){.hero-card{opacity:1!important}.gal-item img,.exc-imgs img{clip-path:none!important}.steps.fil .step .n{transition:none}.btn{transition:color .4s}.ruban-in,.wa::after{animation:none}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script defer src="/cookie-consent.js?v=20260703"></script>
