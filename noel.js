@@ -9,9 +9,9 @@
   if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   var nav = navigator, mobile = innerWidth < 700;
-  /* Appareil modeste ou économie de données : flocons seuls, traîneau sans traînée */
-  var leger = (nav.hardwareConcurrency && nav.hardwareConcurrency <= 2) || (nav.deviceMemory && nav.deviceMemory <= 2) ||
-    (nav.connection && nav.connection.saveData);
+  /* Appareil modeste ou économie de données : flocons seuls, traîneau sans traînée, pas d'histoire.
+     On ne se fie plus à « 2 cœurs ou moins » : Safari sur iPhone annonce 2 cœurs quel que soit le modèle, ce qui privait tous les iPhone de l'histoire. */
+  var leger = nav.hardwareConcurrency === 1 || (nav.deviceMemory && nav.deviceMemory <= 2) || (nav.connection && nav.connection.saveData);
   var n = leger ? 6 : mobile ? 10 : 20, R = Math.random;
   var ETOILE = 'clip-path:polygon(50% 0,58% 42%,100% 50%,58% 58%,50% 100%,42% 58%,0 50%,42% 42%)';
 
