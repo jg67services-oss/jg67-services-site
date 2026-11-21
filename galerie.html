@@ -126,6 +126,20 @@
   transition:transform .6s var(--ease);
 }
 .gallery-item:hover img { transform:scale(1.08) }
+/* Retouche légère, adaptée à chaque photo après mesure (luminosité, saturation, dominante) : data-ton = s sombre, s2 sombre et déjà colorée,
+   c déjà claire, f dominante froide, w dominante chaude ou très colorée ; sans attribut = réglage courant. La visionneuse reprend le même réglage. */
+.gallery-item img, #lightbox-img { filter:brightness(1.03) contrast(1.04) saturate(1.04) }
+.gallery-item[data-ton="s"] img, #lightbox-img[data-ton="s"] { filter:brightness(1.08) contrast(1.03) saturate(1.03) }
+.gallery-item[data-ton="s2"] img, #lightbox-img[data-ton="s2"] { filter:brightness(1.08) contrast(1.02) }
+.gallery-item[data-ton="c"] img, #lightbox-img[data-ton="c"] { filter:contrast(1.05) saturate(1.04) }
+.gallery-item[data-ton="f"] img, #lightbox-img[data-ton="f"] { filter:brightness(1.03) contrast(1.03) sepia(.07) saturate(1.06) }
+.gallery-item[data-ton="w"] img, #lightbox-img[data-ton="w"] { filter:brightness(1.02) contrast(1.03) saturate(.95) }
+/* Révélation douce des photos au défilement : la classe .gr est posée par le script sur les photos sous l'écran, puis retirée */
+.gallery-item.gr { opacity:0; transform:translateY(22px); transition:opacity .8s var(--ease) var(--gd,0s),transform .8s var(--ease) var(--gd,0s) }
+.gallery-item.gr img { transform:scale(1.07); transition:transform 1.4s var(--ease) var(--gd,0s) }
+.gallery-item.gr.in { opacity:1; transform:none }
+.gallery-item.gr.in img { transform:none }
+@media(prefers-reduced-motion:reduce){ .gallery-item.gr,.gallery-item.gr img { opacity:1; transform:none; transition:none } }
 .gallery-item::after {
   content:""; position:absolute; inset:0; border-radius:3px;
   border:2px solid transparent; pointer-events:none; z-index:2;
@@ -293,7 +307,7 @@
 
       <!-- Grid -->
       <div id="gallery-grid">
-        <div class="gallery-item featured-hero" data-category="chambre" data-index="0">
+        <div class="gallery-item featured-hero" data-category="chambre" data-index="0" data-ton="s2">
           <img src="img/gal/chambre-theme-sous-marin-etoilee.webp" alt="Chambre thème sous-marin avec ciel étoilé – Ménage Airbnb Strasbourg">
           <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
         </div>
@@ -321,7 +335,7 @@
           <picture><source srcset="img/gal/new-41249015.webp" type="image/webp"><img src="img/gal/new-41249015.jpg" alt="Cuisine équipée avec crédence métro et coin repas scandinave – Ménage Airbnb Strasbourg" loading="lazy"></picture>
           <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="chambre" data-index="36">
+        <div class="gallery-item" data-category="chambre" data-index="36" data-ton="c">
           <picture><source srcset="img/gal/new-IMG_6386.webp" type="image/webp"><img src="img/gal/new-IMG_6386.jpg" alt="Chambre avec lit bois et linge hôtelier préparé – Location courte durée Strasbourg" loading="lazy"></picture>
           <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
         </div>
@@ -329,11 +343,11 @@
           <picture><source srcset="img/gal/new-a97189f2.webp" type="image/webp"><img src="img/gal/new-a97189f2.jpg" alt="Salle de bain avec douche, WC suspendu et carreaux de ciment – JG67 Services Strasbourg" loading="lazy"></picture>
           <div class="gallery-overlay"><span class="gallery-badge">Salle de bain</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="espace-de-vie" data-index="38">
+        <div class="gallery-item" data-category="espace-de-vie" data-index="38" data-ton="s">
           <picture><source srcset="img/gal/new-56af54b7.webp" type="image/webp"><img src="img/gal/new-56af54b7.jpg" alt="Studio avec canapé gris et kitchenette équipée – Location courte durée Strasbourg" loading="lazy"></picture>
           <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="chambre" data-index="39">
+        <div class="gallery-item" data-category="chambre" data-index="39" data-ton="f">
           <picture><source srcset="img/gal/new-IMG_6420.webp" type="image/webp"><img src="img/gal/new-IMG_6420.jpg" alt="Chambre lumineuse avec serviettes roulées style hôtelier – JG67 Services Strasbourg" loading="lazy"></picture>
           <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
         </div>
@@ -341,11 +355,11 @@
           <picture><source srcset="img/gal/new-b09cdd36.webp" type="image/webp"><img src="img/gal/new-b09cdd36.jpg" alt="Douche carrelage métro blanc et sol carreaux de ciment après nettoyage – Strasbourg" loading="lazy"></picture>
           <div class="gallery-overlay"><span class="gallery-badge">Salle de bain</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="espace-de-vie" data-index="41">
+        <div class="gallery-item" data-category="espace-de-vie" data-index="41" data-ton="w">
           <picture><source srcset="img/gal/new-a7abd75f.webp" type="image/webp"><img src="img/gal/new-a7abd75f.jpg" alt="Cuisine équipée avec évier granit noir et plan de travail bois – JG67 Services Strasbourg" loading="lazy"></picture>
           <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="chambre" data-index="42">
+        <div class="gallery-item" data-category="chambre" data-index="42" data-ton="s">
           <picture><source srcset="img/gal/new-53d3d93d.webp" type="image/webp"><img src="img/gal/new-53d3d93d.jpg" alt="Chambre cosy avec tête de lit grise et linge hôtelier – JG67 Services Strasbourg" loading="lazy"></picture>
           <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
         </div>
@@ -365,7 +379,7 @@
           <picture><source srcset="img/gal/new-cde1e090.webp" type="image/webp"><img src="img/gal/new-cde1e090.jpg" alt="Chambre avec parure paisley et coussins rouges – Ménage Airbnb Strasbourg JG67" loading="lazy"></picture>
           <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="chambre" data-index="47">
+        <div class="gallery-item featured-tall" data-category="chambre" data-index="47" data-ton="c">
           <picture><source srcset="img/gal/new-photo-avril-1.webp" type="image/webp"><img src="img/gal/new-photo-avril-1.jpg" alt="Chambre élégante avec tête de lit capitonnée et touches design – JG67 Services Strasbourg" loading="lazy"></picture>
           <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
         </div>
@@ -373,11 +387,11 @@
           <picture><source srcset="img/gal/new-5cf1cd05.webp" type="image/webp"><img src="img/gal/new-5cf1cd05.jpg" alt="Chambre avec tête de lit grise et parure vert d'eau – Ménage Airbnb Strasbourg JG67" loading="lazy"></picture>
           <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item featured-tall" data-category="salle-de-bain" data-index="1">
+        <div class="gallery-item featured-tall" data-category="salle-de-bain" data-index="1" data-ton="w">
           <img src="img/gal/sdb-baignoire-jacuzzi.webp" alt="Baignoire jacuzzi d'angle après nettoyage – Salle de bain Airbnb Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Salle de bain</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="salle-de-bain" data-index="2">
+        <div class="gallery-item" data-category="salle-de-bain" data-index="2" data-ton="c">
           <img src="img/gal/sdb-douche-marbre.webp" alt="Douche italienne carrelage effet marbre – Salle de bain Airbnb Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Salle de bain</span><span class="gallery-voir">Voir</span></div>
         </div>
@@ -385,11 +399,11 @@
           <img src="img/gal/chambre-boheme-sous-combles.webp" alt="Chambre bohème sous les combles préparée par JG67 Services Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item featured-wide" data-category="chambre" data-index="4">
+        <div class="gallery-item featured-wide" data-category="chambre" data-index="4" data-ton="s">
           <img src="img/gal/lit-rond-bleu-cygnes-serviettes.webp" alt="Lit rond avec décoration serviettes en cygnes – Ménage Airbnb Strasbourg JG67 Services" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="chambre" data-index="5">
+        <div class="gallery-item" data-category="chambre" data-index="5" data-ton="f">
           <img src="img/gal/lit-serviettes-waffle-ardoise.webp" alt="Lit préparé avec serviettes roulées style hôtelier – JG67 Services Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
         </div>
@@ -397,23 +411,23 @@
           <img src="img/gal/sdb-double-vasque-ensemble.webp" alt="Salle de bain double vasque après remise à blanc – JG67 Services Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Salle de bain</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="chambre" data-index="7">
+        <div class="gallery-item" data-category="chambre" data-index="7" data-ton="w">
           <img src="img/gal/lit-parure-florale-bleue.webp" alt="Parure de lit fleurie bleue après ménage Airbnb – JG67 Services Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="chambre" data-index="8">
+        <div class="gallery-item" data-category="chambre" data-index="8" data-ton="w">
           <img src="img/gal/chambre-twin-verte-parquet.webp" alt="Chambre twin avec parure verte préparée pour location courte durée – Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="salle-de-bain" data-index="9">
+        <div class="gallery-item" data-category="salle-de-bain" data-index="9" data-ton="c">
           <img src="img/gal/sdb-douche-colonne-beige.webp" alt="Douche avec colonne chromée – Nettoyage salle de bain location Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Salle de bain</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="chambre" data-index="10">
+        <div class="gallery-item" data-category="chambre" data-index="10" data-ton="w">
           <img src="img/gal/chambre-parquet-point-hongrie.webp" alt="Chambre double avec parquet point de Hongrie après remise à blanc – JG67 Services" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Chambre</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="salle-de-bain" data-index="11">
+        <div class="gallery-item" data-category="salle-de-bain" data-index="11" data-ton="f">
           <img src="img/gal/sdb-vasque-sous-combles.webp" alt="Meuble vasque sous les combles préparé – JG67 Services Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Salle de bain</span><span class="gallery-voir">Voir</span></div>
         </div>
@@ -425,11 +439,11 @@
           <img src="img/gal/cuisine-ouverte-plan-noir.webp" alt="Cuisine ouverte avec plan noir nettoyée pour Airbnb – JG67 Services Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="espace-de-vie" data-index="14">
+        <div class="gallery-item" data-category="espace-de-vie" data-index="14" data-ton="s">
           <img src="img/gal/salon-lumineux-triple-fenetre.webp" alt="Salon lumineux triple fenêtre après ménage Airbnb Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item" data-category="detail" data-index="15">
+        <div class="gallery-item" data-category="detail" data-index="15" data-ton="w">
           <img src="img/gal/detail-serviette-noeud.webp" alt="Détail serviette pliée en nœud papillon – Finitions ménage Airbnb Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Détail</span><span class="gallery-voir">Voir</span></div>
         </div>
@@ -437,7 +451,7 @@
           <img src="img/salon-boheme-voilages.webp" alt="Salon bohème voilages blancs et guirlandes – Logement Airbnb Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
         </div>
-        <div class="gallery-item featured-tall" data-category="espace-de-vie" data-index="26">
+        <div class="gallery-item featured-tall" data-category="espace-de-vie" data-index="26" data-ton="f">
           <img src="img/loft-mezzanine-canapes.webp" alt="Loft mezzanine canapés anthracite et mur planches – Location courte durée Strasbourg" loading="lazy">
           <div class="gallery-overlay"><span class="gallery-badge">Espace de vie</span><span class="gallery-voir">Voir</span></div>
         </div>
@@ -562,6 +576,22 @@ const io = new IntersectionObserver(entries => {
 }, {threshold:.1});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+/* Révélation douce des photos : seules celles sous l'écran sont masquées (rien n'est caché sans script ni si les animations sont réduites) */
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const ioG = new IntersectionObserver(entries => {
+    let k = 0;
+    entries.forEach(e => {
+      if(!e.isIntersecting) return;
+      const el = e.target, d = Math.min(k++, 5) * 0.07;
+      el.style.setProperty('--gd', d + 's'); el.classList.add('in'); ioG.unobserve(el);
+      setTimeout(() => { el.classList.remove('gr','in'); el.style.removeProperty('--gd'); }, 1700 + d * 1000);
+    });
+  }, {threshold:.08});
+  document.querySelectorAll('.gallery-item').forEach(el => {
+    if(el.getBoundingClientRect().top > innerHeight){ el.classList.add('gr'); ioG.observe(el); }
+  });
+}
+
 /* Filtres */
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -594,6 +624,7 @@ function openLightbox(index) {
   const img = items[index].querySelector('img');
   lbImg.src = img.src;
   lbImg.alt = img.alt;
+  lbImg.dataset.ton = items[index].dataset.ton || '';
   lbCtr.textContent = `${index + 1} / ${items.length}`;
   lb.classList.add('active');
   document.body.style.overflow = 'hidden';
@@ -635,7 +666,7 @@ document.addEventListener('keydown', e => {
 });
 </script>
 <script src="/conversion-tracking.js?v=20260703" defer></script>
-<script src="/noel.js?v=20261120b" defer></script>
-<script src="/cta-mobile.js?v=20261120" defer></script>
+<script src="/noel.js?v=20261121f" defer></script>
+<script src="/cta-mobile.js?v=20261121" defer></script>
 </body>
 </html>

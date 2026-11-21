@@ -306,6 +306,8 @@ section{padding:110px 0}
 .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px}
 .gal-item{position:relative;overflow:hidden;border-radius:3px;aspect-ratio:4/3}
 .gal-item img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.2s var(--ease)}
+/* Retouche légère des photos (même réglage courant que la galerie) */
+.gal-item img,.exc-imgs img{filter:brightness(1.03) contrast(1.04) saturate(1.04)}
 .gal-item:hover img{transform:scale(1.1)}
 .gal-item figcaption{position:absolute;left:0;bottom:0;width:100%;padding:26px 26px 20px;background:linear-gradient(transparent,rgba(10,22,32,.85));font-family:var(--f-display);font-size:1.25rem;font-style:italic;letter-spacing:.02em;opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
 .gal-item:hover figcaption{opacity:1;transform:none}
@@ -348,6 +350,11 @@ section{padding:110px 0}
 .step{position:relative;text-align:center;padding:0 8px}
 .step .n{position:relative;z-index:1;width:62px;height:62px;margin:0 auto 24px;display:grid;place-items:center;border-radius:50%;background:var(--blanc);border:1px solid var(--ligne);font-family:var(--f-display);font-size:1.5rem;font-weight:700;color:var(--champagne);transition:background .5s,color .5s,border-color .5s,transform .5s var(--ease)}
 .step:hover .n{background:var(--nuit);color:var(--champagne-2);border-color:var(--nuit);transform:scale(1.08)}
+/* Les numéros s'allument un à un au passage du fil doré (classe .fil posée par le script, délais remis à zéro ensuite pour le survol) */
+.step:nth-child(1){--sd:.1s}.step:nth-child(2){--sd:.75s}.step:nth-child(3){--sd:1.4s}.step:nth-child(4){--sd:2.05s}
+.steps.fil .step .n{border-color:var(--champagne);box-shadow:0 0 0 5px rgba(183,147,91,.1);transition:background .5s,color .5s,border-color .6s var(--ease) var(--sd),box-shadow .9s var(--ease) var(--sd),transform .5s var(--ease)}
+.steps.fil-ok .step{--sd:0s}
+.steps.fil .step:hover .n{border-color:var(--nuit)}
 .step h3{font-size:1.25rem;margin-bottom:8px}
 .step p{color:var(--gris);font-size:.92rem}
 
@@ -419,8 +426,9 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
 .wa{position:fixed;right:26px;bottom:26px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;color:#fff;box-shadow:0 14px 34px -10px rgba(37,211,102,.55);transition:transform .4s var(--ease)}
 .wa:hover{transform:scale(1.1) rotate(6deg)}
 .wa svg{width:28px;height:28px;fill:#fff}
-.wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid #25D366;animation:pulse 2.4s var(--ease) infinite}
-@keyframes pulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+.wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid #25D366;animation:pulse 7s var(--ease) infinite}
+/* halo du bouton WhatsApp : une onde douce toutes les 7 s (au lieu d'une onde continue) */
+@keyframes pulse{0%{transform:scale(1);opacity:.6}30%,100%{transform:scale(1.6);opacity:0}}
 
 /* ---------- Responsive ---------- */
 @media(max-width:980px){
@@ -471,7 +479,7 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
 }
 /* Ruban défilant des prestations */
 .ruban{background:var(--nuit);border-top:1px solid rgba(255,255,255,.08);overflow:hidden;padding:22px 0}
-.ruban-in{display:flex;width:max-content;animation:ruban 52s linear infinite}
+.ruban-in{display:flex;width:max-content;animation:ruban 84s linear infinite}
 .ruban:hover .ruban-in{animation-play-state:paused}
 .ruban span{font-family:var(--f-display);font-style:italic;font-size:1.3rem;color:rgba(255,255,255,.8);white-space:nowrap;padding-left:30px}
 .ruban span::after{content:"\2726";font-style:normal;font-size:.62rem;color:var(--champagne);margin-left:30px;vertical-align:middle}
@@ -499,7 +507,13 @@ footer .contact .material-icons-outlined{font-size:1.05rem;color:var(--champagne
   .presta::after,.t-card::after,.svc::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(183,147,91,.14),transparent 62%);opacity:0;transition:opacity .5s;pointer-events:none}
   .presta:hover::after,.t-card:hover::after,.svc:hover::after{opacity:1}
 }
-@media(prefers-reduced-motion:reduce){.hero-card{opacity:1!important}.gal-item img,.exc-imgs img{clip-path:none!important}}
+/* Retour tactile (iPhone : pas de survol) : les boutons et les cartes répondent au doigt */
+.btn,.wa,.svc{-webkit-tap-highlight-color:transparent}
+.btn{transition:color .4s var(--ease),transform .18s var(--ease)}
+.btn:active{transform:translateY(1px) scale(.98)}
+.wa:active{transform:scale(.93)}
+@media(hover:none){.svc:active,.presta:active{transform:scale(.985);transition-duration:.18s}}
+@media(prefers-reduced-motion:reduce){.hero-card{opacity:1!important}.gal-item img,.exc-imgs img{clip-path:none!important}.steps.fil .step .n{transition:none}.btn{transition:color .4s}.ruban-in,.wa::after{animation:none}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script defer src="/cookie-consent.js?v=20260703"></script>
@@ -1144,7 +1158,7 @@ counters.forEach(c=>ioCount.observe(c));
 const steps=document.getElementById('steps');
 if(steps){
   new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){steps.style.setProperty('--thread',1);}});
+    entries.forEach(e=>{if(e.isIntersecting&&!steps.classList.contains('fil')){steps.style.setProperty('--thread',1);steps.classList.add('fil');setTimeout(()=>steps.classList.add('fil-ok'),3200);}});
   },{threshold:.3}).observe(steps);
 }
 
@@ -1209,8 +1223,8 @@ applyRandomPhotoPair('[data-random-gallery]', jg67PhotoPool, 'jg67-gallery-photo
 applyRandomPhotoPair('[data-random-excellence]', jg67PhotoPool, 'jg67-excellence-photos');
 </script>
 <script src="/conversion-tracking.js?v=20260703" defer></script>
-<script src="/noel.js?v=20261120b" defer></script>
-<script src="/cta-mobile.js?v=20261120" defer></script>
+<script src="/noel.js?v=20261121f" defer></script>
+<script src="/cta-mobile.js?v=20261121" defer></script>
 <script>
 /* Effets premium — desktop avec souris uniquement, jamais sous prefers-reduced-motion */
 (function(){
