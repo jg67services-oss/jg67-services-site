@@ -76,8 +76,31 @@
     '<path d="M157 60l-11 17M165 62l3 18M180 61l-5 18M187 58l12 15" fill="none" stroke="url(#noel-or)" stroke-width="2.6"/>' +
     '<path d="M199 33l-2-11m0 4l6-7m-5 10l-7-5" fill="none" stroke="url(#noel-or)" stroke-width="1.8"/>';
   var CORPS = '<path d="M54 60c0-16 6-24 16-24s16 8 16 24z"/>';
-  var TETE = '<circle cx="71" cy="28" r="7.5" fill="#F0DDB4"/><path d="M63.5 28c1 11 14 11 15 0-4 3-11 3-15 0z" fill="#fff"/>' +
-    '<path d="M63 25c1-11 13-15 19-7l6 6-10-2c-4-1-10 0-15 3z"/><path d="M63 25.5c5-3 11-3.5 16-2.5" fill="none" stroke="#fff" stroke-width="2.6"/><circle cx="88.5" cy="24.5" r="2.8" fill="#fff"/>';
+  /* Tête du Père Noël (traîneau et toit), dans le même cadre que l'ancienne : visage, joues et nez rosés, yeux et sourcils,
+     barbe ondulée, moustache, sourire, bonnet rouge à plis, bordure de fourrure et pompon */
+  var TETE =
+    /* visage et ombres (sous le bonnet, côté droit) */
+    '<path d="M64.3 23.5h13.4c.9 2.2 1 5 .2 7.2-1.2 2.6-3.8 3.9-6.9 3.9s-5.7-1.3-6.9-3.9c-.8-2.2-.7-5 .2-7.2z" fill="#F2CDAA"/>' +
+    '<path d="M64.2 23.5h13.6l.4 2.1q-7.2-1.5-14.4 0z" fill="#C98F68" opacity=".45"/><path d="M76.4 24.6c1 2.2 1 4.6.3 6.5l1.2-.4c.8-2.2.7-5-.2-7.2z" fill="#C98F68" opacity=".35"/>' +
+    '<circle cx="67.1" cy="29.4" r="1.55" fill="#E58A7B" opacity=".55"/><circle cx="74.9" cy="29.4" r="1.55" fill="#E58A7B" opacity=".55"/>' +
+    /* yeux et sourcils */
+    '<ellipse cx="68.3" cy="27.1" rx=".68" ry=".85" fill="#2B2520"/><ellipse cx="73.7" cy="27.1" rx=".68" ry=".85" fill="#2B2520"/>' +
+    '<circle cx="68.5" cy="26.8" r=".24" fill="#fff"/><circle cx="73.9" cy="26.8" r=".24" fill="#fff"/>' +
+    '<path d="M66.8 25.7q1.4-1 2.9-.3M72.3 25.4q1.5-.7 2.9.3" fill="none" stroke="#fff" stroke-width=".95"/>' +
+    /* barbe ondulée et ses mèches */
+    '<path d="M63.4 25c.1 3 1.3 5.6 3.4 7q2 1.4 4.2 1.4 2.2 0 4.2-1.4c2.1-1.4 3.3-4 3.4-7 1.4 3.4 1 7.2-.7 9.9q-.4 1.8-1.8 1.5-.3 2.2-2.1 2-.9 2.1-2.5.7-1.6 1.5-2.6-.6-1.8.2-2.2-2-1.3.4-1.9-1.2c-1.7-2.9-2.4-6.8-1.4-10.3z" fill="#fff"/>' +
+    '<path d="M66.3 33.6q.9 1.5.4 2.9M69.4 35.2q.6 1.6.1 3.1M72.9 35.2q-.5 1.6 0 3.2M75.9 33.6q-.8 1.4-.4 2.8M64.6 29.5q.2 2.4 1.3 4M77.4 29.5q-.2 2.4-1.3 4" fill="none" stroke="#CFC6B6" stroke-width=".45"/>' +
+    /* sourire, moustache, nez */
+    '<path d="M69.4 32.3q1.6 2.1 3.2 0z" fill="#A8443E"/>' +
+    '<path d="M71 30.1c-1.2-.9-3-.7-4.3.4-1 .9-2.2 1-3 .4.6 1.7 2.4 2.5 4.2 2.1 1.4-.3 2.5-1.3 3.1-2.5.6 1.2 1.7 2.2 3.1 2.5 1.8.4 3.6-.4 4.2-2.1-.8.6-2 .5-3-.4-1.3-1.1-3.1-1.3-4.3-.4z" fill="#fff" stroke="#CFC6B6" stroke-width=".35"/>' +
+    '<ellipse cx="71" cy="29.2" rx="1.5" ry="1.25" fill="#E9A08C"/><circle cx="70.6" cy="28.8" r=".36" fill="#fff" opacity=".75"/>' +
+    /* bonnet rouge : plis, reflet, fourrure, pompon */
+    '<path d="M63 25c1-11 13-15 19-7l6 6-10-2c-4-1-10 0-15 3z" fill="#C8463C"/>' +
+    '<path d="M70.5 16.4q4-1.4 7.6 1.2M79.6 19.2l5.2 3.4M74 15.2q3.4.4 6 3.2" fill="none" stroke="#952B24" stroke-width=".6" opacity=".75"/>' +
+    '<path d="M65.3 21.4q1.6-4.6 5.6-6.3" fill="none" stroke="#E57A6E" stroke-width=".6" opacity=".8"/>' +
+    '<path d="M63 25.5c5-3 11-3.5 16-2.5" fill="none" stroke="#fff" stroke-width="2.8"/><path d="M63 25.9c5-3 11-3.5 16-2.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-dasharray=".1 1.55"/>' +
+    '<path d="M63.4 26.9c4.8-2.8 10.4-3.3 15.2-2.4" fill="none" stroke="#CFC6B6" stroke-width=".4" opacity=".8"/>' +
+    '<circle cx="88.5" cy="24.5" r="2.8" fill="#fff"/><path d="M86.8 26.2q1.7 1.1 3.4-.2" fill="none" stroke="#CFC6B6" stroke-width=".5"/>';
   var SVG = '<svg viewBox="0 0 345 100" fill="url(#noel-or)" stroke-linecap="round" stroke-linejoin="round">' +
     '<defs><linearGradient id="noel-or" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="100"><stop offset="0" stop-color="#F0DDB4"/><stop offset="1" stop-color="#B7935B"/></linearGradient></defs>' +
     /* hotte et cadeaux */
