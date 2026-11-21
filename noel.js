@@ -152,7 +152,7 @@
      1. le traîneau passe et sa neige se dépose ; 2. deux lutins JG67 balaient et font briller la vitre ;
      3. le Père Noël sort de derrière le toit et approuve, une étoile s'allume ; 4. la signature, et le traîneau repart.
      Chaque personnage a sa bulle de dialogue. Environ 20 s. */
-  var VU = 'jg67-noel-histoire', ECH = (mobile ? 220 : 340) / 340, OR = '#C9A66B', CREME = '#F6F4EF', PEAU = '#F6D9B8', NUIT = '#0E1E2A';
+  var VU = 'jg67-noel-histoire', ECH = (mobile ? 220 : 340) / 340, OR = '#C9A66B', CREME = '#F6F4EF', NUIT = '#0E1E2A';
   var CSS_H = '.noel .sc{border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#15324C 0,#0E1E2A 80%);border:1px solid rgba(183,147,91,.45);box-shadow:0 18px 40px -16px rgba(14,30,42,.75);animation:nh-v 19.7s ease .4s 1 both}' +
     '.noel .sc svg{display:block;width:100%;height:auto;animation:nh-dim .6s ease 16.5s 1 both}' +
     '.noel .sc .fb{transform-box:fill-box;transform-origin:50% 100%}.noel .sc .fc{transform-box:fill-box;transform-origin:50% 50%}' +
@@ -191,21 +191,50 @@
   function deja() { try { return sessionStorage.getItem(VU); } catch (e) { return '1'; } }
   function an(nom, duree, delai, reste) { return 'animation:' + nom + ' ' + duree + 's ' + (reste || 'ease-in-out') + ' ' + delai + 's both'; }
 
-  /* Lutin en tenue JG67 (crème et champagne), pieds en (0,0), tourné vers la droite.
-     marche = [animation de déplacement, départ en s], pas = nombre de foulées, saut = instant du petit saut de joie. */
-  function lutin(marche, pas, saut, bras, traine) {
+  /* Lutin en tenue JG67 (crème et champagne), pieds en (0,0), tourné vers la droite, dessiné dans le même style que le Père Noël.
+     marche = [animation de déplacement, départ en s], pas = nombre de foulées, saut = instant du petit saut de joie,
+     o = ce qui distingue les deux lutins : bonnet, pli (couleur des plis), cheveux, echarpe (rouge) ou col, rire (bouche ouverte). */
+  function lutin(marche, pas, saut, bras, traine, o) {
+    var OMBRE = '#C98F68', PLI = '#CFC6B6';
     function jambe(x, d) {
       return '<g style="transform-origin:' + x + 'px -14px;animation:nh-j .3s linear ' + (marche[1] + d) + 's ' + pas + ' both">' +
-        '<path d="M' + x + ' -14v11" fill="none" stroke="' + OR + '" stroke-width="3.6"/><path d="M' + (x - 3) + ' 0v-3.2h5.5l5.5 3.2z" fill="' + OR + '"/></g>';
+        '<path d="M' + x + ' -14v11" fill="none" stroke="' + OR + '" stroke-width="3.6"/><path d="M' + (x - 1.8) + ' -8.2h3.6M' + (x - 1.8) + ' -5.6h3.6" fill="none" stroke="' + CREME + '" stroke-width=".8" stroke-linecap="butt"/>' +
+        /* chaussure à bout relevé, revers et semelle */
+        '<path d="M' + (x - 3) + ' 0v-3.4h5.4q3.6.3 6 2.2.6.8-.4 1.2z" fill="#9C7A45"/><path d="M' + (x - 3) + ' -3.3h5.2" fill="none" stroke="#F0DDB4" stroke-width=".9"/><path d="M' + (x - 3) + ' 0h11" fill="none" stroke="#6F5630" stroke-width=".6"/></g>';
     }
     return '<g style="' + marche[0] + '"><g transform="translate(0 128) scale(1.1)">' + (traine || '') +
+      '<ellipse cx="1" cy=".6" rx="9.5" ry="1.5" fill="#000" opacity=".22"/>' +
       '<g style="' + an('nh-hop', 0.9, saut, 'ease-out') + '"><g style="animation:nh-bob .3s ease-in-out infinite alternate">' +
       jambe(-3.5, 0) + jambe(3.5, 0.15) +
+      /* tunique : volume (ombre à droite), plis, ourlet, boutons, ceinture à boucle */
       '<path d="M-9 -13q-2.5-17 9-18.5 11.5 1.5 9 18.5z" fill="' + CREME + '"/>' +
-      '<path d="M-9.3 -18h18.6" fill="none" stroke="' + OR + '" stroke-width="2.4"/><path d="M-6 -29.5l3 3 3-3 3 3 3-3" fill="none" stroke="' + OR + '" stroke-width="1.6"/>' +
-      '<path d="M-5.5 -39l-5.5-3.5 4 6z" fill="' + PEAU + '"/><circle cx="1" cy="-38" r="7.2" fill="' + PEAU + '"/>' +
-      '<circle cx="4.2" cy="-39" r="1" fill="' + NUIT + '"/><path d="M3 -35.2q2.2 1.6 4 .2" fill="none" stroke="' + NUIT + '" stroke-width=".9"/><circle cx="6.2" cy="-36.6" r="1.3" fill="#C8463C" opacity=".35"/>' +
-      '<path d="M-6.5 -43.5q1-12-2.5-16.5 12 0 17.5 16.5z" fill="' + OR + '"/><path d="M-7 -43.5h16" fill="none" stroke="#fff" stroke-width="2.6"/><circle cx="-9.5" cy="-60.5" r="2.4" fill="#fff"/>' +
+      '<path d="M4 -30.6q6.6 2.6 5 17.6h-3.4q1.8-11.6-1.6-17.6z" fill="#D9D2C4" opacity=".7"/>' +
+      '<path d="M-5 -16.6q.9 2 .4 3.6M-.5 -16.6q.6 2 .2 3.6M3.6 -16.6q.4 2 0 3.6M-5.6 -25q.6 3 .2 5.6" fill="none" stroke="' + PLI + '" stroke-width=".5"/>' +
+      '<path d="M-9 -13.4h18" fill="none" stroke="' + OR + '" stroke-width="1"/><circle cx="1.6" cy="-26" r=".8" fill="' + OR + '"/><circle cx="1.6" cy="-22.6" r=".8" fill="' + OR + '"/>' +
+      '<path d="M-9.3 -18h18.6" fill="none" stroke="#9C7A45" stroke-width="2.6"/><rect x="-.4" y="-19.7" width="3.6" height="3.4" rx=".6" fill="#F0DDB4" stroke="#6F5630" stroke-width=".5"/>' +
+      (o.echarpe ? '<path d="M-6.6 -30.6q7 2.8 13.4 0l.5 2.6q-7 3-14.4 0z" fill="#C8463C"/><path d="M-5.4 -28.4l-2.6 6.2 2.9-.7 1.1-4.7z" fill="#C8463C"/><path d="M-4.6 -29.6q5 1.6 9.8.2" fill="none" stroke="#952B24" stroke-width=".5"/>'
+        : '<path d="M-6.4 -30.4l3.2 3.4 3.2-3.4 3.2 3.4 3.2-3.4" fill="none" stroke="' + OR + '" stroke-width="1.8"/><path d="M-6.4 -30.4l3.2 3.4 3.2-3.4 3.2 3.4 3.2-3.4" fill="none" stroke="#F0DDB4" stroke-width=".5"/>') +
+      /* oreille pointue, visage, ombres */
+      '<path d="M-4.4 -40.8l-7-4.4q.5 5.8 5.8 8.4z" fill="#F2CDAA"/><path d="M-5.6 -40.6l-3.4-2.2M-6.4 -38.6q-1.6-.8-2.6-2.4" fill="none" stroke="' + OMBRE + '" stroke-width=".5"/>' +
+      '<path d="M-5.6 -40.5c0-3.6 2.8-5.8 6.6-5.8s6.8 2.4 6.8 6c0 2.2-.6 4.4-2.2 6-1.4 1.5-3.2 2.4-5 2.4-3.6 0-6.2-3.4-6.2-8.6z" fill="#F2CDAA"/>' +
+      '<path d="M-5.6 -40.5c0 5.2 2.6 8.6 6.2 8.6 1 0 2-.3 2.9-.8-3.6.2-6.8-2.6-7.7-7.8z" fill="' + OMBRE + '" opacity=".4"/>' +
+      '<path d="M-5.4 -43.4h13l.2 1.5q-6.6-1.2-13.4.2z" fill="' + OMBRE + '" opacity=".4"/>' +
+      /* cheveux, yeux (pupille et reflet), sourcils, nez, joue, sourire */
+      '<path d="M-6 -43q-1 2.8.1 5 1.1-2.9 3.5-3.9z" fill="' + o.cheveux + '"/><path d="M2.6 -44.4q2.8.2 4.8 2.3-2.5-.7-4.9-.2z" fill="' + o.cheveux + '"/>' +
+      '<ellipse cx="4.2" cy="-39.6" rx="1.3" ry="1.5" fill="#fff"/><circle cx="4.6" cy="-39.5" r=".85" fill="#2B2520"/><circle cx="4.9" cy="-39.9" r=".27" fill="#fff"/>' +
+      '<ellipse cx="7.1" cy="-39.7" rx=".7" ry="1.25" fill="#fff"/><circle cx="7.3" cy="-39.6" r=".6" fill="#2B2520"/>' +
+      '<path d="M2.7 -41.9q1.6-1.1 3.1-.2M6.5 -41.9q.8-.5 1.4 0" fill="none" stroke="' + o.cheveux + '" stroke-width=".75"/>' +
+      '<path d="M6.3 -38.5q2.9.5 2.5 2.1-.8.9-2.6.2z" fill="#E8B592"/><circle cx="8" cy="-36.7" r=".7" fill="#E58A7B" opacity=".7"/>' +
+      '<circle cx="3.8" cy="-36.3" r="1.35" fill="#E58A7B" opacity=".5"/>' +
+      (o.rire ? '<path d="M3 -34.9q2.2 2.4 4.2-.2z" fill="#A8443E"/><path d="M3.6 -34.7h3" fill="none" stroke="#fff" stroke-width=".5"/>'
+        : '<path d="M3.2 -34.8q2 1.5 3.9-.3" fill="none" stroke="#8E3B34" stroke-width=".75"/>') +
+      /* bonnet : plis, reflet, bordure de fourrure, pompon */
+      '<path d="M-6.5 -43.5q1-12-2.5-16.5 12 0 17.5 16.5z" fill="' + o.bonnet + '"/>' +
+      '<path d="M-3.4 -48.6q4-1.2 7.6 1.4M-5.6 -54.4q3-.6 5.8.8M3 -52q2 2 3 4.6" fill="none" stroke="' + o.pli + '" stroke-width=".6" opacity=".8"/>' +
+      '<path d="M-5.4 -46q.6-5-.8-9.6" fill="none" stroke="#fff" stroke-width=".5" opacity=".45"/>' +
+      '<path d="M-7 -43.5h16" fill="none" stroke="#fff" stroke-width="2.8"/><path d="M-7 -43.1h16" fill="none" stroke="#fff" stroke-width="3.4" stroke-dasharray=".1 1.5"/>' +
+      '<path d="M-6.6 -42h15.2" fill="none" stroke="' + PLI + '" stroke-width=".4"/>' +
+      '<circle cx="-9.5" cy="-60.5" r="2.4" fill="#fff"/><path d="M-11 -59q1.5 1 3-.1" fill="none" stroke="' + PLI + '" stroke-width=".45"/>' +
       bras + '</g></g></g></g>';
   }
 
@@ -259,13 +288,23 @@
       h +
       /* Scène 2 : le lutin au chiffon (seau JG67) puis le lutin au balai */
       lutin([an('nh-x2', 1.5, 4.3, 'cubic-bezier(.3,.6,.4,1)'), 4.3], 5, 12.62,
-        '<g style="animation:nh-ca .5s linear 5.8s 6 both"><path d="M3 -27l11 -3" fill="none" stroke="' + CREME + '" stroke-width="3.4"/><rect x="12.5" y="-35" width="8" height="7" rx="2" fill="#fff"/></g>',
+        /* chiffon à plis et liseré, manche à revers, main */
+        '<g style="animation:nh-ca .5s linear 5.8s 6 both"><path d="M12.4 -35.4q4.1-1.2 8.2.2.8 3.5-.3 7.1-3.9.9-7.8-.2-.9-3.5-.1-7.1z" fill="#fff"/>' +
+        '<path d="M14.4 -34.2q.6 3 .1 5.4M17.8 -34.6q.8 3 .2 5.8" fill="none" stroke="#CFC6B6" stroke-width=".45"/><path d="M12.8 -29.3q3.7.9 7.4.1" fill="none" stroke="' + OR + '" stroke-width=".7"/>' +
+        '<path d="M3 -27l10.4 -2.8" fill="none" stroke="' + CREME + '" stroke-width="3.6"/><path d="M11.4 -29.3l1.9 -.5" fill="none" stroke="' + OR + '" stroke-width="3.9" stroke-linecap="butt"/>' +
+        '<ellipse cx="15" cy="-30.6" rx="2.1" ry="1.8" fill="#F2CDAA"/><path d="M14.6 -31.9l1.7.5M14.2 -30.8l2.2.4M14.4 -29.7l1.8.2" fill="none" stroke="#C98F68" stroke-width=".35"/></g>',
         '<path d="M-32 -15q10-11 20 0" fill="none" stroke="#F0DDB4" stroke-width="1.2"/><path d="M-33 -15h22l-3 15h-16z" fill="' + OR + '"/>' +
-        '<text x="-22" y="-4.6" text-anchor="middle" font-family="Outfit,Arial,sans-serif" font-size="7.4" font-weight="700" fill="' + NUIT + '">JG67</text>') +
+        '<text x="-22" y="-4.6" text-anchor="middle" font-family="Outfit,Arial,sans-serif" font-size="7.4" font-weight="700" fill="' + NUIT + '">JG67</text>',
+        { bonnet: '#C8463C', pli: '#952B24', cheveux: '#A5552E', echarpe: 1 }) +
       lutin([an('nh-x1', 4, 4.8, 'linear'), 4.8], 13, 12.5,
-        '<g style="transform-origin:8px -24px;animation:nh-ba .36s ease-in-out 5.4s 10 alternate both"><path d="M6 -41L17 -4" fill="none" stroke="#E4CFA3" stroke-width="1.8"/>' +
-        '<path d="M12.5 -7h9l2.5 7h-13z" fill="' + OR + '"/><path d="M15.5 -6v5M19 -6v5" fill="none" stroke="' + NUIT + '" stroke-width=".6" opacity=".5"/>' +
-        '<path d="M2 -27l8.5 5" fill="none" stroke="' + CREME + '" stroke-width="3.4"/><circle cx="11" cy="-21.5" r="2" fill="' + PEAU + '"/></g>') +
+        /* balai : manche en bois, ligature rouge, paille ; deux mains sur le manche */
+        '<g style="transform-origin:8px -24px;animation:nh-ba .36s ease-in-out 5.4s 10 alternate both"><path d="M6 -41L17 -4" fill="none" stroke="#B98A52" stroke-width="2"/><path d="M6.7 -40.6L17 -6" fill="none" stroke="#EBD7AE" stroke-width=".55"/>' +
+        '<path d="M13.4 -8.2l4.8-1.4 6.2 9.6h-13.8z" fill="#D9B36A"/><path d="M15.4 -6.4l-2.6 6.4M17.2 -7l.2 7M18.8 -7.2l2.8 7.2M20 -5.4l2.6 5.4" fill="none" stroke="#9C7A45" stroke-width=".5"/>' +
+        '<path d="M13.8 -8.4l4.2-1.2" fill="none" stroke="#C8463C" stroke-width="1.5"/>' +
+        '<path d="M-1.5 -26q5.6 9.6 15 13.6" fill="none" stroke="#E6E0D3" stroke-width="3.2"/><ellipse cx="14.4" cy="-12.3" rx="2" ry="1.7" fill="#F2CDAA"/>' +
+        '<path d="M2 -27l8 4.7" fill="none" stroke="' + CREME + '" stroke-width="3.6"/><path d="M8.6 -23.1l1.7 1" fill="none" stroke="' + OR + '" stroke-width="3.9" stroke-linecap="butt"/>' +
+        '<ellipse cx="11.4" cy="-21.3" rx="2.1" ry="1.8" fill="#F2CDAA"/><path d="M10.6 -22.5l1.9 1M10.3 -21.4l2.2.6M10.7 -20.3l1.7.3" fill="none" stroke="#C98F68" stroke-width=".35"/></g>',
+        null, { bonnet: OR, pli: '#8E6F3F', cheveux: '#C9A24E', rire: 1 }) +
       /* l'étoile du logement impeccable */
       '<path class="fc" d="M302 9l3.2 9.8 9.8 3.2-9.8 3.2-3.2 9.8-3.2-9.8-9.8-3.2 9.8-3.2z" fill="#F3E3C0" style="' + an('nh-st', 1.5, 12.3, 'ease-out') + '"/>' +
       '</svg>';
