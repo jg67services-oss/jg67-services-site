@@ -99,7 +99,7 @@
     '<g transform="translate(124 -9)"><g class="rn r3">' + RENNE + '<circle cx="205" cy="39" r="2.3" fill="#C8463C"/></g></g>' +
     '</svg>';
 
-  function vol() {
+  function vol(suite) {
     noter();
     var tr = document.createElement('div'); tr.className = 'tr'; tr.innerHTML = SVG; c.appendChild(tr);
     var trainee = leger ? 0 : setInterval(function () {
@@ -112,7 +112,7 @@
     }, mobile ? 90 : 55);
     tr.addEventListener('animationend', function (e) {
       if (e.target !== tr) return;
-      clearInterval(trainee); tr.remove(); prevoir(false);
+      clearInterval(trainee); tr.remove(); if (suite !== false) prevoir(false);
     });
     return tr;
   }
@@ -127,15 +127,24 @@
   /* ---------- Histoire de Noël : « Même le Père Noël fait appel aux experts du ménage » ----------
      Une fois par session, dans une petite vignette au coin bas gauche (aucun clic capté, rien ne couvre le texte ni les boutons) :
      1. le traîneau passe et sa neige se dépose ; 2. deux lutins JG67 balaient et font briller la vitre ;
-     3. le Père Noël sort de derrière le toit et approuve, une étoile s'allume ; 4. la signature. Environ 15 s. */
-  var VU = 'jg67-noel-histoire', OR = '#C9A66B', CREME = '#F6F4EF', PEAU = '#F6D9B8', NUIT = '#0E1E2A';
-  var CSS_H = '.noel .sc{border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#15324C 0,#0E1E2A 80%);border:1px solid rgba(183,147,91,.45);box-shadow:0 18px 40px -16px rgba(14,30,42,.75);animation:nh-v 14.8s ease .4s 1 both}' +
-    '.noel .sc svg{display:block;width:100%;height:auto;animation:nh-dim .6s ease 11.6s 1 both}' +
+     3. le Père Noël sort de derrière le toit et approuve, une étoile s'allume ; 4. la signature, et le traîneau repart.
+     Chaque personnage a sa bulle de dialogue. Environ 20 s. */
+  var VU = 'jg67-noel-histoire', ECH = (mobile ? 220 : 340) / 340, OR = '#C9A66B', CREME = '#F6F4EF', PEAU = '#F6D9B8', NUIT = '#0E1E2A';
+  var CSS_H = '.noel .sc{border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#15324C 0,#0E1E2A 80%);border:1px solid rgba(183,147,91,.45);box-shadow:0 18px 40px -16px rgba(14,30,42,.75);animation:nh-v 19.7s ease .4s 1 both}' +
+    '.noel .sc svg{display:block;width:100%;height:auto;animation:nh-dim .6s ease 16.5s 1 both}' +
     '.noel .sc .fb{transform-box:fill-box;transform-origin:50% 100%}.noel .sc .fc{transform-box:fill-box;transform-origin:50% 50%}' +
     '.noel .sc .ph{position:absolute;inset:0;margin:0;max-width:none;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 ' + (mobile ? 14 : 28) + 'px;' +
-    'font:italic 500 ' + (mobile ? 15 : 21) + 'px/1.25 "Cormorant Garamond",Georgia,serif;letter-spacing:.01em;color:#F3E3C0;animation:nh-ph 3.1s ease 11.8s 1 both}' +
+    'font:italic 500 ' + (mobile ? 15 : 21) + 'px/1.25 "Cormorant Garamond",Georgia,serif;letter-spacing:.01em;color:#F3E3C0;animation:nh-ph 3.1s ease 16.7s 1 both}' +
+    /* bulles de dialogue : au-dessus de la vignette, pointe vers le personnage ; .bw suit le personnage, .bu apparaît, le texte se révèle */
+    '.noel .bu{position:absolute;bottom:0;box-sizing:border-box;width:max-content;max-width:' + Math.min(mobile ? 180 : 250, innerWidth - 24) + 'px;padding:9px 13px;border-radius:14px;background:#FFFDF8;border:1px solid rgba(183,147,91,.75);' +
+    'box-shadow:0 10px 24px -10px rgba(14,30,42,.6);font:500 ' + (mobile ? 12.5 : 13.5) + 'px/1.35 Outfit,-apple-system,"Segoe UI",sans-serif;color:#0E1E2A;transform-origin:var(--p) 100%;animation:nh-bu var(--d) ease var(--t) 1 both}' +
+    '.noel .bu:after{content:"";position:absolute;left:var(--p);bottom:-6px;width:10px;height:10px;margin-left:-5px;background:inherit;border:inherit;border-width:0 1px 1px 0;border-bottom-right-radius:2px;transform:rotate(45deg)}' +
+    '.noel .bu span{display:block;animation:nh-rv .8s ease-out calc(var(--t) + .15s) 1 both}' +
+    '@keyframes nh-bu{0%{opacity:0;transform:translateY(6px) scale(.9)}10%,88%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-4px)}}' +
+    '@keyframes nh-rv{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}' +
+    '@keyframes nh-s1{0%{transform:translateX(' + (-40 * ECH) + 'px)}15%{transform:translateX(' + (16 * ECH) + 'px)}100%{transform:translateX(' + (158 * ECH) + 'px)}}' +
     '.noel b.d{animation-name:nh-dep;animation-timing-function:cubic-bezier(.3,0,.7,.7)}' +
-    '@keyframes nh-v{0%{opacity:0;transform:translate3d(0,14px,0)}5%,95%{opacity:1;transform:none}100%{opacity:0;transform:translate3d(0,8px,0)}}' +
+    '@keyframes nh-v{0%{opacity:0;transform:translate3d(0,14px,0)}4%,96%{opacity:1;transform:none}100%{opacity:0;transform:translate3d(0,8px,0)}}' +
     '@keyframes nh-dim{to{opacity:.14}}' +
     '@keyframes nh-ph{0%{opacity:0;transform:translateY(6px)}16%,82%{opacity:1;transform:none}100%{opacity:0;transform:none}}' +
     '@keyframes nh-dep{0%{transform:translate3d(0,0,0);opacity:.95}80%{opacity:.9}100%{transform:translate3d(var(--x),var(--y),0) scale(.5);opacity:0}}' +
@@ -152,7 +161,7 @@
     '@keyframes nh-ba{from{transform:rotate(10deg)}to{transform:rotate(-14deg)}}' +
     '@keyframes nh-ca{0%,100%{transform:none}25%{transform:translate(2px,-3px)}50%{transform:translate(4px,0)}75%{transform:translate(2px,3px)}}' +
     '@keyframes nh-vs{from{transform:translateX(-16px)}to{transform:translateX(36px)}}' +
-    '@keyframes nh-pn{0%{transform:translateY(70px)}22%{transform:translateY(-4px)}28%{transform:translateY(0)}40%{transform:translateY(0) rotate(5deg)}48%{transform:translateY(0) rotate(-2deg)}56%,84%{transform:translateY(0) rotate(0)}100%{transform:translateY(70px)}}' +
+    '@keyframes nh-pn{0%{transform:translateY(70px)}11%{transform:translateY(-4px)}14%{transform:translateY(0)}20%{transform:translateY(0) rotate(5deg)}24%{transform:translateY(0) rotate(-2deg)}28%,92%{transform:translateY(0) rotate(0)}100%{transform:translateY(70px)}}' +
     '@keyframes nh-po{from{opacity:0;transform:translateY(6px) rotate(35deg)}to{opacity:1;transform:none}}' +
     '@keyframes nh-st{0%{transform:scale(0) rotate(0);opacity:0}55%{transform:scale(1.25) rotate(50deg);opacity:1}100%{transform:scale(1) rotate(90deg);opacity:1}}';
 
@@ -185,7 +194,7 @@
     if (mobile && !demo && cb && cb.offsetHeight) { setTimeout(histoire, 4000); return; }
     try { sessionStorage.setItem(VU, '1'); } catch (e) {}
     if (!histoire.css) { histoire.css = 1; var s2 = document.createElement('style'); s2.textContent = CSS_H; document.head.appendChild(s2); }
-    var tr = vol(), k, q, h = '';
+    var tr = vol(false), k, q, h = '';
 
     /* Scène 1 : la neige du traîneau tombe dans la vignette et se dépose (toit, cheminée, quatre congères) */
     for (k = 0; k < 13; k++)
@@ -206,8 +215,8 @@
       '<g fill="#F3E3C0" opacity=".5"><circle cx="28" cy="24" r="1.2"/><circle cx="74" cy="12" r=".9"/><circle cx="122" cy="30" r="1.1"/><circle cx="168" cy="14" r=".9"/><circle cx="326" cy="52" r="1"/></g>' +
       '<path d="M0 128h340v22H0z" fill="#fff" opacity=".07"/><path d="M0 128h340" fill="none" stroke="#B7935B" stroke-width="1" opacity=".55"/>' +
       /* Scène 3 : le Père Noël, caché derrière le toit, monte, hoche la tête et lève le pouce */
-      '<g clip-path="url(#nh-ciel)"><g style="transform-origin:250px 60px;' + an('nh-pn', 2.7, 9) + '"><g transform="translate(122.2 -18.4) scale(1.8)" fill="url(#nh-or)">' + CORPS +
-      '<g style="transform-origin:62px 46px;' + an('nh-po', 0.45, 9.9, 'cubic-bezier(.3,1.5,.5,1)') + '"><path d="M62 47l-9-10" fill="none" stroke="url(#nh-or)" stroke-width="4.5"/><circle cx="52.5" cy="36" r="3.3" fill="#F0DDB4"/><path d="M52.5 33.5v-5.5" fill="none" stroke="#F0DDB4" stroke-width="2.6"/></g>' +
+      '<g clip-path="url(#nh-ciel)"><g style="transform-origin:250px 60px;' + an('nh-pn', 5.3, 11.2) + '"><g transform="translate(122.2 -18.4) scale(1.8)" fill="url(#nh-or)">' + CORPS +
+      '<g style="transform-origin:62px 46px;' + an('nh-po', 0.45, 12.1, 'cubic-bezier(.3,1.5,.5,1)') + '"><path d="M62 47l-9-10" fill="none" stroke="url(#nh-or)" stroke-width="4.5"/><circle cx="52.5" cy="36" r="3.3" fill="#F0DDB4"/><path d="M52.5 33.5v-5.5" fill="none" stroke="#F0DDB4" stroke-width="2.6"/></g>' +
       TETE + '</g></g></g>' +
       /* le logement : petite maison à colombages */
       '<rect x="290" y="44" width="11" height="24" fill="#8E6F3F"/>' +
@@ -224,16 +233,16 @@
       '<g fill="#fff" style="' + an('nh-ap', 2, 2) + '"><path d="M218 78L267 38l49 40h-10q-2-5-6-3l-33-28-33 28q-4-2-6 3z"/><rect x="288" y="41" width="15" height="5" rx="2.5"/></g>' +
       h +
       /* Scène 2 : le lutin au chiffon (seau JG67) puis le lutin au balai */
-      lutin([an('nh-x2', 1.5, 4.3, 'cubic-bezier(.3,.6,.4,1)'), 4.3], 5, 10.42,
+      lutin([an('nh-x2', 1.5, 4.3, 'cubic-bezier(.3,.6,.4,1)'), 4.3], 5, 12.62,
         '<g style="animation:nh-ca .5s linear 5.8s 6 both"><path d="M3 -27l11 -3" fill="none" stroke="' + CREME + '" stroke-width="3.4"/><rect x="12.5" y="-35" width="8" height="7" rx="2" fill="#fff"/></g>',
         '<path d="M-32 -15q10-11 20 0" fill="none" stroke="#F0DDB4" stroke-width="1.2"/><path d="M-33 -15h22l-3 15h-16z" fill="' + OR + '"/>' +
         '<text x="-22" y="-4.6" text-anchor="middle" font-family="Outfit,Arial,sans-serif" font-size="7.4" font-weight="700" fill="' + NUIT + '">JG67</text>') +
-      lutin([an('nh-x1', 4, 4.8, 'linear'), 4.8], 13, 10.3,
+      lutin([an('nh-x1', 4, 4.8, 'linear'), 4.8], 13, 12.5,
         '<g style="transform-origin:8px -24px;animation:nh-ba .36s ease-in-out 5.4s 10 alternate both"><path d="M6 -41L17 -4" fill="none" stroke="#E4CFA3" stroke-width="1.8"/>' +
         '<path d="M12.5 -7h9l2.5 7h-13z" fill="' + OR + '"/><path d="M15.5 -6v5M19 -6v5" fill="none" stroke="' + NUIT + '" stroke-width=".6" opacity=".5"/>' +
         '<path d="M2 -27l8.5 5" fill="none" stroke="' + CREME + '" stroke-width="3.4"/><circle cx="11" cy="-21.5" r="2" fill="' + PEAU + '"/></g>') +
       /* l'étoile du logement impeccable */
-      '<path class="fc" d="M302 9l3.2 9.8 9.8 3.2-9.8 3.2-3.2 9.8-3.2-9.8-9.8-3.2 9.8-3.2z" fill="#F3E3C0" style="' + an('nh-st', 1.5, 10.1, 'ease-out') + '"/>' +
+      '<path class="fc" d="M302 9l3.2 9.8 9.8 3.2-9.8 3.2-3.2 9.8-3.2-9.8-9.8-3.2 9.8-3.2z" fill="#F3E3C0" style="' + an('nh-st', 1.5, 12.3, 'ease-out') + '"/>' +
       '</svg>';
 
     /* Placement : coin bas gauche, au-dessus du bandeau cookies s'il est affiché et de la barre d'action mobile */
@@ -245,6 +254,21 @@
     sc.innerHTML = svg + '<p class="ph">La magie de Noël passe aussi par un logement impeccable.</p>';
     c.appendChild(sc);
     sc.addEventListener('animationend', function (e) { if (e.target === sc) sc.remove(); });
+
+    /* Bulles : x = position du personnage dans la scène (0 à 340), cote = 'g' (pointe à gauche de la bulle) ou 'd' (à droite),
+       t = apparition en s, d = durée en s, suit = animation de déplacement à suivre (le lutin au balai marche pendant sa réplique) */
+    function bulle(texte, x, cote, t, d, suit) {
+      var w = document.createElement('div');
+      w.style.cssText = 'left:' + (gauche + x * ECH) + 'px;bottom:' + (bas + Math.round(large * 150 / 340) + 14) + 'px;width:0;height:0' + (suit ? ';animation:' + suit : '');
+      w.innerHTML = '<div class="bu" style="' + (cote === 'g' ? 'left:-28px;--p:28px' : 'right:-34px;--p:calc(100% - 34px)') + ';--t:' + t + 's;--d:' + d + 's"><span>' + texte + '</span></div>';
+      w.firstChild.addEventListener('animationend', function (e) { if (e.target === w.firstChild) w.remove(); });
+      c.appendChild(w);
+    }
+    bulle('Un nettoyage impeccable dans chaque pièce ! ✨', 0, 'g', 5.7, 2.8, 'nh-s1 4s linear 4.8s both');
+    bulle('Tout est prêt pour accueillir les prochains voyageurs ! 🎄', 226, 'd', 8.7, 2.9);
+    bulle('Avec JG67 Services, même pendant les fêtes, le professionnalisme est au rendez-vous ! 🎅✨', 250, 'd', 11.9, 4.2);
+    /* le Père Noël repart en traîneau avec sa traînée scintillante, pendant la signature */
+    setTimeout(function () { if (sc.isConnected) vol(); }, 16300);
 
     /* la poussière de neige du traîneau descend vers la vignette */
     var nb = 0, pous = setInterval(function () {
